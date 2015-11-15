@@ -1,0 +1,34 @@
+.slide-panel {
+    position : relative;
+    overflow: hidden;
+    margin: 0px;
+    background-color: @black;
+    box-sizing: border-box;
+    top : 0px;
+    left : 0px;
+    .shadow-overlay{
+        position: absolute;
+        z-index: 3;
+        padding : 0px;
+        margin: 0px;
+        min-height: 1px;
+        width: 100%;
+        background-color: rgba( 0, 0, 0, 0.6 );
+        box-sizing: border-box;
+    }
+    .slide-img{
+        position: absolute;
+        z-index: 0;
+        padding : 0px;
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        box-sizing: border-box;
+        visibility : hidden;
+    }
+}

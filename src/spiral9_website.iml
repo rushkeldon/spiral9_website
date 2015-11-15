@@ -4,8 +4,10 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$/..">
       <excludeFolder url="file://$MODULE_DIR$/../.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/../doc" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="spiral9_website node_modules" level="project" />
   </component>
 </module>

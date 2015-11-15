@@ -1,0 +1,6 @@
+<div class="slide-panel" ng-show="slideShowInfo">
+    <div class="shadow-overlay"></div>
+    <div ng-repeat="imgURL in slideShowInfo.imgURLs"
+         class="slide-img slide-img-{{$index}}"
+         ng-style="{ 'background-image' : 'url(' + imgURL + ')' }"></div>
+</div>

@@ -1,38 +1,41 @@
 <!doctype html>
-<html ng-app="s9app" ng-controller="s9controller">
+<html ng-app="spiral9" ng-controller="spiral9controller">
 <head>
-    <!--<base href="/secondaryFlow"> -->
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
 
-    <!-- base is required for HTML5 mode -->
-    <base href="//spiral9.com/" />
-
     <title>Keldon Rush</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate-loader-static-files/2.8.1/angular-translate-loader-static-files.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.8.1/angular-translate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-aria.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-cookies.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-touch.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/restangular/1.5.1/restangular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <!-- scripts -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-touch.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min.js"></script>
+    <script type="text/javascript" src="js/angular-scroll-animate.js"></script>
+    <script type="text/javascript" src="js/templates-components.js"></script>
+    <script type="text/javascript" src="js/spiral9.js"></script>
 
-    <!--
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-data/2.8.1/js-data.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-data-angular/3.1.0/js-data-angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/3.0.2/es6-promise.min.js"></script>
-    -->
-
-    <link rel="stylesheet" type="text/css" href="">
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:700italic,400,300,700' rel='stylesheet' type='text/css'>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300" />
+    <link rel="stylesheet" type="text/css" href="css/spiral9.css">
 </head>
 
-
-Check out https://www.icloud.com/jobs/
+<body>
+    <div class="slide-and-title">
+        <slide-panel></slide-panel>
+        <title-panel></title-panel>
+    </div>
+    <nav-bar></nav-bar>
+    <about-panel></about-panel>
+    <skills-panel></skills-panel>
+    <work-experience-panel></work-experience-panel>
+    <thumb-picka-panel></thumb-picka-panel>
+    <contact-panel></contact-panel>
+    <footer-bar></footer-bar>
+</body>
+</html>

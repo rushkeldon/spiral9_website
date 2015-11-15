@@ -1,0 +1,232 @@
+@top: 35px;
+@pointerMargin: -5px;
+@anchorTextColor: #FFFFFF;
+@panelBackgroundColor: #FFFFFF;
+@panelBorderColor: #CCCCCC;
+@anchorBgColor: #ACB7C0;
+@timelineCenterColor: #CCCCCC;
+
+.timeline {
+    padding: 0;
+    list-style: none;
+    position: relative; // center line
+    &:before {
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        content: " ";
+        width: 3px;
+        background-color: @timelineCenterColor;
+        left: 50%;
+        margin-left: -1.5px;
+        @media @smallQuery{
+            left: 40px;
+        }
+    }
+    .timeline-event {
+        margin-bottom: 20px;
+        position: relative;
+        &.timeline-inverted {
+            .timeline-panel {
+                float: right;
+                &:before {
+                    border-left-width: 0;
+                    border-right-width: 15px;
+                    left: -15px;
+                    right: auto;
+                }
+                &:after {
+                    border-left-width: 0;
+                    border-right-width: 14px;
+                    left: -14px;
+                    right: auto;
+                }
+            }
+        }
+        &:before {
+            content: " ";
+            display: table;
+        }
+        &:after {
+            content: " ";
+            display: table;
+            clear: both;
+        }
+        &:nth-child(odd){
+            .timeline-panel{
+                &.bounce-in{
+                    animation:  cd-bounce-2 0.6s;
+                }
+            }
+        }
+        &:nth-child(even){
+            .timeline-panel{
+                &.bounce-in{
+                    animation:  cd-bounce-2-inverse 0.6s;
+                }
+            }
+        }
+        .timeline-badge {
+            box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+            color: #FFFFFF;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 1.4em;
+            text-align: center;
+            position: absolute;
+            top: 26px;
+            left: 50%;
+            margin-left: -25px;
+            background-color: #999999;
+            z-index: 100;
+            border-top-right-radius: 50%;
+            border-top-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+            @media @smallQuery{
+                left: 15px;
+                margin-left: 0;
+                top: @top + 1;
+            }
+            .glyphicon {
+                top: 2px;
+            }
+            &.primary {
+                background-color: #2E6DA4;
+            }
+            &.success {
+                background-color: #3F903F;
+            }
+            &.warning {
+                background-color: #F0AD4E;
+            }
+            &.danger {
+                background-color: #D9534F;
+            }
+            &.info {
+                background-color: #5BC0DE;
+            }
+            &.hidden{
+                display: block !important;
+                opacity: 0;
+            }
+            &.bounce-in{
+                animation:  cd-bounce-1 0.6s;
+            }
+        }
+        .timeline-panel {
+            background-color: @panelBackgroundColor;
+            float: left;
+            border: 1px solid #D4D4D4;
+            border-radius: 2px;
+            padding: 12px;
+            position: relative;
+            -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+            @media @mediumQuery {
+                width: ~"calc(50% - 45px)";
+                width: ~"-moz-calc(50% - 45px)";
+                width: ~"-webkit-calc(50% - 45px)";
+            }
+            @media @smallQuery{
+                width: ~"calc(100% - 85px)";
+                width: ~"-moz-calc(100% - 85px)";
+                width: ~"-webkit-calc(100% - 85px)";
+                float: right;
+            }
+            &:before {
+                position: absolute;
+                top: @top;
+                right: -15px;
+                display: inline-block;
+                border-top: 15px solid transparent;
+                border-left: 15px solid @panelBorderColor;
+                border-right: 0 solid @panelBorderColor;
+                border-bottom: 15px solid transparent;
+                content: " ";
+                @media @smallQuery{
+                    border-left-width: 0;
+                    border-right-width: 15px;
+                    left: -15px;
+                    right: auto;
+                    top: @top + 11px;
+                }
+            }
+            &:after {
+                position: absolute;
+                top: @top + 1;
+                right: -14px;
+                display: inline-block;
+                border-top: 14px solid transparent;
+                border-left: 14px solid @panelBackgroundColor;
+                border-right: 0 solid @panelBackgroundColor;
+                border-bottom: 14px solid transparent;
+                content: " ";
+                @media @smallQuery{
+                    border-left-width: 0;
+                    border-right-width: 14px;
+                    left: -14px;
+                    right: auto;
+                    top: @top + 12px;
+                }
+            }
+            &.hidden{
+                display: block !important;
+                opacity: 0;
+            }
+            .timeline-heading {
+                text-align: left;
+                h4 {
+
+                }
+                .glyphicon {
+                    margin-right: 4px;
+                    vertical-align: -1px;
+                }
+            }
+            .timeline-body {
+                text-align: left;
+            }
+            .timeline-footer {
+                text-align: left;
+                margin-top: 10px;
+                padding: 10px 0;
+            }
+        }
+    }
+
+    img {
+        vertical-align: middle;
+    }
+
+    .img-responsive {
+        display: block;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .img-rounded {
+        border-radius: 3px;
+    }
+
+    .img-thumbnail {
+        background-color: #FFFFFF;
+        border: 1px solid #EDEDF0;
+        border-radius: 3px;
+        display: inline-block;
+        height: auto;
+        line-height: 1.428571429;
+        max-width: 100%;
+        moz-transition: all .2s ease-in-out;
+        o-transition: all .2s ease-in-out;
+        padding: 2px;
+        transition: all .2s ease-in-out;
+        webkit-transition: all .2s ease-in-out;
+    }
+
+    .img-circle {
+        border-radius: 50%;
+    }
+}
+

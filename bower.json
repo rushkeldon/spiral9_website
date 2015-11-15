@@ -1,0 +1,43 @@
+{
+    "name" : "spiral9_website",
+    "version" : "0.0.0",
+    "homepage" : "https://github.com/rushkeldon/spiral9_website",
+    "contributors" : [
+        {
+            "name" : "Keldon Rush",
+            "email" : "keldon@spiral9.com"
+        }
+    ],
+    "description" : "An angular responsive portfolio",
+    "main" : "build",
+    "keywords" : [
+        "HTML5",
+        "CSS3",
+        "Angular",
+        "Responsive",
+        "Portfolio",
+        "GSAP"
+    ],
+    "license" : "MIT",
+    "ignore" : [
+        "vendor/*"
+    ],
+    "dependencies" : {
+        "angular" : "1.4.7",
+        "angular-aria" : "1.4.7",
+        "angular-bootstrap" : "0.14.3",
+        "angular-cookies" : "1.4.7",
+        "angular-scroll-animate" : "0.9.x",
+        "angular-timeline" : "1.5.2",
+        "angular-translate" : "2.8.1",
+        "angular-translate-loader-static-files" : "2.8.1",
+        "angular-ui-router" : "0.2.15",
+        "angular-ui-utils" : "0.1.1",
+        "bootstrap" : "3.3.5",
+        "es6-promise" : "2.2.0",
+        "font-awesome" : "4.x.x",
+        "gsap" : "1.18.0",
+        "restangular" : "1.5.1",
+        "underscore" : "1.8.3"
+    }
+}

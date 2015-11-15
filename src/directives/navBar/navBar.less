@@ -1,0 +1,50 @@
+.nav-bar{
+    position : absolute;
+    display: block;
+    background-color : @navBarBG;
+    height: 62px;
+    text-align : center;
+    z-index : 10;
+    width : 100%;
+    @media @largeQuery {
+        position : absolute;
+    }
+    @media @smallQuery , @mediumQuery {
+        position : fixed;
+        top : 0px;
+    }
+    label{
+        @media @largeQuery {
+            display : none;
+        }
+        @media @smallQuery , @mediumQuery {
+            display : inline-block;
+        }
+    }
+    button{
+        @media @largeQuery {
+            display : none;
+        }
+        @media @smallQuery , @mediumQuery {
+            display : inline-block;
+        }
+    }
+    .nav-item{
+        display: inline-block;
+        color: @navItemColor;
+        padding: 0px 25px;
+        text-align: center;
+        line-height: 62px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        &:hover {
+            color : @white;
+        }
+        &.active {
+            background-color : @navItemActiveBG;
+        }
+    }
+}
+
+

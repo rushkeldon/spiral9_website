@@ -1,0 +1,23 @@
+/* this is meant to be loaded after bootstrap.css so as to overwrite some styles */
+
+
+.timeline .timeline-event .timeline-badge .glyphicon {
+    top: 2px;
+}
+
+@media only screen and (min-width: 768px) {
+    .timeline .timeline-panel {
+        width: ~"calc(50% - 45px)";
+        width: ~"-moz-calc(50% - 45px)";
+        width: ~"-webkit-calc(50% - 45px)";
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .timeline .timeline-panel {
+        width: ~"calc(100% - 85px)";
+        width: ~"-moz-calc(100% - 85px)";
+        width: ~"-webkit-calc(100% - 85px)";
+    }
+}
+

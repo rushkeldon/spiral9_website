@@ -1,0 +1,20 @@
+<section class="about-panel" ng-show="aboutInfo">
+    <div class="title-area">
+        <h2 ng-bind="aboutInfo.title"></h2>
+
+        <p ng-bind="aboutInfo.subTitle"></p>
+    </div>
+    <div class="body-area">
+        <div class="text-area">
+            <h3 ng-bind="aboutInfo.myName"></h3>
+            <h4 ng-bind="aboutInfo.myRole"></h4>
+            <hr ng-repeat-start="blurb in aboutInfo.htmlBlurbs" ng-if="false">
+            <p ng-bind-html="blurb | makeSafeHTML"></p>
+            <hr ng-repeat-end ng-if="false">
+            <button class="btn" ng-bind="aboutInfo.btnLabel" ng-click="buttonClicked($event)"></button>
+        </div>
+        <div class="light-box">
+            <img ng-src="{{aboutInfo.myImgURL}}" alt="{{aboutInfo.myName}}" class="img-circle">
+        </div>
+    </div>
+</section>

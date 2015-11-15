@@ -1,0 +1,81 @@
+.about-panel {
+    background: @accentColorFirst;
+    color: @white;
+    position: relative;
+    padding-top: 85px;
+    padding-bottom: 93px;
+    overflow: hidden;
+    .title-area {
+        text-align: center;
+        h2 {
+
+        }
+        p {
+
+        }
+    }
+
+    .body-area {
+        width: 970px;
+        margin: 0px auto;
+        padding: 0px 15px;
+        @media @smallQuery , @mediumQuery {
+            width: 100%;
+        }
+        .text-area {
+            display: inline-block;
+            width: 60%;
+            float: left;
+            @media @smallQuery , @mediumQuery {
+                display: block;
+                float: none;
+                width: 100%;
+            }
+            h3 {
+                box-sizing: border-box;
+                color: #FFFFFF;
+                display: block;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 24px;
+                font-weight: normal;
+                height: 36px;
+                line-height: 30px;
+                margin: 0px;
+                padding: 0px 0px 6px 0px;
+            }
+            button {
+                font-size: 16px;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 700;
+                background: #474D5D;
+                padding: 16px 22px;
+                display: inline-block;
+                &.active, &:hover {
+                    background: #373D4C;
+                    color: #CCCCCC;
+                    text-decoration: none;
+                }
+                @media @smallQuery , @mediumQuery {
+                    /*display: block;
+                    margin: 0px auto;*/
+                }
+            }
+        }
+        .light-box {
+            display: inline-block;
+            text-align: center;
+            float: right;
+            width: 294px;
+            @media @smallQuery , @mediumQuery {
+                padding: 20px 0px 0px 0px;
+                float: none;
+                display: block;
+                width: 100%;
+            }
+            .img-circle {
+                border-radius: 50%;
+            }
+        }
+    }
+}
+

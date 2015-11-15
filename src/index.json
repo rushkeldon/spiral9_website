@@ -1,0 +1,171 @@
+{
+    "slideShowInfo" : {
+        "transition" : {
+            "duration" : 1.5,
+            "delay" :  5,
+            "type" : "crossfade"
+        },
+        "imgURLs" : [
+            "img/slides/slide0.jpg",
+            "img/slides/slide1.jpg",
+            "img/slides/slide2.jpg",
+            "img/slides/slide3.jpg",
+            "img/slides/slide4.jpg",
+            "img/slides/slide5.jpg",
+            "img/slides/slide6.jpg"
+        ]
+    },
+    "titleInfo" : {
+        "title" : "I'M KELDON RUSH",
+        "subTitles" : [
+            "I Design, Develop, and Deploy Experiences",
+            "I love collaborating with talented people",
+            "I really enjoy making cool things",
+            "sort of addicted to learning",
+            "People tend to like me"
+        ]
+    },
+    "navInfo" : {
+        "label" : "MENU",
+        "navItems" : [
+            {
+                "label" : "HOME",
+                "selector" : ".slide-panel"
+            },
+            {
+                "label" : "ABOUT",
+                "selector" : ".about-panel"
+            },
+            {
+                "label" : "SKILLS",
+                "selector" : ".skills-panel"
+            },
+            {
+                "label" : "EXPERIENCE",
+                "selector" : ".experience-panel"
+            },
+            {
+                "label" : "PORTFOLIO",
+                "selector" : ".portfolio-panel"
+            },
+            {
+                "label" : "CONTACT",
+                "selector" : ".contact-panel"
+            }
+        ]
+    },
+    "aboutInfo" : {
+        "title" : "ABOUT ME",
+        "subTitle" : "A small introduction about my self",
+        "myName" : "Keldon Rush",
+        "myRole" : "Experience Engineer / Front End Web Developer",
+        "myImgURL" : "img/keldon_bw.jpg",
+        "htmlBlurbs" : [
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat. cillum dolore eu fugiat nulla pariatur. olore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "BTW, I developed this responsive angular app from scratch!<br/>The charts below are using the D3 data visualization library baked into an Angular directive.",
+            "Check it out on github here : <a href=\"https://github.com/rushkeldon/spiral9_website\">https://github.com/rushkeldon/spiral9_website</a>"
+        ],
+        "btnLabel" : "Download Resume",
+        "btnURL" : "//google.com"
+    },
+    "skillsInfo" : {
+        "title" : "TECHNICAL SKILLS",
+        "subTitle" : "some of my chops",
+        "skills" : [
+            {
+                "label" : "javascript",
+                "blurb" : "Straight up code!<br/>I am interested in ES6 and Babel...",
+                "percent" : 93
+            },
+            {
+                "label" : "angular",
+                "blurb" : "I have come to really appreciate Angular - I'm quite interested in 2.0...",
+                "percent" : 88
+            },
+            {
+                "label" : "LESS",
+                "blurb" : "SOooo cool!  I love LESS a lot MORE than I would have expected!",
+                "percent" : 93
+            },
+            {
+                "label" : "CSS3",
+                "blurb" : "Solid, but [always] still learning",
+                "percent" : 84
+            },
+            {
+                "label" : "responsive",
+                "blurb" : "I got 99 viewports but iPhone's only one...",
+                "percent" : 82
+            },
+            {
+                "label" : "gulp",
+                "blurb" : "It's basically all about streaming globs and pipes",
+                "percent" : 85
+            },
+            {
+                "label" : "git",
+                "blurb" : "Got",
+                "percent" : 95
+            },
+            {
+                "label" : "jenkins",
+                "blurb" : "Jenkins is super cool - I am planning on getting to know him better",
+                "percent" : 72
+            },
+            {
+                "label" : "photoshop",
+                "blurb" : "I'm not a designer - still I pixel poke better than most devs...",
+                "percent" : 78
+            }
+        ]
+    },
+    "portfolioInfo" : {
+
+    },
+    "contactInfo" : {
+        "title" : "GET IN TOUCH",
+        "subTitle" : "I'd love to hear about your projects & opportunities",
+        "contactDetails" : {
+            "label" : "CONTACT DETAILS",
+            "address" : "",
+            "phone" : " +1 (206) 349-8690",
+            "email" : "keldon@spiral9.com",
+            "url" : "http://spiral9.com"
+        },
+        "contactForm" : null
+    },
+    "workInfo" : {
+        "title" : "WORK EXPERIENCE",
+        "subTitle" : "Some of my experiences creating experiences",
+        "events" : [
+            {
+                "badgeClass": "info",
+                "iconName" : "glass",
+                "title" : "Holland America Group",
+                "when" : "just a moment ago",
+                "headerHTML" : "boo",
+                "bodyHTML" : "boo",
+                "footerHTML" : "boo"
+            },
+            {
+                "badgeClass": "danger",
+                "iconName" : "th-large",
+                "title" : "Ratio Interactive",
+                "when" : "just a moment ago",
+                "headerHTML" : "boo",
+                "bodyHTML" : "boo",
+                "footerHTML" : "boo"
+            },
+            {
+                "badgeClass": "danger",
+                "iconName" : "map-marker",
+                "title" : "Active Mind Technology",
+                "when" : "just a moment ago",
+                "headerHTML" : "boo",
+                "bodyHTML" : "boo",
+                "footerHTML" : "boo"
+            }
+        ]
+    }
+}

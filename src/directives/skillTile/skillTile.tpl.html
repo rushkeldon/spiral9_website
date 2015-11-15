@@ -1,0 +1,7 @@
+<div class="skill-tile" ng-show="skillInfo">
+    <div class="skill-meter">
+        <arc-indicator class="arc-indicator" data-paused data-expected="1" data-actual="{{skillInfo.percent / 100}}"></arc-indicator>
+    </div>
+    <h4 ng-bind="skillInfo.label"></h4>
+    <p ng-bind-html="skillInfo.blurb | makeSafeHTML"></p>
+</div>

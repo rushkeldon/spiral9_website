@@ -1,0 +1,13 @@
+<nav class="nav-bar" ng-show="navInfo">
+    <label ng-bind="navInfo.label"></label>
+    <button ng-click="displayNavItems">
+        <i class="fa fa-bars"></i>
+    </button>
+    <ul>
+        <li class="nav-item"
+            ng-repeat="navItem in navInfo.navItems"
+            ng-class="{ 'active' : currentSelector === navItem.selector }"
+            ng-bind="navItem.label"
+            ng-click="navItemClicked( $event, navItem.selector )"></li>
+    </ul>
+</nav>
