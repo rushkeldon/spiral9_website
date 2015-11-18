@@ -14,7 +14,9 @@
  * @description An empty module description. Please fill in a high level description of this module.
  */
 angular.module( 'spiral9.directives.slidePanel', [
-    'spiral9.services.DataService'
+    'spiral9.services.DataService',
+    'spiral9.services.ResponsiveService',
+    'spiral9.services.SignalTowerService'
 ] )
 
 /**
@@ -24,7 +26,7 @@ angular.module( 'spiral9.directives.slidePanel', [
  * @element ANY
  * @description An empty directive description. Please fill in a high level description of this directive.
  */
-    .directive( 'slidePanel', function slidePanelDirective( $document, $timeout, $window, DataService ) {
+    .directive( 'slidePanel', function slidePanelDirective( $document, $timeout, $window, DataService, SignalTowerService ) {
         var CN = 'slidePanelDirective';
         return {
             restrict : 'E',
@@ -32,19 +34,14 @@ angular.module( 'spiral9.directives.slidePanel', [
             templateUrl : 'slidePanel/slidePanel.tpl.html',
             scope : {},
             link : function slidePanelDirectiveLink( scope, element, attrs ) {
-               // console.log( CN + " instantiated." );
-
                 // initial values
                 scope.retryMS = 200;
                 scope.shouldPlay = true;
                 scope.slideIndex = -1;
                 scope.tween = null;
-                scope.baseElement = element[ 0 ];
                 scope.slideShowInfo = null;
 
                 function swapSlides( nextSlide, prevSlide ) {
-                   // console.log( CN + ".swapSlides" );
-
                     // prepare nextSlide to fade in
                     if( nextSlide ) {
                         TweenMax.set( nextSlide, {
@@ -60,7 +57,7 @@ angular.module( 'spiral9.directives.slidePanel', [
                     }
                 }
 
-                function getSlides() {
+                scope.getSlides = function getSlides() {
                     var oldIndex = scope.slideIndex;
                     var nextSlide, prevSlide;
                     scope.slideIndex++;
@@ -78,16 +75,15 @@ angular.module( 'spiral9.directives.slidePanel', [
                     }
 
                     return [ nextSlide, prevSlide ];
-                }
+                };
 
                 scope.displayNextSlide = function displayNextSlide(){
-                   // console.log( CN + ".displayNextSlide" );
-
-                    if( !scope.shouldPlay ){
+                    if( !scope.checkShouldPlay() ){
+                        clearTimeout( scope.timeoutID );
                         return;
                     }
 
-                    var slides = getSlides();
+                    var slides = scope.getSlides();
                     scope.nextSlide = slides[ 0 ];
                     scope.prevSlide = slides[ 1 ];
 
@@ -115,7 +111,7 @@ angular.module( 'spiral9.directives.slidePanel', [
                     } );
                 };
 
-                function documentScrolled(){
+                scope.documentScrolled = function documentScrolled(){
                     if( scope.tween ){
                         scope.tween.kill();
                         if( scope.nextSlide ){
@@ -126,23 +122,22 @@ angular.module( 'spiral9.directives.slidePanel', [
                         }
                     }
 
-                    if( $window.pageYOffset > 0 ){
-                        scope.shouldPlay = false;
-                        clearTimeout( scope.timeoutID );
-                    } else {
-                        scope.shouldPlay = true;
-                        clearTimeout( scope.timeoutID );
-                        scope.timeoutID = setTimeout( scope.displayNextSlide, scope.slideShowInfo.transition.delay * 1000 );
+                    clearTimeout( scope.timeoutID );
+
+                    if( scope.checkShouldPlay() ){
+                        scope.timeoutID = setTimeout( scope.displayNextSlide, scope.slideShowInfo.transition.delay * 800 );
                     }
-                }
+                };
+
+                scope.checkShouldPlay = function checkShouldPlay(){
+                    scope.shouldPlay = scope.slideIndex === -1 ? true : $window.pageYOffset <= 0;
+                    return( scope.shouldPlay );
+                };
 
                 scope.getData = function getData(){
-                   // console.log( CN + ".getData" );
-
                     DataService.getSlideShowInfo()
                         .then(
                             function dataReceived( slideShowInfo ) {
-                               // console.log( CN + ".dataReceived" );
                                 scope.slideShowInfo = slideShowInfo;
                                 scope.$evalAsync( scope.init );
                             },
@@ -152,31 +147,29 @@ angular.module( 'spiral9.directives.slidePanel', [
                     );
                 };
 
-                scope.init = function init(){
-                    //console.log( CN + ".init" );
-                    //console.log( "\tscope.slideShowInfo :", scope.slideShowInfo );
-                    //console.log( "\tscope.baseElement :", scope.baseElement );
-
-                    if( scope.baseElement && scope.baseElement.querySelector ){
-                        $document.bind( 'scroll', documentScrolled );
-
-                        TweenMax.set( scope.baseElement, {
+                scope.layout = function layout(){
+                    if( element[ 0 ] && element[ 0 ].querySelector ){
+                        TweenMax.set( element[ 0 ], {
                             height : $window.innerHeight
                         } );
 
-                        TweenMax.set( scope.baseElement.querySelector( '.shadow-overlay' ), {
+                        TweenMax.set( element[ 0 ].querySelector( '.shadow-overlay' ), {
                             height : $window.innerHeight
                         } );
-
-                        scope.$evalAsync( scope.displayNextSlide );
-                    } else {
-                        //// console.log( "...retrying in " + scope.retryMS + " ms." );
-                        // $timeout( scope.init, scope.retryMS );
                     }
+
+                    SignalTowerService.dispatchSignal( 'slidePanelSizeChanged' );
+                };
+
+                scope.init = function init(){
+                    $document.bind( 'scroll', scope.documentScrolled );
+                    SignalTowerService.subscribeToSignal( 'signalWindowResized', scope.layout, scope );
+                    SignalTowerService.createSignal( 'slidePanelSizeChanged' );
+                    scope.layout();
+                    scope.$evalAsync( scope.displayNextSlide );
                 };
 
                 scope.$evalAsync( scope.getData );
-
             }
         };
     } );

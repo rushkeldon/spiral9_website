@@ -1,27 +1,17 @@
 .about-panel {
-    background: @accentColorFirst;
+    .MixPanel();
+    background: @bgColor2;
     color: @white;
-    position: relative;
-    padding-top: 85px;
-    padding-bottom: 93px;
-    overflow: hidden;
     .title-area {
-        text-align: center;
+        .MixPanelTitle();
         h2 {
-
         }
         p {
-
         }
     }
 
     .body-area {
-        width: 970px;
-        margin: 0px auto;
-        padding: 0px 15px;
-        @media @smallQuery , @mediumQuery {
-            width: 100%;
-        }
+        .MixPanelBody();
         .text-area {
             display: inline-block;
             width: 60%;
@@ -50,14 +40,15 @@
                 background: #474D5D;
                 padding: 16px 22px;
                 display: inline-block;
+                outline: none;
                 &.active, &:hover {
                     background: #373D4C;
                     color: #CCCCCC;
                     text-decoration: none;
+                    outline: none;
                 }
-                @media @smallQuery , @mediumQuery {
-                    /*display: block;
-                    margin: 0px auto;*/
+                &:focus{
+                    outline: none;
                 }
             }
         }

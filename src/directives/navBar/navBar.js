@@ -35,64 +35,61 @@ angular.module( 'spiral9.directives.navBar', [
             templateUrl : 'navBar/navBar.tpl.html',
             scope : {},
             link : function navBarDirectiveLink( scope, element, attrs ) {
-                // console.log( CN + " instantiated." );
-
                 scope.navInfo = null;
                 scope.currentSelector = "";
+                scope.shouldMenuDisplay = true;
 
-                scope.displayNavItems = function displayNavItems( e ){
-                    console.log( CN + ".displayNavItems" );
-
+                scope.toggleNavMenu = function toggleNavMenu( e ){
+                    scope.shouldMenuDisplay = !scope.shouldMenuDisplay;
+                    scope.$evalAsync();
                 };
 
                 scope.navItemClicked = function navItemClicked( e, selector ){
-                    console.log( CN + ".navItemClicked" );
-
+                    if( ResponsiveService.tag() !== 'large' ){
+                        scope.shouldMenuDisplay = false;
+                        scope.$evalAsync();
+                    }
                     scope.currentSelector = selector;
                     scope.scrollToCurrentSelector();
                 };
 
                 scope.scrollToCurrentSelector = function scrollToCurrentSelector(){
-                    console.log( CN + ".scrollToCurrentSelector" );
-
+                    var targetElement = $document[ 0 ].querySelector( scope.currentSelector );
+                    if( targetElement ){
+                        var targetY = $window.pageYOffset + targetElement.getBoundingClientRect().top - 62;
+                        if( targetY < 0 ){ targetY = 0; }
+                        TweenMax.to( window, 1, {
+                                scrollTo : { y : targetY },
+                                ease : Power2.easeOut }
+                        );
+                    }
                 };
 
                 scope.breakPointChanged = function breakPointChanged( newBreakPointTag ) {
-                    console.log( CN + ".breakPointChanged" );
-                    console.log( "\tnewBreakPointTag :", newBreakPointTag );
-
+                    if( newBreakPointTag === 'large' ){
+                        scope.shouldMenuDisplay = true;
+                    } else {
+                        scope.shouldMenuDisplay = false;
+                    }
+                    scope.$evalAsync();
                 };
 
-                scope.documentScrolled = function documentScrolled(){
-                    if( !scope.slidePanelHeight ){
-                        scope.getSlidePanelHeight();
-                    }
+                scope.documentClicked = function documentClicked( e ){
+                    var doesClickPertain = element[ 0 ].contains( e.target );
 
-                    if( !scope.navBarHeight ){
-                        scope.getNavBarHeight();
-                    }
-
-                    if( scope.slidePanelHeight ){
-                        if( $window.pageYOffset >= scope.slidePanelHeight - scope.navBarHeight ){
-                            TweenMax.set( element[ 0 ], {
-                                css : {
-                                    position : "fixed",
-                                    top : "0px"
-                                }
-                            } );
-                        } else{
-                            TweenMax.set( element[ 0 ], {
-                                css : {
-                                    position : "absolute",
-                                    top : scope.slidePanelHeight - scope.navBarHeight + "px"
-                                }
-                            } );
+                    if( !doesClickPertain ){
+                        if( ResponsiveService.tag() !== 'large' ){
+                            scope.shouldMenuDisplay = false;
+                            scope.$evalAsync();
                         }
                     }
                 };
 
+                scope.documentScrolled = function documentScrolled(){
+                    scope.layout();
+                };
+
                 scope.getData = function getData(){
-                    // console.log( CN + ".getData" );
                     DataService.getNavInfo()
                         .then(
                             function dataReceived( navInfo ) {
@@ -123,11 +120,44 @@ angular.module( 'spiral9.directives.navBar', [
                     return scope.navBarHeight;
                 };
 
+                scope.layout = function layout(){
+                    if( ResponsiveService.tag() === 'large' ){
+                        scope.getSlidePanelHeight();
+
+                        if( !scope.navBarHeight ){
+                            scope.getNavBarHeight();
+                        }
+
+                        if( $window.pageYOffset >= scope.slidePanelHeight - scope.navBarHeight ){
+                            TweenMax.set( element[ 0 ], {
+                                css : {
+                                    position : "fixed",
+                                    top : "0px"
+                                }
+                            } );
+                        } else{
+                            TweenMax.set( element[ 0 ], {
+                                css : {
+                                    position : "absolute",
+                                    top : scope.slidePanelHeight - scope.navBarHeight + "px"
+                                }
+                            } );
+                        }
+
+                    } else {
+                        TweenMax.set( element[ 0 ], {
+                            css : {
+                                position : "fixed",
+                                top : "0px"
+                            }
+                        } );
+                    }
+                };
+
                 scope.init = function init(){
                     scope.getNavBarHeight();
 
                     if( ResponsiveService.tag() === 'large' ){
-                        // console.log( CN + " sees desktop media query." );
                         TweenMax.set( element[ 0 ], {
                             css : {
                                 top : $window.innerHeight - scope.navBarHeight
@@ -135,8 +165,11 @@ angular.module( 'spiral9.directives.navBar', [
                         } );
                     }
                     SignalTowerService.subscribeToSignal( 'signalBreakPointChanged', scope.breakPointChanged, scope );
+                    SignalTowerService.subscribeToSignal( 'slidePanelSizeChanged', scope.layout, scope );
                     $document.bind( 'scroll', scope.documentScrolled );
+                    $document.bind( 'click', scope.documentClicked );
                     scope.getSlidePanelHeight();
+                    scope.breakPointChanged( ResponsiveService.tag() );
                 };
 
                 scope.$evalAsync( scope.getData );

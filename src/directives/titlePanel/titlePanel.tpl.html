@@ -1,5 +1,5 @@
 <div class="title-panel" ng-show="titleInfo">
     <h1 ng-bind="titleInfo.title"></h1>
-    <h2 ng-bind="subTitle"
-        class="sub-title"></h2>
+    <h2 class="sub-title"
+        ng-bind-html="subTitle | makeSafeHTML"></h2>
 </div>

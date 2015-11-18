@@ -1,50 +1,98 @@
+/* does this work? */
 .nav-bar{
+    .MixBar();
     position : absolute;
-    display: block;
-    background-color : @navBarBG;
-    height: 62px;
-    text-align : center;
     z-index : 10;
-    width : 100%;
+    background-color : @bgColor1;
+    color: @fgColor1;
     @media @largeQuery {
         position : absolute;
     }
     @media @smallQuery , @mediumQuery {
         position : fixed;
-        top : 0px;
+        top : 0px !important;
     }
-    label{
-        @media @largeQuery {
-            display : none;
-        }
-        @media @smallQuery , @mediumQuery {
-            display : inline-block;
-        }
-    }
+
     button{
+        background: transparent;
+        border : none;
+        border-radius: 0;
+        box-shadow: none;
+        cursor: pointer;
+        font-size : 20px;
+        height : @heightBar;
+        line-height : @heightBar;
+        outline: none;
+        padding : 0px 25px 0px 0px;
+        position : absolute;
+        right : 5px;
+        text-align : right;
+        width : 200px;
         @media @largeQuery {
             display : none;
         }
         @media @smallQuery , @mediumQuery {
-            display : inline-block;
+            display : block;
+        }
+        &:focus {
+            outline: none;
+        }
+        label{
+            cursor: pointer;
+            position : absolute;
+            right : 60px;
+            top : 0px;
+            height : @heightBar;
+            line-height : @heightBar;
+            font-size: 20px;
+            @media @largeQuery {
+                display : none;
+            }
+            @media @smallQuery , @mediumQuery {
+                display : block;
+            }
         }
     }
-    .nav-item{
-        display: inline-block;
-        color: @navItemColor;
-        padding: 0px 25px;
-        text-align: center;
-        line-height: 62px;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 16px;
-        font-weight: 400;
-        &:hover {
-            color : @white;
+    .nav-menu{
+        background-color : @bgColor1;
+        color: @fgColor1;
+        display : block;
+        @media @smallQuery , @mediumQuery {
+            display : block;
+            width : 300px;
+            position : absolute;
+            right : 0px;
+            top : @heightBar;
         }
-        &.active {
-            background-color : @navItemActiveBG;
+        .nav-item{
+            cursor: pointer;
+            display: inline-block;
+            background-color : @bgColor1;
+            color: @fgColor1;
+            padding: 0px 25px;
+            text-align: center;
+            line-height: @heightBar;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            &:hover {
+                color : @white;
+            }
+            &.active, &:focus {
+                background-color : @bgColor1active;
+                outline: none;
+            }
+            @media @largeQuery {
+                background : transparent;
+                display: inline-block;
+            }
+            @media @smallQuery , @mediumQuery {
+                background-color : @bgColor1;
+                display: block;
+            }
         }
     }
+
 }
 
 

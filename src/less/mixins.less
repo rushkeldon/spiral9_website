@@ -1,0 +1,43 @@
+.MixPanel() {
+    position: relative;
+    padding-top: @paddingTopPanel;
+    padding-bottom: @paddingBottomPanel;
+    overflow: hidden;
+}
+
+.MixBar() {
+    display: block;
+    height: @heightBar;
+    line-height: @heightBar;
+    text-align: center;
+    width: 100%;
+}
+
+.MixPanelTitle() {
+    text-align: center;
+    padding-bottom : @paddingBottomTitleArea;
+}
+
+.MixPanelBody() {
+    width: @widthLiveArea;
+    margin: 0px auto;
+    padding: 0px 15px;
+    @media @smallQuery , @mediumQuery {
+        width: @widthLiveAreaMobile;
+    }
+}
+
+.MixType(){
+    font-family: @fontMain;
+    margin: 0px;
+    padding : 0px;
+    line-height: 100%;
+    outline: none;
+    &:hover, &.active, &:focus {
+        outline: none;
+    }
+}
+
+.MixTypeUpperCase(){
+    text-transform: uppercase;
+}

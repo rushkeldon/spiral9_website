@@ -26,7 +26,7 @@ angular.module( 'spiral9.directives.skillsPanel', [
  * @element ANY
  * @description An empty directive description. Please fill in a high level description of this directive.
  */
-    .directive( 'skillsPanel', function skillsPanelDirective( $document, $window, DataService, ResponsiveService, SignalTowerService ) {
+    .directive( 'skillsPanel', function skillsPanelDirective( $document, $window, DataService ) {
         var CN = 'skillsPanelDirective';
         return {
             restrict : 'E',
@@ -34,12 +34,10 @@ angular.module( 'spiral9.directives.skillsPanel', [
             templateUrl : 'skillsPanel/skillsPanel.tpl.html',
             scope : {},
             link : function skillsPanelDirectiveLink( scope, element, attrs ) {
-                // console.log( CN + " instantiated." );
 
                 scope.skillsInfo = null;
 
                 scope.getData = function getData(){
-                    // console.log( CN + ".getData" );
                     DataService.getSkillsInfo()
                         .then(
                             function dataReceived( skillsInfo ) {

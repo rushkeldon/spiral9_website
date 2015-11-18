@@ -18,18 +18,19 @@
     "titleInfo" : {
         "title" : "I'M KELDON RUSH",
         "subTitles" : [
-            "I Design, Develop, and Deploy Experiences",
-            "I love collaborating with talented people",
-            "I really enjoy making cool things",
-            "sort of addicted to learning",
-            "People tend to like me"
+            "I have experience<br/>creating experiences",
+            "I Design, Develop,<br/>&amp; Deploy software",
+            "I love collaborating<br/>with talented people",
+            "I really enjoy making cool things - A LOT!!",
+            "I *love* learning new things &amp; sharing things I've learned",
+            "I have a strong work ethic &amp; care a lot about UX"
         ]
     },
     "navInfo" : {
         "label" : "MENU",
         "navItems" : [
             {
-                "label" : "HOME",
+                "label" : "KELDON",
                 "selector" : ".slide-panel"
             },
             {
@@ -42,7 +43,7 @@
             },
             {
                 "label" : "EXPERIENCE",
-                "selector" : ".experience-panel"
+                "selector" : ".work-panel"
             },
             {
                 "label" : "PORTFOLIO",
@@ -63,10 +64,13 @@
         "htmlBlurbs" : [
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat. cillum dolore eu fugiat nulla pariatur. olore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "BTW, I developed this responsive angular app from scratch!<br/>The charts below are using the D3 data visualization library baked into an Angular directive.",
-            "Check it out on github here : <a href=\"https://github.com/rushkeldon/spiral9_website\">https://github.com/rushkeldon/spiral9_website</a>"
+            "BTW, I developed this responsive angular app right here!<br/>I leveraged a few libraries and extended a few code snippets here and there.",
+            "I am using these frameworks and libraries in this app :",
+            "<ul style=\"margin-left:30px;\"><li>AngularJS 1.4.7 - Javascript Framework</li><li>D3 - Javascript Graphics</li><li>Font Awesome - Font Script</li><li>Google Font API - Font Script</li><li>GSAP - GreenSock Animation Platform</li><li>Twitter Bootstrap - Web Framework</li></ul>",
+            "You can check out the source on github here : <a href=\"https://github.com/rushkeldon/spiral9_website\">https://github.com/rushkeldon/spiral9_website</a>"
+
         ],
-        "btnLabel" : "Download Resume",
+        "btnLabel" : "Download My Resume",
         "btnURL" : "//google.com"
     },
     "skillsInfo" : {
@@ -120,6 +124,48 @@
             }
         ]
     },
+    "workInfo" : {
+        "title" : "WORK EXPERIENCE",
+        "subTitle" : "Some of my experiences creating experiences",
+        "events" : [
+            {
+                "badgeClass": "primary",
+                "iconName" : "glass",
+                "title" : "Holland America Group",
+                "when" : "just a moment ago",
+                "headerHTML" : "<a href=\"http://hollandamerica.com\">http://hollandamerica.com</a><br/><a href=\"http://seabourn.com\">http://seabourn.com</a>",
+                "bodyHTML" : "<p>Extensively refactored the Angular service for the shopping cart and checkout flow for two sites while supporting multiple languages, currencies, and a whole boat load of business logic.</p><p>Helped to convert the home pages and other key components of hollandamerica.com and seabourn.com to a responsive Angular application.</p>",
+                "footerHTML" : ""
+            },
+            {
+                "badgeClass": "danger",
+                "iconName" : "th-large",
+                "title" : "Ratio Interactive",
+                "when" : "just a moment ago",
+                "headerHTML" : "",
+                "bodyHTML" : "",
+                "footerHTML" : ""
+            },
+            {
+                "badgeClass": "success",
+                "iconName" : "map-marker",
+                "title" : "Active Mind Technology",
+                "when" : "just a moment ago",
+                "headerHTML" : "",
+                "bodyHTML" : "",
+                "footerHTML" : ""
+            },
+            {
+                "badgeClass": "warning",
+                "iconName" : "film",
+                "title" : "Exponential Entertainment",
+                "when" : "just a moment ago",
+                "headerHTML" : "",
+                "bodyHTML" : "",
+                "footerHTML" : ""
+            }
+        ]
+    },
     "portfolioInfo" : {
 
     },
@@ -134,38 +180,5 @@
             "url" : "http://spiral9.com"
         },
         "contactForm" : null
-    },
-    "workInfo" : {
-        "title" : "WORK EXPERIENCE",
-        "subTitle" : "Some of my experiences creating experiences",
-        "events" : [
-            {
-                "badgeClass": "info",
-                "iconName" : "glass",
-                "title" : "Holland America Group",
-                "when" : "just a moment ago",
-                "headerHTML" : "boo",
-                "bodyHTML" : "boo",
-                "footerHTML" : "boo"
-            },
-            {
-                "badgeClass": "danger",
-                "iconName" : "th-large",
-                "title" : "Ratio Interactive",
-                "when" : "just a moment ago",
-                "headerHTML" : "boo",
-                "bodyHTML" : "boo",
-                "footerHTML" : "boo"
-            },
-            {
-                "badgeClass": "danger",
-                "iconName" : "map-marker",
-                "title" : "Active Mind Technology",
-                "when" : "just a moment ago",
-                "headerHTML" : "boo",
-                "bodyHTML" : "boo",
-                "footerHTML" : "boo"
-            }
-        ]
     }
 }

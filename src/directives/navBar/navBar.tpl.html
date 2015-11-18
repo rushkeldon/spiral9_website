@@ -1,10 +1,11 @@
 <nav class="nav-bar" ng-show="navInfo">
-    <label ng-bind="navInfo.label"></label>
-    <button ng-click="displayNavItems">
+    <button ng-click="toggleNavMenu()">
+        <label ng-bind="navInfo.label"></label>
         <i class="fa fa-bars"></i>
     </button>
-    <ul>
+    <ul class="nav-menu">
         <li class="nav-item"
+            ng-show="shouldMenuDisplay"
             ng-repeat="navItem in navInfo.navItems"
             ng-class="{ 'active' : currentSelector === navItem.selector }"
             ng-bind="navItem.label"

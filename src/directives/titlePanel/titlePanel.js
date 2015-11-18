@@ -14,6 +14,7 @@
  * @description An empty module description. Please fill in a high level description of this module.
  */
 angular.module( 'spiral9.directives.titlePanel', [
+    'spiral9.filters.makeSafeHTML',
     'spiral9.services.DataService'
 ] )
 
@@ -32,7 +33,6 @@ angular.module( 'spiral9.directives.titlePanel', [
             scope : {},
             templateUrl : 'titlePanel/titlePanel.tpl.html',
             link : function titlePanelDirectiveLink( scope, element, attrs ) {
-
                 scope.titleInfo = null;
                 scope.subTitleIndex = 0;
                 scope.subTitleStage = null;
@@ -40,8 +40,6 @@ angular.module( 'spiral9.directives.titlePanel', [
                 scope.delay = 4;
 
                 scope.displayNextSubTitle = function displayNextSubTitle(){
-                   // console.log( CN + ".displayNextSubTitle" );
-
                     if( !scope.subTitleStage ){
                         scope.subTitleStage = element[ 0 ].querySelector( '.sub-title' );
                     }
@@ -65,22 +63,17 @@ angular.module( 'spiral9.directives.titlePanel', [
                                 } );
                             }
                         } );
-                    } else{
-                       // console.log( "can't find the subTitle stage... " );
                     }
                 };
 
                 scope.delayThenDisplay = function delayThenDisplay(){
-                   // console.log( CN + ".delayThenDisplay" );
                     $timeout( scope.displayNextSubTitle, scope.delay * 1000 );
                 };
 
                 scope.getData = function getData(){
-                   // console.log( CN + ".getData" );
                     DataService.getTitleInfo()
                         .then(
                         function dataReceived( titleInfo ) {
-                           // console.log( CN + ".dataReceived" );
                             scope.titleInfo = titleInfo;
                             scope.subTitle = scope.titleInfo.subTitles[ 0 ];
                             scope.delayThenDisplay();

@@ -1,14 +1,11 @@
 .skills-panel {
-    background: @greyBG;
-    color: @textColorSecond;
-    position: relative;
-    padding: 85px 0px;
-    overflow: hidden;
-    /* height : 3000px; */
+    .MixPanel();
+    background: @bgColor4;
+    color: @fgColor4second;
     .title-area {
-        text-align: center;
+        .MixPanelTitle();
         h2 {
-            color : @accentColorSecond;
+            color : @fgColor4;
         }
         p {
 
@@ -16,13 +13,7 @@
     }
 
     .body-area {
-        width: 970px;
-        margin: 0px auto;
-        padding: 45px 15px;
-        text-align : center;
-        @media @smallQuery , @mediumQuery {
-            width: 100%;
-        }
+        .MixPanelBody();
     }
 }
 
