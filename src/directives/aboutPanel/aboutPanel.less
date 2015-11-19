@@ -16,52 +16,93 @@
             display: inline-block;
             width: 60%;
             float: left;
+            padding: 0px 0px 0px 20px;
+            color : @fgColor2;
             @media @smallQuery , @mediumQuery {
                 display: block;
                 float: none;
                 width: 100%;
             }
             h3 {
-                box-sizing: border-box;
-                color: #FFFFFF;
-                display: block;
-                font-family: 'Open Sans', sans-serif;
-                font-size: 24px;
-                font-weight: normal;
-                height: 36px;
-                line-height: 30px;
-                margin: 0px;
-                padding: 0px 0px 6px 0px;
+                font-size : 26px;
+                line-height : 172%;
+            }
+            h4{
+                padding: 0px 0px 19px 0px;
+            }
+            p{
+                font-size : 16px;
+                line-height : 150%;
+                padding : 0px 0px 10px 3px;
+                a{
+                    color: #474D5D;
+                    text-decoration: none;
+                    outline: none;
+                    &.active, &:hover, &:focus {
+                        text-decoration: underline;
+                        outline: none;
+                    }
+                }
+            }
+            .more-info-toggle{
+                padding-left : 3px;
+                font-size : 16px;
+                line-height : 150%;
+                font-weight : 400;
+                a{
+                    font-size : 16px;
+                    line-height : 150%;
+                    color: #474D5D;
+                    text-decoration: none;
+                    outline: none;
+                    &.active, &:hover, &:focus {
+                        text-decoration: underline;
+                        outline: none;
+                    }
+                    i{
+                        padding-right : 10px;
+                        &.active, &:hover, &:focus {
+                            text-decoration: none;
+                            outline: none;
+                        }
+                    }
+                }
+            }
+            .more-info{
+                overflow : hidden;
+                height : 0px;
             }
             button {
                 font-size: 16px;
                 font-family: 'Open Sans', sans-serif;
                 font-weight: 700;
-                background: #474D5D;
+                background-color: #474D5D;
                 padding: 16px 22px;
                 display: inline-block;
                 outline: none;
-                &.active, &:hover {
+                margin : 15px;
+                &.active, &:hover, &:focus {
                     background: #373D4C;
                     color: #CCCCCC;
                     text-decoration: none;
                     outline: none;
                 }
-                &:focus{
-                    outline: none;
-                }
             }
         }
         .light-box {
-            display: inline-block;
-            text-align: center;
-            float: right;
+            position : absolute;
+            display: block;
             width: 294px;
+            right : 0px;
+            top : 0px;
+            bottom : 0px;
+            height : 294px;
+            margin : 5% 75px auto 0px;
             @media @smallQuery , @mediumQuery {
+                position : relative;
                 padding: 20px 0px 0px 0px;
-                float: none;
-                display: block;
                 width: 100%;
+                margin : 0px;
             }
             .img-circle {
                 border-radius: 50%;

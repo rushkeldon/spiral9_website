@@ -22,8 +22,7 @@
             "I Design, Develop,<br/>&amp; Deploy software",
             "I love collaborating<br/>with talented people",
             "I really enjoy making cool things - A LOT!!",
-            "I *love* learning new things &amp; sharing things I've learned",
-            "I have a strong work ethic &amp; care a lot about UX"
+            "I *love* learning new things &amp; sharing things I've learned"
         ]
     },
     "navInfo" : {
@@ -57,21 +56,33 @@
     },
     "aboutInfo" : {
         "title" : "ABOUT ME",
-        "subTitle" : "A small introduction about my self",
+        "subTitle" : "a brief introduction",
         "myName" : "Keldon Rush",
         "myRole" : "Experience Engineer / Front End Web Developer",
         "myImgURL" : "img/keldon_bw.jpg",
         "htmlBlurbs" : [
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat. cillum dolore eu fugiat nulla pariatur. olore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "BTW, I developed this responsive angular app right here!<br/>I leveraged a few libraries and extended a few code snippets here and there.",
-            "I am using these frameworks and libraries in this app :",
-            "<ul style=\"margin-left:30px;\"><li>AngularJS 1.4.7 - Javascript Framework</li><li>D3 - Javascript Graphics</li><li>Font Awesome - Font Script</li><li>Google Font API - Font Script</li><li>GSAP - GreenSock Animation Platform</li><li>Twitter Bootstrap - Web Framework</li></ul>",
-            "You can check out the source on github here : <a href=\"https://github.com/rushkeldon/spiral9_website\">https://github.com/rushkeldon/spiral9_website</a>"
-
+            "I started out in the software industry at Microsoft as a Technical Media Designer.  The technical part started to grow as I became the manager of a team of Technical Media Designers.",
+            "I transitioned to the role of Program Manager at Microsoft and I continued to contribute more and more code to the projects I was managing.",
+            "I spent the next four years as a technical Program Manager at two startups where my contributions as a web developer increased.",
+            "Next at Smashing Ideas I was the Director of the Platforms & Technologies Division.  I was a core developer on the team as well as managing the team and customer relationships.  Our customers included MTV, Disney, at&amp;t, T-Mobile, Verizon, Nokia, Adobe, and Microsoft.",
+            "During that time one of the startups was purchased (<a href=\"http://www.washingtonpost.com/wp-dyn/content/article/2008/08/19/AR2008081902299.html\">Nuance Buys SNAPin</a>) and with my proceeds I started Spiral9.",
+            "Spiral9 was a 14 person company focused on providing ideation, design, development services.  Our main customers were Adobe, TiVo, Cisco, Facebook, Disney, and SNAPin.  Our projects were nearly all TV and set-top-box related.  We rode a very interesting bubble as we helped our customers explore the next evolution of Connected TV.",
+            "In 2011 that bubble popped and since then I have been mainly focused on front end web development.",
+            "BTW, I developed this responsive angular app that you are using right now."
         ],
+        "moreInfo" : {
+            "labelSeeMore" : "see more about this app",
+            "labelSeeLess" : "see less",
+            "htmlBlurbs" : [
+                "In this app I am using :",
+                "<ul style=\"margin-left:30px;\"><li>AngularJS 1.4.7</li><li>D3.js - Data-Driven Documents</li><li>Font Awesome - Font &amp; CSS Toolkit</li><li>Google Font API - Web Fonts via CSS</li><li>GSAP - GreenSock Animation Platform</li><li>Bootstrap - HTML, CSS, and JS framework</li></ul>",
+                "In this app's toolchain I am using :",
+                "<ul style=\"margin-left:30px;\"><li>LESS - CSS preprocessor (w/ plugin : less-plugin-glob)</li><li>npm - JS package manager</li><li>gulp - streaming build system</li><li>bower - package manager</li><li>git - source control (via github)</li><li>jasmine - test runner</li><li>I developed the project using Intellij IDEA</li></ul>",
+                "You can check out the source on github here :<br/>&nbsp;&nbsp;<a href=\"https://github.com/rushkeldon/spiral9_website\">https://github.com/rushkeldon/spiral9_website</a>"
+            ]
+        },
         "btnLabel" : "Download My Resume",
-        "btnURL" : "//google.com"
+        "btnURL" : "http://spiral9.com/keldon/keldon_rush_resume.pdf"
     },
     "skillsInfo" : {
         "title" : "TECHNICAL SKILLS",
@@ -99,12 +110,12 @@
             },
             {
                 "label" : "responsive",
-                "blurb" : "I got 99 viewports but iPhone's only one...",
+                "blurb" : "I got 99 viewports but iPhone's only one... (check this site out on phones and tablets!)",
                 "percent" : 82
             },
             {
                 "label" : "gulp",
-                "blurb" : "It's basically all about streaming globs and pipes",
+                "blurb" : "Streaming goodness with globs and pipes",
                 "percent" : 85
             },
             {
@@ -129,7 +140,7 @@
         "subTitle" : "Some of my experiences creating experiences",
         "events" : [
             {
-                "badgeClass": "primary",
+                "badgeClass": "info",
                 "iconName" : "glass",
                 "title" : "Holland America Group",
                 "when" : "just a moment ago",

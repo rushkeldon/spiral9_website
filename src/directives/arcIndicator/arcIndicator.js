@@ -199,8 +199,8 @@ angular.module( 'spiral9.directives.arcIndicator', [
                         .attr( 'd', arcObject )
                         .transition()
                         .delay( 200 )
-                        .duration( 2500 )
-                        .ease( 'elastic' )
+                        .duration( 1500 )
+                        .ease( 'bounce' )
                         .attrTween( 'd', scope.tweenArc( { endAngle : end }, arcObject ) );
                 };
 

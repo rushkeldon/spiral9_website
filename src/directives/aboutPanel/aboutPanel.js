@@ -37,11 +37,33 @@ angular.module( 'spiral9.directives.aboutPanel', [
                 // console.log( CN + " instantiated." );
 
                 scope.aboutInfo = null;
+                scope.isMoreInfoDisplayed = false;
+                scope.moreInfoElement = null;
 
                 scope.buttonClicked = function buttonClicked( e ){
                     var url = scope.aboutInfo.btnURL;
                     if( url ) {
                         window.open( url, "_self" );
+                    }
+                };
+
+                scope.toggleMoreInfo = function toggleMoreInfo(){
+                    if( !scope.moreInfoElement ){
+                        scope.moreInfoElement = element[ 0 ].querySelector( '.more-info' );
+                    }
+                    if( !scope.isMoreInfoDisplayed ){
+                        TweenMax.set( scope.moreInfoElement, {
+                            height : 'auto'
+                        } );
+                        TweenMax.from( scope.moreInfoElement, 0.2, {
+                            height : 0
+                        } );
+                        scope.isMoreInfoDisplayed = true;
+                    } else {
+                        TweenMax.to( scope.moreInfoElement, 0.2, {
+                            height : 0
+                        } );
+                        scope.isMoreInfoDisplayed = false;
                     }
                 };
 

@@ -11,6 +11,15 @@
             <hr ng-repeat-start="blurb in aboutInfo.htmlBlurbs" ng-if="false">
             <p ng-bind-html="blurb | makeSafeHTML"></p>
             <hr ng-repeat-end ng-if="false">
+            <div class="more-info-toggle" ng-if="aboutInfo.moreInfo">
+                <a href="javascript:;" ng-if="!isMoreInfoDisplayed" ng-click="toggleMoreInfo()"><i class="glyphicon glyphicon-eye-open"></i>{{aboutInfo.moreInfo.labelSeeMore}}</a>
+                <a href="javascript:;" ng-if="isMoreInfoDisplayed" ng-click="toggleMoreInfo()"><i class="glyphicon glyphicon-eye-close"></i>{{aboutInfo.moreInfo.labelSeeLess}}</a>
+            </div>
+            <div class="more-info" ng-if="aboutInfo.moreInfo">
+                <hr ng-repeat-start="blurb in aboutInfo.moreInfo.htmlBlurbs" ng-if="false">
+                <p ng-bind-html="blurb | makeSafeHTML"></p>
+                <hr ng-repeat-end ng-if="false">
+            </div>
             <button class="btn" ng-bind="aboutInfo.btnLabel" ng-click="buttonClicked($event)"></button>
         </div>
         <div class="light-box">

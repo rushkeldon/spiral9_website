@@ -10,8 +10,8 @@
              when-not-visible="animateElementOut">
             <div class="timeline-heading">
                 <h4>{{event.title}}</h4>
-                <p ng-if="event.when">
-                    <small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{event.when}}</small>
+                <p class="timeline-when" ng-if="event.when">
+                    <i class="glyphicon glyphicon-time"></i>{{event.when}}
                 </p>
                 <div ng-if="event.headerHTML"
                      ng-bind-html="event.headerHTML | makeSafeHTML"></div>
@@ -21,7 +21,6 @@
                  ng-bind-html="event.bodyHTML | makeSafeHTML">
             </div>
             <div class="timeline-footer"
-                 ng-if="event.footerHTML"
                  ng-bind-html="event.footerHTML | makeSafeHTML">
             </div>
         </div>
