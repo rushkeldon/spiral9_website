@@ -2,7 +2,13 @@
 @largeQuery: ~"screen and (min-width:1100px)";
 @mediumQuery: ~"screen and (min-width:768px) and (max-width:1099px)";
 @smallQuery: ~"screen and (max-width:767px)";
+/*
+@portrait : ~" and (orientation: portrait)";
+@landscape : ~" and (orientation: landscape)";
 
+@mediumQueryPortrait : @mediumQuery, @portrait;
+@smallQueryPortrait : @smallQuery, @portrait;
+*/
 // fonts
 @fontMain : 'Open Sans', sans-serif;
 
@@ -16,6 +22,7 @@
 @lightBlue : #87CEFA;
 @lightGrey : #E7E7E8;
 @darkGrey : #6A6A6A;
+@offWhite : #F1F1F1;
 @white : #FFFFFF;
 
 @btnBackground : #2E3435;
@@ -27,12 +34,12 @@
 @fgColor1 : #C3C8D6;
 
 // about panel
-@bgColor2 : #00BDBD;
+@bgColor2 : #009FB1;/*#00BDBD;*/
 @fgColor2 : @white;
 
 // skills panel (and workExperience panel)
 @bgColor4 : #EEEEEE;
-@fgColor4 : #FF665B;
+@fgColor4 : #D8453A;/*#FF665B;*/
 @fgColor4second : #474D5E;
 
 // contact panel
@@ -50,6 +57,8 @@
 @widthLiveArea : 1150px;
 @widthLiveAreaMobile : 100%;
 @heightBar : 62px;
+@paddingTopPanelSmall : 30px;
+@paddingBottomTitleAreaSmall : 30px;
 
 /* fonts */
 @fontSans : "Helvetica Neue", Helvetica, Arial, sans-serif;

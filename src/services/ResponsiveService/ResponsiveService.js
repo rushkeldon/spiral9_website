@@ -30,6 +30,7 @@ angular.module( 'spiral9.services.ResponsiveService', [
         function noop() {}
 
         var _responsiveService = {
+            isTouchDevice : null,
             width : 0,
             height : 0,
             tag : '',
@@ -47,6 +48,8 @@ angular.module( 'spiral9.services.ResponsiveService', [
                     if( freshTag !== _responsiveService.tag ) {
                         _responsiveService.tag = freshTag;
                         broadcastMethod = function dispatchSignal() {
+                            // console.log( CN + ".signalBreakPointChanged" );
+                            // console.log( "\t_responsiveService.tag :", _responsiveService.tag );
                             SignalTowerService.dispatchSignal( 'signalBreakPointChanged', _responsiveService.tag );
                         };
                     }
@@ -75,6 +78,12 @@ angular.module( 'spiral9.services.ResponsiveService', [
 
         var responsiveService = {
             TAGS : TAGS,
+            isTouchDevice : function isTouchDevice() {
+                if( _responsiveService.isTouchDevice === null ){
+                    _responsiveService.isTouchDevice = 'ontouchstart' in $window.document.documentElement;
+                }
+                return _responsiveService.isTouchDevice;
+            },
             tag : function tag() {
                 var sizeTag;
                 var bp = _responsiveService.breakPoints;

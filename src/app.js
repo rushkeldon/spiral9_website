@@ -19,6 +19,7 @@ angular.module( 'spiral9', [
     'spiral9.directives.aboutPanel',
     'spiral9.directives.arcIndicator',
     'spiral9.directives.navBar',
+    'spiral9.directives.portfolioPanel',
     'spiral9.directives.skillsPanel',
     'spiral9.directives.slidePanel',
     'spiral9.directives.timeline',

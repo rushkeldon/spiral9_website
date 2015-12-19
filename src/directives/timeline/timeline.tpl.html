@@ -1,9 +1,9 @@
 <ul class="timeline" ng-show="timelineInfo">
-    <li ng-repeat="event in timelineInfo.events" class="timeline-event" ng-class-even="'timeline-inverted'">
+    <li ng-repeat="(eventIndex, event) in timelineInfo.events" class="timeline-event" ng-class-even="'timeline-inverted'">
         <div class="timeline-badge {{event.badgeClass}} hidden"
              when-visible="animateElementIn"
              when-not-visible="animateElementOut">
-            <i class="glyphicon glyphicon-{{event.iconName}}"></i>
+            <i class="glyphicons glyphicons-{{event.iconName}}"></i>
         </div>
         <div class="timeline-panel {{event.badgeClass}} hidden"
              when-visible="animateElementIn"
@@ -11,17 +11,32 @@
             <div class="timeline-heading">
                 <h4>{{event.title}}</h4>
                 <p class="timeline-when" ng-if="event.when">
-                    <i class="glyphicon glyphicon-time"></i>{{event.when}}
+                    <i class="halflings halflings-time"></i>{{event.when}}
                 </p>
-                <div ng-if="event.headerHTML"
-                     ng-bind-html="event.headerHTML | makeSafeHTML"></div>
+                <!-- <div class="heading-inner" ng-if="event.headerHTML" ng-bind-html="event.headerHTML | makeSafeHTML"></div> -->
+                <div class="heading-inner">
+                    <a ng-repeat="linkInfo in event.linkInfos"
+                       ng-href="{{linkInfo.url}}"
+                       target="{{linkInfo.target ? linkInfo.target : '_self'}}">
+                        <i class="halflings halflings-link"></i>{{linkInfo.label}}
+                    </a>
+                </div>
             </div>
-            <div class="timeline-body"
-                 ng-if="event.bodyHTML"
-                 ng-bind-html="event.bodyHTML | makeSafeHTML">
+            <!--  <div class="timeline-body" ng-if="event.bodyHTML" ng-bind-html="event.bodyHTML | makeSafeHTML"> -->
+            <div class="timeline-body">
+                <div class="badge-panel" ng-if="event.badgeKeys">
+                    <badge-link ng-repeat="key in event.badgeKeys" data-key="{{key}}"></badge-link>
+                </div>
             </div>
-            <div class="timeline-footer"
-                 ng-bind-html="event.footerHTML | makeSafeHTML">
+            <div class="toggle-link" ng-click="toggleDetailLevel(eventIndex)" ng-if="event.details">
+                <a href="javascript:;" ng-if="!event.isMoreDetails"><i class="halflings halflings-download"></i>see more details</a>
+                <a href="javascript:;" ng-if="event.isMoreDetails"><i class="halflings halflings-upload"></i>see less detail</a>
+            </div>
+            <!-- <div class="timeline-footer" ng-bind-html="event.footerHTML | makeSafeHTML"> -->
+            <div class="timeline-footer">
+                <ul ng-if="event.details">
+                    <li ng-repeat="detail in event.details" ng-bind-html="detail | makeSafeHTML"></li>
+                </ul>
             </div>
         </div>
     </li>

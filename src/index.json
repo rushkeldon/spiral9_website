@@ -2,7 +2,7 @@
     "slideShowInfo" : {
         "transition" : {
             "duration" : 1.5,
-            "delay" :  5,
+            "delay" : 5,
             "type" : "crossfade"
         },
         "imgURLs" : [
@@ -61,14 +61,13 @@
         "myRole" : "Experience Engineer / Front End Web Developer",
         "myImgURL" : "img/keldon_bw.jpg",
         "htmlBlurbs" : [
-            "I started out in the software industry at Microsoft as a Technical Media Designer.  The technical part started to grow as I became the manager of a team of Technical Media Designers.",
-            "I transitioned to the role of Program Manager at Microsoft and I continued to contribute more and more code to the projects I was managing.",
-            "I spent the next four years as a technical Program Manager at two startups where my contributions as a web developer increased.",
-            "Next at Smashing Ideas I was the Director of the Platforms & Technologies Division.  I was a core developer on the team as well as managing the team and customer relationships.  Our customers included MTV, Disney, at&amp;t, T-Mobile, Verizon, Nokia, Adobe, and Microsoft.",
-            "During that time one of the startups was purchased (<a href=\"http://www.washingtonpost.com/wp-dyn/content/article/2008/08/19/AR2008081902299.html\">Nuance Buys SNAPin</a>) and with my proceeds I started Spiral9.",
-            "Spiral9 was a 14 person company focused on providing ideation, design, development services.  Our main customers were Adobe, TiVo, Cisco, Facebook, Disney, and SNAPin.  Our projects were nearly all TV and set-top-box related.  We rode a very interesting bubble as we helped our customers explore the next evolution of Connected TV.",
-            "In 2011 that bubble popped and since then I have been mainly focused on front end web development.",
-            "BTW, I developed this responsive angular app that you are using right now."
+            "I started out in the software industry at Microsoft as a Technical Media Designer.  My interest in the technical aspects grew as I became the manager of the Technical Media Designers.",
+            "I transitioned to the role of Program Manager at Microsoft but continued to contribute more and more <u>code</u> to the projects I was managing.",
+            "I spent the next four years as a technical Program Manager at two startups and my contributions as a web developer increased.",
+            "Next at Smashing Ideas I was a core developer on the team (among some other duties).  Our customers included MTV, Disney, at&amp;t, T-Mobile, Verizon, Nokia, Adobe, and Microsoft.",
+            "In 2008 I started Spiral9 Inc which was at one point a 14 person company focused on providing ideation, design, and development services.  Our main customers were Adobe, TiVo, Cisco, Facebook, and Disney.",
+            "Since 2011 I have scaled back Spiral9 to just me and have been focused almost exclusively on providing front end web development services.",
+            "I developed this responsive angular app that you are using right now.  This site is <a href=\"https://github.com/rushkeldon/spiral9_website\">openly available on github</a> and configurable using one JSON file."
         ],
         "moreInfo" : {
             "labelSeeMore" : "see more about this app",
@@ -140,37 +139,140 @@
         "subTitle" : "Some of my experiences creating experiences",
         "events" : [
             {
-                "badgeClass": "info",
-                "iconName" : "glass",
+                "badgeClass" : "primary",
+                "iconName" : "boat",
                 "title" : "Holland America Group",
-                "when" : "just a moment ago",
-                "headerHTML" : "<a href=\"http://hollandamerica.com\">http://hollandamerica.com</a><br/><a href=\"http://seabourn.com\">http://seabourn.com</a>",
-                "bodyHTML" : "<p>Extensively refactored the Angular service for the shopping cart and checkout flow for two sites while supporting multiple languages, currencies, and a whole boat load of business logic.</p><p>Helped to convert the home pages and other key components of hollandamerica.com and seabourn.com to a responsive Angular application.</p>",
-                "footerHTML" : ""
+                "when" : "12/2014 - 9/2015",
+                "headerHTML" : "",
+                "linkInfos" : [
+                    {
+                        "label" : "hollandamerica.com",
+                        "url" : "http://hollandamerica.com",
+                        "target" : "_self"
+                    },
+                    {
+                        "label" : "seabourn.com",
+                        "url" : "http://seabourn.com",
+                        "target" : "_blank"
+                    }
+                ],
+                "bodyHTML" : "",
+                "badgeKeys" : [
+                    "angular",
+                    "bootstrap",
+                    "css3",
+                    "git",
+                    "gulp",
+                    "html5",
+                    "jenkins",
+                    "jquery",
+                    "jasmine",
+                    "responsive",
+                    "rest",
+                    "scrum"
+                ],
+                "footerHTML" : "",
+                "details" : [
+                    "Extensively refactored the Angular service for the shopping cart and checkout flow for both sites",
+                    "Supported multiple languages, countries, currencies, and a whole 'boat load' of business logic therein",
+                    "Implemented a responsive angular hero directive for both sites' home pages",
+                    "Implemented a responsive image directive that enabled download of only the one image that corresponded to the current breakpoint",
+                    "Converted many key components of both sites to be responsive and angular from being non-responsive and JSP / Spring implementations"
+                ]
             },
             {
-                "badgeClass": "danger",
-                "iconName" : "th-large",
+                "badgeClass" : "danger",
+                "iconName" : "show-big-thumbnails",
                 "title" : "Ratio Interactive",
-                "when" : "just a moment ago",
+                "when" : "4/2014 - 11/2014",
                 "headerHTML" : "",
+                "linkInfos" : [
+                    {
+                        "label" : "weareratio.com",
+                        "url" : "http://weareratio.com",
+                        "target" : "_self"
+                    }
+                ],
                 "bodyHTML" : "",
-                "footerHTML" : ""
+                "badgeKeys" : [
+                    "angular",
+                    "aws",
+                    "css3",
+                    "git",
+                    "gulp",
+                    "html5",
+                    "jenkins",
+                    "jquery",
+                    "jasmine",
+                    "php",
+                    "rest",
+                    "scrum",
+                    "winjs",
+                    "windows"
+                ],
+                "footerHTML" : "",
+                "details" : [
+                    "Served as the Lead Developer for an enterprise Windows Store app on Microsoft Surface tablets",
+                    "Helped the team raise code coverage in automated unit testing across the product",
+                    "Managed and maintained Jenkins CI server(s) - expanding git hooks to include release management on github",
+                    "Lead a 'fit-and-finish' sprint to increase the product's design consistency",
+                    "Released two upgrades to the Windows Store",
+                    "Successfully handed off the code base and the accrued knowledge to the customer's in-house development team",
+                    "Contributed significantly to a large exercise franchise using PHP and WordPress",
+                    "Authored an architectural roadmap to enable high availability WordPress hosted on AWS across geographic availability zones"
+                ]
             },
             {
-                "badgeClass": "success",
-                "iconName" : "map-marker",
+                "badgeClass" : "success",
+                "iconName" : "golf-course",
                 "title" : "Active Mind Technology",
-                "when" : "just a moment ago",
+                "when" : "5/2013 - 11/2013",
                 "headerHTML" : "",
+                "linkInfos" : [
+                    {
+                        "label" : "gamegolf.com",
+                        "url" : "http://www.gamegolf.com/downloads",
+                        "target" : "_blank"
+                    }
+                ],
                 "bodyHTML" : "",
-                "footerHTML" : ""
+                "badgeKeys" : [
+                    "air",
+                    "as3",
+                    "git",
+                    "jenkins",
+                    "rest",
+                    "scrum",
+                    "windows",
+                    "mac",
+                    "wix"
+                ],
+                "footerHTML" : "",
+                "details" : [
+                    "The project was behind schedule and a *complete* UI redesign needed to be implemented",
+                    "The mission was to take over the project, implement the new UI design, and get the project back on schedule to ship for Christmas.",
+                    "ActionScript 3 development for 'captive runtime' AIR applications running on both Windows and Mac OS X",
+                    "Implemented the new UI (including significant production of assets) as designed by designer Yves Behar",
+                    "Finished development of ANE component to communicate with the proprietary USB GPS device using ANE bridge from AS3 to native code (required a large refactor)",
+                    "Created installers for both Mac OS X and Windows (with WiX)",
+                    "Wrote automation scripts for Jenkins CI for the build process and the creation of installers",
+                    "Finished the project while getting it back on schedule for a Christmas launch"
+                ]
             },
             {
-                "badgeClass": "warning",
-                "iconName" : "film",
+                "badgeClass" : "warning",
+                "iconName" : "star-half",
                 "title" : "Exponential Entertainment",
                 "when" : "just a moment ago",
+                "headerHTML" : "",
+                "bodyHTML" : "",
+                "footerHTML" : ""
+            },
+            {
+                "badgeClass" : "whimsy",
+                "iconName" : "tv",
+                "title" : "Spiral9",
+                "when" : "11/2007 - now",
                 "headerHTML" : "",
                 "bodyHTML" : "",
                 "footerHTML" : ""
@@ -178,7 +280,178 @@
         ]
     },
     "portfolioInfo" : {
-
+        "title" : "PORTFOLIO",
+        "subTitle" : "some of my projects past",
+        "filterTags" : [
+            {
+                "icon" : "",
+                "tag" : "all"
+            },
+            {
+                "icon" : "imac",
+                "tag" : "desktop"
+            },
+            {
+                "icon" : "iphone",
+                "tag" : "phone"
+            },
+            {
+                "icon" : "ipad",
+                "tag" : "tablet"
+            },
+            {
+                "icon" : "tv",
+                "tag" : "tv"
+            },
+            {
+                "icon" : "globe",
+                "tag" : "web"
+            }
+        ],
+        "projects" : [
+            {
+                "label" : "Holland America Group",
+                "tags" : [
+                    "all",
+                    "web",
+                    "tablet",
+                    "phone"
+                ],
+                "thumb" : "img/logo_hal_new.png",
+                "link" : "http://hollandamerica.com",
+                "imageInfos" : [
+                    {
+                        "url" : "http://spiral9.com/img/apple_wave.jpg",
+                        "captionHTML" : "the very nice wave image from Apple"
+                    }
+                ]
+            },
+            {
+                "label" : "ratio",
+                "tags" : [
+                    "all",
+                    "web",
+                    "tablet",
+                    "phone"
+                ],
+                "thumb" : "img/logo_ratio.png",
+                "link" : "http://weareratio.com",
+                "imageInfos" : [
+                    {
+                        "url" : "http://spiral9.com/img/apple_wave.jpg",
+                        "captionHTML" : "the very nice wave image from Apple"
+                    }
+                ]
+            },
+            {
+                "label" : "Active Mind Technology",
+                "tags" : [
+                    "all",
+                    "phone"
+                ],
+                "thumb" : "img/logo_game_golf.png",
+                "link" : "http://gamegolf.com",
+                "imageInfos" : [
+                    {
+                        "url" : "http://spiral9.com/img/apple_wave.jpg",
+                        "captionHTML" : "the very nice wave image from Apple"
+                    }
+                ]
+            },
+            {
+                "label" : "Exponential Entertainment",
+                "tags" : [
+                    "all",
+                    "web",
+                    "tablet"
+                ],
+                "thumb" : "img/logo_ee.png",
+                "link" : "http://exponentialent.com",
+                "imageInfos" : [
+                    {
+                        "url" : "http://spiral9.com/img/apple_wave.jpg",
+                        "captionHTML" : "the very nice wave image from Apple"
+                    }
+                ]
+            },
+            {
+                "label" : "TiVo",
+                "tags" : [
+                    "all",
+                    "tablet",
+                    "phone"
+                ],
+                "thumb" : "img/logo_tivo.png",
+                "link" : "http://tivo.com",
+                "imageInfos" : [
+                    {
+                        "url" : "http://spiral9.com/img/apple_wave.jpg",
+                        "captionHTML" : "the very nice wave image from Apple"
+                    }
+                ]
+            },
+            {
+                "label" : "Disney",
+                "tags" : [
+                    "all",
+                    "tv"
+                ],
+                "thumb" : "img/logo_disney.png",
+                "link" : "http://disney.com",
+                "imageInfos" : [
+                    {
+                        "url" : "http://spiral9.com/img/apple_wave.jpg",
+                        "captionHTML" : "the very nice wave image from Apple"
+                    }
+                ]
+            },
+            {
+                "label" : "Adobe",
+                "tags" : [
+                    "all",
+                    "tablet",
+                    "phone"
+                ],
+                "thumb" : "img/logo_adobe.png",
+                "link" : "http://adobe.com",
+                "imageInfos" : [
+                    {
+                        "url" : "http://spiral9.com/img/apple_wave.jpg",
+                        "captionHTML" : "the very nice wave image from Apple"
+                    }
+                ]
+            },
+            {
+                "label" : "Cisco",
+                "tags" : [
+                    "all",
+                    "tv"
+                ],
+                "thumb" : "img/logo_cisco.png",
+                "link" : "http://cisco.com",
+                "imageInfos" : [
+                    {
+                        "url" : "http://spiral9.com/img/apple_wave.jpg",
+                        "captionHTML" : "the very nice wave image from Apple"
+                    }
+                ]
+            },
+            {
+                "label" : "Beachbody",
+                "tags" : [
+                    "all",
+                    "web"
+                ],
+                "thumb" : "img/logo_beachbody.png",
+                "link" : "http://beachbody.com",
+                "imageInfos" : [
+                    {
+                        "url" : "http://spiral9.com/img/apple_wave.jpg",
+                        "captionHTML" : "the very nice wave image from Apple"
+                    }
+                ]
+            }
+        ]
     },
     "contactInfo" : {
         "title" : "GET IN TOUCH",

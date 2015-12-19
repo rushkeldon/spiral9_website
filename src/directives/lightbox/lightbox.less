@@ -1,0 +1,130 @@
+.MixNormalize(){
+    box-sizing: border-box;
+}
+
+.MixCenterScreen(){
+    .MixNormalize();
+    position : absolute;
+    top : 0px;
+    bottom : 0px;
+    left : 0px;
+    right : 0px;
+    margin : auto;
+}
+
+.MixBtnNav(){
+    transition: 0.3s;
+    position : absolute;
+    z-index : 903;
+    top : 0px;
+    bottom : 0px;
+    margin : auto;
+    border : 0px solid white;
+    color : rgba( 0, 0, 0, 0 );
+    background-color : rgba( 0, 0, 0, 0 );
+    width : 50%;
+    height : 100%;
+    font-weight : 400;
+    font-size : 40px;
+    outline : none;
+    opacity : 0;
+    visibility : inherit;
+    &:focus, &:hover {
+        color : white;
+        text-shadow: 1px 1px 3px rgba( 0, 0, 0, 0.4 );
+        outline : none;
+        opacity : 1;
+    }
+}
+
+.dark-room{
+    .MixCenterScreen();
+    background-color : rgba( 0, 0, 0, 0.9 );
+    padding : 0px;
+    margin : 0px;
+    position : fixed; /* */
+    overflow-y : scroll;
+    z-index : 3000;
+    .light-frame{
+        .MixCenterScreen();
+        max-width : 100%;
+        overflow : visible;
+        .touch-pane{
+            .MixCenterScreen();
+            z-index : 909;
+            background-color : rgba( 0, 0, 0, 0 );
+        }
+        .light-box{
+            .MixCenterScreen();
+            margin-top : auto;
+            margin-right : auto;
+            margin-bottom : auto;
+            margin-left : auto;
+            height : 0px;
+            max-width : 100%;
+            font-size : 0px;
+            line-height : 0px;
+            z-index : 900;
+            .btn-prev{
+                .MixBtnNav();
+                left : 0px;
+                text-align : left;
+                width : 25%;
+                &:focus, &:hover {
+                    text-shadow: -1px 1px 3px rgba( 0, 0, 0, 0.4 );
+                }
+                &:before{
+                    margin-left : -9px;
+                }
+            }
+            .btn-next{
+                .MixBtnNav();
+                right : 0px;
+                text-align : right;
+                width : 75%;
+                &:before{
+                    margin-right : -9px;
+                }
+            }
+            img{
+                .MixNormalize();
+                visibility : inherit;
+                position : relative;
+                width : 100%;
+                z-index : 900;
+                /* border: 14px solid #f5f5f5; */
+            }
+            .image-border{
+                position : absolute;
+                left : 10px;
+                right : 10px;
+                top : 10px;
+                bottom : 10px;
+                box-shadow: 0 0 0 10px #f5f5f5;
+                z-index : 902;
+                visibility : inherit;
+            }
+            .caption-pane{
+                position : absolute;
+                left : 10px;
+                bottom : 10px;
+                right : 10px;
+                z-index : 902;
+                text-align : center;
+                color : rgba( 255, 255, 255, 0.8 );
+                font-weight : 400;
+                line-height : 32px;
+                height : 32px;
+                font-size : 16px;
+                background-color : rgba( 0, 0, 0, 0.5 );
+                margin : 0px;
+                padding : 0px;
+                outline : none;
+                &:focus{
+                    outline : none;
+                }
+            }
+        }
+    }
+}
+

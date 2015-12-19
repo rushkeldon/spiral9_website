@@ -1,7 +1,9 @@
 
 angular.module( 'spiral9.directives.timeline', [
     'angular-scroll-animate',
-    'spiral9.filters.makeSafeHTML'
+    'spiral9.directives.badgeLink',
+    'spiral9.filters.makeSafeHTML',
+    'spiral9.services.ResponsiveService'
 ] )
 /**
  * @ngdoc directive
@@ -10,7 +12,7 @@ angular.module( 'spiral9.directives.timeline', [
  * @description
  * Primary container for displaying a vertical set of timeline events.
  */
-    .directive( 'timeline', function timelineDirective() {
+    .directive( 'timeline', function timelineDirective( ResponsiveService ) {
         var CN = "timeline";
         return {
             restrict : 'E',
@@ -20,32 +22,39 @@ angular.module( 'spiral9.directives.timeline', [
                 timelineInfo : "="
             },
             link : function timelineDirectiveLink( scope, element, attrs ){
-                var exampleTimlineInfo = {
-                    "title" : "WORK EXPERIENCE",
-                    "subTitle" : "Some of my experiences creating experiences",
-                    "events" : [
-                        {
-                            "badgeClass": "danger",
-                            "iconName" : "exclamation-sign",
-                            "title" : "New Event",
-                            "when" : "just a moment ago",
-                            "headerHTML" : "Header Here",
-                            "bodyHTML" : "<p>Hmmm, addEventToTimeline was called with no eventInfo!<br/>So you have gotten this default event.</p>",
-                            "footerHTML" : "This is the footer."
-                        }
-                    ]
-                };
 
-                scope.addEventToTimeline = function addEventToTimeline( eventInfo ) {
-                    eventInfo = eventInfo ? eventInfo :  {
-                        badgeClass: 'danger',
-                        badgeIconClass: 'glyphicon-exclamation-sign',
-                        title: 'New Event',
-                        when: 'just a moment ago',
-                        contentHtml: '<p>Hmmm, addEventToTimeline was called with no eventInfo!<br/>So you have gotten this default event.</p>'
-                    };
+                scope.toggleDetailLevel = function toggleDetailLevel( eventIndex ){
+                    var event = scope.timelineInfo.events[ eventIndex ];
+                    var lessDetailElement = element[ 0 ].querySelectorAll( '.timeline-body' )[ eventIndex ];
+                    var moreDetailElement = element[ 0 ].querySelectorAll( '.timeline-footer' )[ eventIndex ];
 
-                    scope.timelineInfo.events.push( eventInfo );
+                    if( !event.isMoreDetails ){
+                        // grow footer
+                        TweenMax.set( moreDetailElement, {
+                            height : 'auto'
+                        } );
+                        TweenMax.from( moreDetailElement, 0.2, {
+                            height : 0
+                        } );
+                        // shrink body
+                        TweenMax.to( lessDetailElement, 0.2, {
+                            height : 0
+                        } );
+                        event.isMoreDetails = true;
+                    } else {
+                        // grow body
+                        TweenMax.set( lessDetailElement, {
+                            height : 'auto'
+                        } );
+                        TweenMax.from( lessDetailElement, 0.2, {
+                            height : 0
+                        } );
+                        // shrink footer
+                        TweenMax.to( moreDetailElement, 0.2, {
+                            height : 0
+                        } );
+                        event.isMoreDetails = false;
+                    }
                 };
 
                 scope.animateElementIn = function animateElementIn( elem ) {
@@ -54,8 +63,11 @@ angular.module( 'spiral9.directives.timeline', [
                 };
 
                 scope.animateElementOut = function animateElementOut( elem ) {
-                    elem.addClass( 'hidden' );
-                    elem.removeClass( 'bounce-in' );
+                    // only hide for desktop
+                    if( ResponsiveService.tag() === 'large' ){
+                        elem.addClass( 'hidden' );
+                        elem.removeClass( 'bounce-in' );
+                    }
                 };
             }
         };

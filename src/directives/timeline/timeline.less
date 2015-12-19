@@ -8,11 +8,36 @@
 @panelBorderColor: #CCCCCC;
 @anchorBgColor: #ACB7C0;
 @timelineCenterColor: #CCCCCC;
+@colorPrimary : #2E6DA4;
+@colorSuccess : #3F903F;
+@colorWarning : #F0AD4E;
+@colorDanger : #D9534F;
+@colorInfo : #5BC0DE;
+
+.badge-panel{
+    display : block;
+    padding : 6px 0px;
+    text-align: center;
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+
+    .badge-link{
+    }
+}
 
 .timeline {
     padding: 0;
     list-style: none;
     position: relative; // center line
+    @media @smallQuery{
+        margin-left: -21px;
+    }
     &:before {
         top: 0;
         bottom: 0;
@@ -74,8 +99,8 @@
             color: #FFFFFF;
             width: 50px;
             height: 50px;
-            line-height: 50px;
-            font-size: 1.4em;
+            line-height: 46px;
+            font-size: 26px;
             text-align: center;
             position: absolute;
             top: 26px;
@@ -89,23 +114,26 @@
                 margin-left: 0;
                 top: @top + 1;
             }
-            .glyphicon {
-                top: 2px;
+            .glyphicons, .halflings {
+                line-height: 46px;
             }
             &.primary {
-                background-color: #2E6DA4;
+                background-color: @colorPrimary;
             }
             &.success {
-                background-color: #3F903F;
+                background-color: @colorSuccess;
             }
             &.warning {
-                background-color: #F0AD4E;
+                background-color: @colorWarning;
             }
             &.danger {
-                background-color: #D9534F;
+                background-color: @colorDanger;
             }
             &.info {
-                background-color: #5BC0DE;
+                background-color: @colorInfo;
+            }
+            &.whimsy {
+                background-color: #50BB40;
             }
             &.hidden {
                 display: block !important;
@@ -120,7 +148,7 @@
             float: left;
             border: 1px solid #D4D4D4;
             border-radius: 2px;
-            padding: 12px;
+            padding: 10px;
             position: relative;
             -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
             box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
@@ -187,41 +215,134 @@
                 h4 {
                     float : left;
                     &:after {
-                        float : none;
+                        visibility: hidden;
+                        display: block;
+                        font-size: 0;
+                        content: '\n';
+                        clear: both;
+                        height: 0;
                     }
                 }
                 .timeline-when {
-                    line-height: 120%;
-                    color: @darkGrey;
+                    display : inline-block;
                     float : right;
-                    .glyphicon {
-                        padding: 2px 4px;
-                        margin-left : 10px;
-                        vertical-align: -2px;
+                    line-height: 120%;
+                    padding : 0px;
+                    i {
+                        padding: 0px 4px 0px 0px;
                         line-height: inherit;
+                        top: 0px;
                     }
-                    &:after {
+                    @media @largeQuery{
+                        display : inline-block;
+                        float : right;
+                        line-height: 120%;
+                        padding : 0px;
+                    }
+                    @media @smallQuery , @mediumQuery {
+                        display : block;
                         float : none;
+                        clear : both;
+                        line-height: 180%;
+                        padding : 2px 4px 0px 4px;
+                    }
+                }
+                .heading-inner{
+                    clear: both;
+                    color: inherit;
+                    font-weight : 400;
+                    padding : 4px 5px;
+                    a{
+                        .MixLink();
+                        display : block;
+                        line-height: 180%;
+                        &.active, &:hover, &:focus {
+                            text-decoration: none;
+                            outline: none;
+                            color : @colorPrimary;
+                        }
+                        i{
+                            padding: 2px 4px 2px 2px;
+                            line-height: inherit;
+                            top: 0px;
+                            @media @smallQuery{
+                                margin-top: -3px;
+                                padding-right: 4px;
+                            }
+                        }
+                    }
+                    p{
+                        padding-bottom : 3px;
+                    }
+                    i{
+                        padding: 2px;
+                    }
+                    @media @smallQuery{
+                        padding : 0px 1px;
                     }
                 }
             }
-            .timeline-body {
-                color: inherit;
+            .timeline-body, .timeline-footer {
                 text-align: left;
-                padding: 4px;
-                a, p, div, ul, li, h1, h2, h3, h4, h5 {
-                    color: inherit;
-                    padding: 0px;
+                color: inherit;
+                overflow : hidden;
+                p{
+                    line-height : 150%;
+                    padding-bottom : 8px;
+                }
+                ul{
+                    padding : 12px 10px 16px 23px;
+                    li{
+                        display : block;
+                        font-size: 15px;
+                        font-weight: 400;
+                        list-style-type: none;
+                        padding : 0px 0px 8px 20px;
+                        position : relative;
+                        &:before{
+                            content: '\e067';
+                            font-family: 'Glyphicons Halflings';
+                            font-size:80%;
+                            left: 0px;
+                            position: absolute;
+                            top:3px;
+                        }
+                    }
+                    @media @smallQuery{
+                        padding : 12px 10px 16px 14px;
+                    }
                 }
             }
             .timeline-footer {
-                color: inherit;
-                text-align: left;
-                margin-top: 10px;
-                padding: 4px;
-                a, p, div, ul, li, h1, h2, h3, h4, h5 {
+                height : 0px;
+            }
+            .toggle-link{
+                text-align : center;
+                font-weight: 500;
+                color : rgba( 0, 0, 0, 0.3 );
+                &.active, &:hover, &:focus {
+                    color : rgba( 0, 0, 0, 0.7 );
+                }
+                a{
+                    font-size : 16px;
+                    font-weight: inherit;
+                    line-height : 225%;
                     color: inherit;
-                    padding: 0px;
+                    text-decoration: none;
+                    outline: none;
+                    &.active, &:hover, &:focus {
+                        text-decoration: none;
+                        outline: none;
+                    }
+                    i{
+                        padding-right : 6px;
+                        font-size: 20px;
+                        top: 9px;
+                        &.active, &:hover, &:focus {
+                            text-decoration: none;
+                            outline: none;
+                        }
+                    }
                 }
             }
         }

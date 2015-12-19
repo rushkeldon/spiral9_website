@@ -15,6 +15,7 @@
  */
 angular.module( 'spiral9.directives.navBar', [
     'ngTouch',
+    'spiral9.directives.stopEvents',
     'spiral9.services.DataService',
     'spiral9.services.ResponsiveService',
     'spiral9.services.SignalTowerService'
@@ -37,14 +38,41 @@ angular.module( 'spiral9.directives.navBar', [
             link : function navBarDirectiveLink( scope, element, attrs ) {
                 scope.navInfo = null;
                 scope.currentSelector = "";
-                scope.shouldMenuDisplay = true;
+                scope.shouldMenuDisplay = false;
+                scope.handlersHandled = {};
+
+                scope.shouldHandleClick = function shouldHandleClick( e, handlerName ){
+                    var shouldHandle = false;
+
+                    switch( true ){
+                        case ( !e ) : // called explicitly - not from click handler
+                            shouldHandle = true;
+                            break;
+                        case ( ResponsiveService.isTouchDevice() && !( handlerName in handlersHandled ) ) :
+                            shouldHandle = true;
+                            scope.handlersHandled[ handlerName ] = true;
+                            break;
+                        case ( ResponsiveService.isTouchDevice() && handlerName in handlersHandled ) :
+                            scope.handlersHandled[ handlerName ] = false;
+                            break;
+                        default :
+                            shouldHandle = true;
+                            break;
+                    }
+
+                    return shouldHandle;
+                };
 
                 scope.toggleNavMenu = function toggleNavMenu( e ){
+                    // console.log( CN + ".toggleNavMenu" );
+                    if( !scope.shouldHandleClick( e, 'toggleNavMenu' ) ){ return; }
                     scope.shouldMenuDisplay = !scope.shouldMenuDisplay;
                     scope.$evalAsync();
                 };
 
                 scope.navItemClicked = function navItemClicked( e, selector ){
+                    if( !scope.shouldHandleClick( e, 'navItemClicked' ) ){ return; }
+                    // console.log( CN + ".navItemClicked" );
                     if( ResponsiveService.tag() !== 'large' ){
                         scope.shouldMenuDisplay = false;
                         scope.$evalAsync();
@@ -56,12 +84,24 @@ angular.module( 'spiral9.directives.navBar', [
                 scope.scrollToCurrentSelector = function scrollToCurrentSelector(){
                     var targetElement = $document[ 0 ].querySelector( scope.currentSelector );
                     if( targetElement ){
-                        var targetY = $window.pageYOffset + targetElement.getBoundingClientRect().top - 62;
+                        //var currentVerticalScroll = window.pageYOffset;
+                        var currentVerticalScroll = ( window.pageYOffset !== null ) ? window.pageYOffset : ( document.documentElement.scrollTop !== null ) ? document.documentElement.scrollTop : document.body.scrollTop;
+
+                        scope.echo = currentVerticalScroll + " ";
+                        var targetY = currentVerticalScroll + targetElement.getBoundingClientRect().top - 62;
                         if( targetY < 0 ){ targetY = 0; }
-                        TweenMax.to( window, 1, {
-                                scrollTo : { y : targetY },
-                                ease : Power2.easeOut }
-                        );
+
+                        if( scope.tween ){
+                            scope.tween.kill();
+                        }
+
+                        scope.tween = TweenMax.to( window, 1, {
+                            scrollTo : { y : targetY },
+                            ease : Power2.easeOut,
+                            onComplete : function cleanTween(){
+                                scope.tween = null;
+                            }
+                        } );
                     }
                 };
 

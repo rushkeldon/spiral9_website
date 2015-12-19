@@ -2,7 +2,7 @@
 .nav-bar{
     .MixBar();
     position : absolute;
-    z-index : 10;
+    z-index : 1000;
     background-color : @bgColor1;
     color: @fgColor1;
     @media @largeQuery {
@@ -11,6 +11,20 @@
     @media @smallQuery , @mediumQuery {
         position : fixed;
         top : 0px !important;
+    }
+
+    span{
+        position : absolute;
+        display : block;
+        left : 0px;
+        top : 0px;
+        line-height: @heightBar;
+        font-family : "Courier New";
+        color : white;
+        font-weight : 600;
+        font-size : 20px;
+        z-index : 10;
+        padding-left : 10px;
     }
 
     button{

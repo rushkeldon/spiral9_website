@@ -2,6 +2,7 @@
     .MixPanel();
     background: @bgColor2;
     color: @white;
+    text-align : left;
     .title-area {
         .MixPanelTitle();
         h2 {
@@ -35,13 +36,7 @@
                 line-height : 150%;
                 padding : 0px 0px 10px 3px;
                 a{
-                    color: #474D5D;
-                    text-decoration: none;
-                    outline: none;
-                    &.active, &:hover, &:focus {
-                        text-decoration: underline;
-                        outline: none;
-                    }
+                    .MixLink();
                 }
             }
             .more-info-toggle{
@@ -89,7 +84,7 @@
                 }
             }
         }
-        .light-box {
+        .img-box {
             position : absolute;
             display: block;
             width: 294px;

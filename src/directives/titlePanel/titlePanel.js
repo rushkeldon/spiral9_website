@@ -33,6 +33,7 @@ angular.module( 'spiral9.directives.titlePanel', [
             scope : {},
             templateUrl : 'titlePanel/titlePanel.tpl.html',
             link : function titlePanelDirectiveLink( scope, element, attrs ) {
+                // console.log( CN + ".titlePanelDirectiveLink" );
                 scope.titleInfo = null;
                 scope.subTitleIndex = 0;
                 scope.subTitleStage = null;

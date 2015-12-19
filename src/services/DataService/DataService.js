@@ -66,6 +66,162 @@ angular.module( 'spiral9.services.DataService', [] )
                     } );
                 }
                 _dataService.pendingProps = [];
+            },
+            skillInfos : {
+                "null" : {
+                    "name" : "null",
+                    "longName" : "Null",
+                    "url" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+                    "blurb" : "Apparently there was no key, so upon lookup we found (you guessed it!) null.",
+                    "clr" : "#999999"
+                },
+                "as3" : {
+                    "name" : "as3",
+                    "longName" : "AS3",
+                    "url" : "https://en.wikipedia.org/wiki/ActionScript",
+                    "blurb" : "ActionScript 3 is an object-oriented programming language and a dialect of ECMAScript.  ECMAScript is a trademarked scripting language specification standardized by Ecma International in the ECMA-262 specification. Well-known implementations of the language, such as JavaScript and ActionScript are widely used for client-side scripting on the Web.",
+                    "clr" : "#D9534F"
+                },
+                "air" : {
+                    "name" : "air",
+                    "longName" : "Adobe AIR",
+                    "url" : "https://en.wikipedia.org/wiki/Adobe_AIR",
+                    "blurb" : "Adobe AIR enables developers to package the same code into native apps for Windows and Mac OS desktops as well as iPhone, iPad, Kindle Fire, Nook Tablet, and other Android devices.  In the case of iOS the code is pre-compiled to allow LLVM to output native ARM assembly code to run on iOS without requiring any runtime.",
+                    "clr" : "#D9534F"
+                },
+                "angular" : {
+                    "name" : "angular",
+                    "longName" : "AngularJS",
+                    "url" : "https://angularjs.org",
+                    "blurb" : "AngularJS is an open-source web application framework mainly maintained by Google and by a community of individual developers and corporations to address many of the challenges encountered in developing single-page applications in a browser.",
+                    "clr" : "#E01600"
+                },
+                "aws" : {
+                    "name" : "aws",
+                    "longName" : "Amazon Web Services",
+                    "url" : "https://aws.amazon.com/what-is-aws/",
+                    "blurb" : "Amazon Web Services (AWS) is a secure cloud services platform, offering compute power, database storage, content delivery and other functionality to help businesses scale and grow.",
+                    "clr" : "#F99900"
+                },
+                "bootstrap" : {
+                    "name" : "bootstrap",
+                    "longName" : "Bootstrap",
+                    "url" : "http://getbootstrap.com",
+                    "blurb" : "Bootstrap is a free and open-source collection of tools for creating websites and web applications. It contains HTML- and CSS-based design templates for typography, forms, buttons, navigation and other interface components, as well as optional JavaScript extensions.",
+                    "clr" : "#5A3F83"
+                },
+                "css3" : {
+                    "name" : "css3",
+                    "longName" : "CSS3",
+                    "url" : "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3",
+                    "blurb" : "CSS3 is the latest evolution of the Cascading Style Sheets language.",
+                    "clr" : "#2E6DA4"
+                },
+                "d3" : {
+                    "name" : "d3",
+                    "longName" : "D3.js",
+                    "url" : "http://d3js.org/",
+                    "blurb" : "D3.js is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG, and CSS.",
+                    "clr" : "#FA9D35"
+                },
+                "git" : {
+                    "name" : "git",
+                    "longName" : "Git",
+                    "url" : "https://en.wikipedia.org/wiki/Git_(software)",
+                    "blurb" : "A distributed revision control system with an emphasis on speed, data integrity, and support for distributed, non-linear workflows.",
+                    "clr" : "#F84C16"
+                },
+                "gulp" : {
+                    "name" : "gulp",
+                    "longName" : "Gulp.js",
+                    "url" : "http://gulpjs.com/",
+                    "blurb" : "Gulp is a streaming javascript task runner used to enhance and automate your workflow and particularly building your project.",
+                    "clr" : "#D14542"
+                },
+                "html5" : {
+                    "name" : "html5",
+                    "longName" : "HTML5",
+                    "url" : "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5",
+                    "blurb" : "The fifth revision of the HTML standard since the inception of the World Wide Web. HTML5 is supposed to be what HTML should have been in the first place.",
+                    "clr" : "#F36518"
+                },
+                "jenkins" : {
+                    "name" : "jenkins",
+                    "longName" : "Jenkins",
+                    "url" : "https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins",
+                    "blurb" : "Jenkins is an award-winning, cross-platform, continuous integration and continuous delivery application that increases productivity.",
+                    "clr" : "#D5362C"
+                },
+                "jquery" : {
+                    "name" : "jquery",
+                    "longName" : "jQuery",
+                    "url" : "https://jquery.com/",
+                    "blurb" : "jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler.",
+                    "clr" : "#2E6DA4"
+                },
+                "jasmine" : {
+                    "name" : "jasmine",
+                    "longName" : "Jasmine",
+                    "url" : "http://jasmine.github.io/",
+                    "blurb" : "Jasmine is a behavior-driven development framework for testing JavaScript code.",
+                    "clr" : "#8B3F83"
+                },
+                "less" : {
+                    "name" : "less",
+                    "longName" : "LESS",
+                    "url" : "http://lesscss.org/",
+                    "blurb" : "Less is a CSS pre-processor, meaning that it extends the CSS language, adding features that allow variables, mixins, functions and many other techniques that allow you to make CSS that is more maintainable, themable and extendable.",
+                    "clr" : "#404245"
+                },
+                "mac" : {
+                    "name" : "mac os",
+                    "longName" : "Mac OS X",
+                    "url" : "http://www.apple.com/osx/",
+                    "blurb" : "OS X is the operating system that makes it possible to do all the things you do on a Mac.",
+                    "clr" : "#333333"
+                },
+                "responsive" : {
+                    "name" : "responsive",
+                    "longName" : "Responsive Web Design",
+                    "url" : "http://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/",
+                    "blurb" : "Responsive web design is an approach to web design aimed at designing and developing web sites and single page applications to provide an optimal viewing and interaction experience — easy reading and navigation with a minimum of resizing, panning, and scrolling—across a wide range of devices and screen sizes.",
+                    "clr" : "#E0CFDF"
+                },
+                "rest" : {
+                    "name" : "rest",
+                    "longName" : "REST",
+                    "url" : "https://en.wikipedia.org/wiki/Representational_state_transfer",
+                    "blurb" : "REST (REpresentational State Transfer) is an architectural style, and an approach to communications that is often used in the development of Web services.",
+                    "clr" : "#5BC0DE"
+                },
+                "scrum" : {
+                    "name" : "scrum",
+                    "longName" : "Scrum",
+                    "url" : "https://www.mountaingoatsoftware.com/agile/scrum",
+                    "blurb" : "Scrum is an agile way to manage a project, usually software development. Agile software development with Scrum is often perceived as a methodology; but rather than viewing Scrum as methodology, think of it as a framework for managing a process.",
+                    "clr" : "#38607C"
+                },
+                "winjs" : {
+                    "name" : "winjs",
+                    "longName" : "WinJS",
+                    "url" : "https://dev.windows.com/en-us/develop/winjs",
+                    "blurb" : "WinJS is an open-source JavaScript library that can assist you in building HTML, CSS, and JavaScript applications for the Windows Store with a consistent look and performance across all Windows devices.",
+                    "clr" : "#442058"
+                },
+                "windows" : {
+                    "name" : "windows",
+                    "longName" : "Microsoft Windows",
+                    "url" : "https://www.microsoft.com/en-us/windows",
+                    "blurb" : "Windows is Microsoft's operating system.",
+                    "clr" : "#0075DA"
+                },
+                "wix" : {
+                    "name" : "wix",
+                    "longName" : "Windows Installer XML Toolset",
+                    "url" : "http://wixtoolset.org/",
+                    "blurb" : "The Windows Installer XML Toolset (WiX, pronounced \"wicks\"), is a free software toolset that builds Windows Installer packages from XML. It's a command-line environment that builds MSI and MSM packages.",
+                    "clr" : "#979797"
+                }
             }
         };
 
@@ -104,6 +260,11 @@ angular.module( 'spiral9.services.DataService', [] )
             getSiteData : function getSiteData(){
                // console.log( CN + ".getSiteData" );
                 return _dataService.getData();
+            },
+            getSkillInfo : function getSkillInfo( key ){
+                // console.log( CN + ".getSkillInfo" );
+                // console.log( "\tkey :", key );
+                return _dataService.skillInfos[ key ];
             }
         };
 

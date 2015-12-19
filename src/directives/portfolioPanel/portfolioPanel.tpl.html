@@ -1,0 +1,41 @@
+<section class="portfolio-panel" ng-show="portfolioInfo">
+    <div class="title-area">
+        <h2 ng-bind="portfolioInfo.title"></h2>
+        <p ng-bind="portfolioInfo.subTitle"></p>
+    </div>
+    <div class="body-area">
+        <div class="filter-bar">
+            <div class="filter-btn"
+                 ng-repeat="filterTag in portfolioInfo.filterTags"
+                 ng-class="{current : currentFilterTag === filterTag}"
+                 ng-click="filterByTag( $event, filterTag )">
+                <span ng-if="filterTag.icon" class="glyphicons glyphicons-{{filterTag.icon}}"></span>
+                <span ng-if="filterTag.icon">&nbsp;</span>
+                <span ng-bind="filterTag.tag" ></span>
+            </div>
+        </div>
+        <div class="projects-panel" ng-show="portfolioInfo.projects && portfolioInfo.projects.length">
+            <div class="project-tile"
+                 ng-repeat="project in portfolioInfo.projects"
+                 ng-click="projectClicked( $event, project )"
+                 style="background-image:url({{project.thumb}})">
+                <!-- <img ng-src="{{project.thumb}}"> -->
+                <div class="hover-pane">
+                    <h1 ng-if="project.label" ng-bind="project.label"></h1>
+                    <a class="btn-view"
+                       ng-click="viewProjectImages( project )"
+                       title="View Images">
+                        <span class="glyphicons glyphicons-picture"></span>
+                    </a>
+                    <a class="btn-link"
+                       href="{{project.link}}"
+                       title="Visit Project Site"
+                       target="_blank">
+                        <span class="glyphicons glyphicons-link"></span>
+                    </a>
+                </div>
+            </div>
+            <lightbox></lightbox>
+        </div>
+    </div>
+</section>

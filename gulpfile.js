@@ -37,9 +37,14 @@ var filePatterns = {
     lessForDirectives : 'src/directives/**/*.less',
     fontFiles : [
         'vendor/font-awesome/fonts/*',
-        'vendor/bootstrap/fonts/*'
+        'vendor/glyphicons/basic_bootstrap/fonts/*',
+        'vendor/glyphicons/halfling/fonts/*'
     ],
-    vendorCSSfiles : 'vendor/angular-timeline/dist/*.css',
+    vendorCSSfiles : [
+        'vendor/bootstrap/dist/css/bootstrap.min.css',
+        'vendor/glyphicons/basic_bootstrap/css/*',
+        'vendor/glyphicons/halfling/css/glyphicons-halflings.css'
+    ],
     vendorJSfiles : 'vendor/angular-scroll-animate/dist/*.js'
 };
 
@@ -136,7 +141,8 @@ gulp.task( 'copyImages', [], function copyImages() {
 
 // copy vendor css files
 gulp.task( 'copyVendorCSS', [], function copyVendorCSS() {
-    return gulp.src( filePatterns.vendorCSSfiles )
+    return gulp.src( filePatterns.vendorCSSfiles, { "base" : "." } )
+        .pipe( flatten() )
         .pipe( gulp.dest( './build/css' ) );
 } );
 
@@ -168,6 +174,7 @@ gulp.task( 'default', [
     'copyImages',
     'copyVendorJS',
     'copyFonts',
+    'copyVendorCSS',
     'copyMainFiles'
 ], function buildSpiral9() {
 
