@@ -80,14 +80,14 @@ angular.module( 'spiral9.services.DataService', [] )
                     "longName" : "AS3",
                     "url" : "https://en.wikipedia.org/wiki/ActionScript",
                     "blurb" : "ActionScript 3 is an object-oriented programming language and a dialect of ECMAScript.  ECMAScript is a trademarked scripting language specification standardized by Ecma International in the ECMA-262 specification. Well-known implementations of the language, such as JavaScript and ActionScript are widely used for client-side scripting on the Web.",
-                    "clr" : "#D9534F"
+                    "clr" : "#FE3E10"
                 },
                 "air" : {
                     "name" : "air",
                     "longName" : "Adobe AIR",
                     "url" : "https://en.wikipedia.org/wiki/Adobe_AIR",
                     "blurb" : "Adobe AIR enables developers to package the same code into native apps for Windows and Mac OS desktops as well as iPhone, iPad, Kindle Fire, Nook Tablet, and other Android devices.  In the case of iOS the code is pre-compiled to allow LLVM to output native ARM assembly code to run on iOS without requiring any runtime.",
-                    "clr" : "#D9534F"
+                    "clr" : "#FE3E10"
                 },
                 "angular" : {
                     "name" : "angular",
@@ -117,12 +117,26 @@ angular.module( 'spiral9.services.DataService', [] )
                     "blurb" : "CSS3 is the latest evolution of the Cascading Style Sheets language.",
                     "clr" : "#2E6DA4"
                 },
+                "css" : {
+                    "name" : "css",
+                    "longName" : "CSS",
+                    "url" : "https://developer.mozilla.org/en-US/docs/Web/CSS",
+                    "blurb" : "Cascading Style Sheets - all the versions before CSS3.",
+                    "clr" : "#2E6DA4"
+                },
                 "d3" : {
                     "name" : "d3",
                     "longName" : "D3.js",
                     "url" : "http://d3js.org/",
                     "blurb" : "D3.js is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG, and CSS.",
                     "clr" : "#FA9D35"
+                },
+                "facebook" : {
+                    "name" : "facebook",
+                    "longName" : "Facebook APIs",
+                    "url" : "https://developers.facebook.com/docs/javascript/quickstart",
+                    "blurb" : "Facebook APIs for web development.",
+                    "clr" : "#415E9D"
                 },
                 "git" : {
                     "name" : "git",
@@ -145,6 +159,20 @@ angular.module( 'spiral9.services.DataService', [] )
                     "blurb" : "The fifth revision of the HTML standard since the inception of the World Wide Web. HTML5 is supposed to be what HTML should have been in the first place.",
                     "clr" : "#F36518"
                 },
+                "html" : {
+                    "name" : "html",
+                    "longName" : "HTML",
+                    "url" : "https://en.wikipedia.org/wiki/HTML",
+                    "blurb" : "HyperText Markup Language - all the versions before HTML5!",
+                    "clr" : "#F36518"
+                },
+                "jasmine" : {
+                    "name" : "jasmine",
+                    "longName" : "Jasmine",
+                    "url" : "http://jasmine.github.io/",
+                    "blurb" : "Jasmine is a behavior-driven development framework for testing JavaScript code.",
+                    "clr" : "#8B3F83"
+                },
                 "jenkins" : {
                     "name" : "jenkins",
                     "longName" : "Jenkins",
@@ -159,12 +187,12 @@ angular.module( 'spiral9.services.DataService', [] )
                     "blurb" : "jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler.",
                     "clr" : "#2E6DA4"
                 },
-                "jasmine" : {
-                    "name" : "jasmine",
-                    "longName" : "Jasmine",
-                    "url" : "http://jasmine.github.io/",
-                    "blurb" : "Jasmine is a behavior-driven development framework for testing JavaScript code.",
-                    "clr" : "#8B3F83"
+                "js" : {
+                    "name" : "javascript",
+                    "longName" : "JavaScript",
+                    "url" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/About_JavaScript",
+                    "blurb" : "JavaScript is a lightweight, interpreted, object-oriented language with first-class functions that is prototype-based, multi-paradigm scripting language that is dynamic, and supports object-oriented, imperative, and functional programming styles.",
+                    "clr" : "#323232"
                 },
                 "less" : {
                     "name" : "less",
@@ -173,6 +201,13 @@ angular.module( 'spiral9.services.DataService', [] )
                     "blurb" : "Less is a CSS pre-processor, meaning that it extends the CSS language, adding features that allow variables, mixins, functions and many other techniques that allow you to make CSS that is more maintainable, themable and extendable.",
                     "clr" : "#404245"
                 },
+                "linux" : {
+                    "name" : "linux",
+                    "longName" : "Linux OS",
+                    "url" : "https://www.linux.com/",
+                    "blurb" : "A Unix-like and mostly POSIX-compliant computer operating system (OS) assembled under the model of free and open-source software development and distribution.",
+                    "clr" : "#06406A"
+                },
                 "mac" : {
                     "name" : "mac os",
                     "longName" : "Mac OS X",
@@ -180,12 +215,19 @@ angular.module( 'spiral9.services.DataService', [] )
                     "blurb" : "OS X is the operating system that makes it possible to do all the things you do on a Mac.",
                     "clr" : "#333333"
                 },
+                "photoshop" : {
+                    "name" : "photoshop",
+                    "longName" : "Adobe Photoshop CC",
+                    "url" : "http://www.adobe.com/products/photoshop.html",
+                    "blurb" : "Adobe Photoshop is a raster graphics editor developed and published by Adobe Systems for Windows and Mac OS.",
+                    "clr" : "#00C7FF"
+                },
                 "responsive" : {
                     "name" : "responsive",
                     "longName" : "Responsive Web Design",
                     "url" : "http://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/",
                     "blurb" : "Responsive web design is an approach to web design aimed at designing and developing web sites and single page applications to provide an optimal viewing and interaction experience — easy reading and navigation with a minimum of resizing, panning, and scrolling—across a wide range of devices and screen sizes.",
-                    "clr" : "#E0CFDF"
+                    "clr" : "#5C2D91"
                 },
                 "rest" : {
                     "name" : "rest",
@@ -201,6 +243,13 @@ angular.module( 'spiral9.services.DataService', [] )
                     "blurb" : "Scrum is an agile way to manage a project, usually software development. Agile software development with Scrum is often perceived as a methodology; but rather than viewing Scrum as methodology, think of it as a framework for managing a process.",
                     "clr" : "#38607C"
                 },
+                "symbian" : {
+                    "name" : "symbian",
+                    "longName" : "Symbian OS",
+                    "url" : "https://en.wikipedia.org/wiki/Symbian",
+                    "blurb" : "The Symbian OS is the operating system developed and sold by Symbian Ltd. The OS was primarily used by Nokia.",
+                    "clr" : "#FDAC00"
+                },
                 "winjs" : {
                     "name" : "winjs",
                     "longName" : "WinJS",
@@ -214,6 +263,13 @@ angular.module( 'spiral9.services.DataService', [] )
                     "url" : "https://www.microsoft.com/en-us/windows",
                     "blurb" : "Windows is Microsoft's operating system.",
                     "clr" : "#0075DA"
+                },
+                "wordpress" : {
+                    "name" : "wordpress",
+                    "longName" : "WordPress",
+                    "url" : "https://en.wikipedia.org/wiki/WordPress",
+                    "blurb" : "WordPress is a free and open-source content management system (CMS) based on PHP and MySQL.",
+                    "clr" : "#118BC0"
                 },
                 "wix" : {
                     "name" : "wix",

@@ -1,11 +1,8 @@
 /*
  * aboutPanel.js
  *
- * Created: Friday, November 6, 2015
- * (c) Copyright 2015 Spiral9 Inc. - All Rights Reserved
- * This is unpublished proprietary source code of Spiral9 Inc.
- * The copyright notice above does not evidence any actual or intended
- * publication of such source code.
+ * The MIT License (MIT)
+ *
  */
 
 /**

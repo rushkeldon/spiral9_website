@@ -1,3 +1,97 @@
-.contact-panel{
-    .MixPanel();
+.contactPoint() {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 40px;
+    .glyphicons, .social {
+        display: inline-block;
+        font-size: 20px;
+        line-height: 40px;
+        padding-right: 10px;
+        text-align: right;
+        width: 40px;
+    }
+    a {
+        .MixLink();
+        color: @clrTxt4_1;
+        &.active, &:hover, &:focus {
+            color: @clrFG4;
+            // color : shade( @clrFG4, -20%);
+        }
+        .glyphicons, .social {
+            text-decoration: none;
+            &.active, &:hover, &:focus {
+                text-decoration: none;
+            }
+        }
+    }
 }
+
+.contact-panel {
+    .MixPanel();
+    background: @clrBG4;
+    color: @clrTxt4;
+    .title-area {
+        .MixPanelTitle();
+        padding-bottom : @paddingBottomTitleAreaSmall;
+        h2 {
+            color: @clrFG4;
+        }
+    }
+
+    .body-area {
+        .MixPanelBody();
+        width: 500px;
+        text-align: left;
+        color: @clrTxt4_1;
+        border-radius : 12px;
+        background-color : @clrBG4_1;
+        padding : 25px;
+        max-width : 97%;
+        .contact-name {
+            .contactPoint();
+            font-size: 24px;
+            color: @clrFG4;
+        }
+        .contact-address {
+            .contactPoint();
+        }
+        .contact-phone {
+            .contactPoint();
+        }
+        .contact-email {
+            .contactPoint();
+        }
+        .contact-url {
+            .contactPoint();
+        }
+        .contact-linkedin-url {
+            .contactPoint();
+        }
+        @media @smallQuery , @mediumQuery {
+            width: 400px;
+            padding : 20px 15px;
+        }
+    }
+    .contact-footer{
+        .contactPoint();
+        position : absolute;
+        display : block;
+        bottom : 0px;
+        width : 100%;
+        margin-top : 20px;
+        font-size: 16px;
+        font-weight: 600;
+        height : @heightBar;
+        line-height : @heightBar;
+        background-color : @clrBG4_1;
+        color: @clrTxt4_1;
+        text-align : center;
+        .glyphicons, .social {
+            display: inline-block;
+            font-size: 20px;
+            line-height: @heightBar;
+            padding-right: 0px;
+        }
+    }
+}
+

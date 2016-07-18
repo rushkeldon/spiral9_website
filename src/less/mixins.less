@@ -1,12 +1,17 @@
 .MixPanel() {
     position: relative;
-    padding-top: @paddingTopPanel;
+    padding-top: @paddingTopPanel + @heightBar;
     padding-bottom: @paddingBottomPanel;
     overflow: hidden;
     text-align: center;
+    min-height : 100vh;
     @media @smallQuery{
-        padding-top: @paddingBottomTitleAreaSmall;
+        // padding-top: @paddingBottomTitleAreaSmall;
     }
+}
+
+.MixPanelLast() {
+    min-height : 100vh;
 }
 
 .MixBar() {
@@ -27,7 +32,7 @@
 }
 
 .MixLink() {
-    color: #474D5D;
+    color: rgba( 0, 0, 0, 0.5 );//#474D5D;
     text-decoration: none;
     outline: none;
     &.active, &:hover, &:focus {
@@ -54,6 +59,7 @@
     }
     p {
         font-size: 16px;
+        line-height : 24px;
     }
     @media @smallQuery{
         padding-bottom: @paddingBottomTitleAreaSmall;

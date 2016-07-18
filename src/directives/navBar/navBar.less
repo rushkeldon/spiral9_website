@@ -1,108 +1,137 @@
 /* does this work? */
-.nav-bar{
+.nav-bar {
     .MixBar();
-    position : absolute;
-    z-index : 1000;
-    background-color : @bgColor1;
-    color: @fgColor1;
+    position: absolute;
+    z-index: 1000;
+    color: @clrNavTxt;
+    background-color: @clrNavBG;
     @media @largeQuery {
-        position : absolute;
+        position: absolute;
     }
     @media @smallQuery , @mediumQuery {
-        position : fixed;
-        top : 0px !important;
+        position: fixed;
+        top: 0px !important;
     }
 
-    span{
-        position : absolute;
-        display : block;
-        left : 0px;
-        top : 0px;
+    span {
+        position: absolute;
+        display: block;
+        left: 0px;
+        top: 0px;
+        height : @heightBar;
         line-height: @heightBar;
-        font-family : "Courier New";
-        color : white;
-        font-weight : 600;
-        font-size : 20px;
-        z-index : 10;
-        padding-left : 10px;
+        font-family: "Courier New";
+        color: inherit;
+        font-weight: 600;
+        font-size: 20px;
+        z-index: 10;
+        padding-left: 10px;
     }
 
-    button{
-        background: transparent;
-        border : none;
+    button {
+        color: @clrNavTxt;
+        text-shadow : @textShadowNavBtn;
+        background-color: unset;
+        border: none;
         border-radius: 0;
         box-shadow: none;
         cursor: pointer;
-        font-size : 20px;
-        height : @heightBar;
-        line-height : @heightBar;
+        font-size: 20px;
+        height: @heightBar;
+        line-height: @heightBar;
         outline: none;
-        padding : 0px 25px 0px 0px;
-        position : absolute;
-        right : 5px;
-        text-align : right;
-        width : 200px;
+        padding: 0px 25px 0px 0px;
+        position: absolute;
+        right: 5px;
+        text-align: right;
+        width: 200px;
         @media @largeQuery {
-            display : none;
+            display: none;
         }
         @media @smallQuery , @mediumQuery {
-            display : block;
+            display: block;
         }
-        &:focus {
+        &:hover, &:focus, &:active {
             outline: none;
         }
-        label{
+        label {
             cursor: pointer;
-            position : absolute;
-            right : 60px;
-            top : 0px;
-            height : @heightBar;
-            line-height : @heightBar;
+            position: absolute;
+            right: 60px;
+            top: 0px;
+            height: @heightBar;
+            line-height: @heightBar;
             font-size: 20px;
             @media @largeQuery {
-                display : none;
+                display: none;
             }
             @media @smallQuery , @mediumQuery {
-                display : block;
+                display: block;
             }
         }
     }
-    .nav-menu{
-        background-color : @bgColor1;
-        color: @fgColor1;
-        display : block;
+    .nav-menu {
+        transition: 0.3s;
+        color: @clrNavTxt;
+        display: block;
+        margin : 0px;
+        padding : 0px;
+        height : @heightBar;
+        overflow : hidden;
         @media @smallQuery , @mediumQuery {
-            display : block;
-            width : 300px;
-            position : absolute;
-            right : 0px;
-            top : @heightBar;
+            display: block;
+            width: 300px;
+            position: absolute;
+            right: 0px;
+            top: @heightBar;
+            height : unset;
+            overflow : visible;
         }
-        .nav-item{
+        .nav-item {
+            background-color: unset;
+            border-radius : 25px;
+            color: @clrNavBtnTxt;
             cursor: pointer;
             display: inline-block;
-            background-color : @bgColor1;
-            color: @fgColor1;
-            padding: 0px 25px;
-            text-align: center;
-            line-height: @heightBar;
             font-family: 'Open Sans', sans-serif;
             font-size: 18px;
-            font-weight: 400;
-            &:hover {
-                color : @white;
-            }
-            &.active, &:focus {
-                background-color : @bgColor1active;
+            font-weight: 600;
+            height : @heightBar;
+            line-height: @heightBar;
+            padding: 0px 25px;
+            text-align: center;
+            text-shadow : @textShadowNavBtn;
+            transition: 0.3s;
+            &:hover, &:focus {
+                border-radius : 0px;
+                color: @clrNavBtnTxtHover;
+                text-shadow : @textShadowNavBtnHover;
+                background-color: @clrNavBtnBGhover;
                 outline: none;
             }
+            &.active {
+                border-radius: 0px;
+                color: @clrNavBtnTxtActive;
+                text-shadow : @textShadowNavBtnActive;
+                background-color: @clrNavBtnBGactive;
+                outline: none;
+                &:first-child{
+                    border-radius: 0px;
+                }
+            }
             @media @largeQuery {
-                background : transparent;
                 display: inline-block;
             }
             @media @smallQuery , @mediumQuery {
-                background-color : @bgColor1;
+                border-radius: 0px;
+                background-color: @clrNavBtnBG;
                 display: block;
+                &.active {
+                    color: @clrNavBtnTxt;
+                    text-shadow : @textShadowNavBtn;
+                    background-color: @clrNavBtnBG;
+                    outline: none;
+                }
             }
         }
     }

@@ -1,0 +1,36 @@
+<section class="contact-panel" ng-show="contactInfo">
+    <div class="title-area">
+        <h2 ng-bind="contactInfo.title"></h2>
+        <p ng-bind-html="contactInfo.subTitle | makeSafeHTML"></p>
+    </div>
+    <div class="body-area">
+        <div class="contact-name"
+             ng-if="contactInfo.name"
+             ng-bind="contactInfo.name">
+        </div>
+        <div class="contact-address"
+             ng-if="contactInfo.address">
+            <span class="glyphicons glyphicons-map"></span>
+            {{contactInfo.address}}
+        </div>
+        <div class="contact-email"
+             ng-if="contactInfo.email">
+            <a href="mailto:{{contactInfo.email}}?subject=interesting%20project&body=Hello%20{{contactInfo.name.split( ' ' )[ 0 ]}},%0D%0DI%20am%20writing%20to%20you%20about%20a%20project%20you%20might%20be%20interested%20in.%0D%0D"><span class="glyphicons glyphicons-envelope"></span>{{contactInfo.email}}</a>
+        </div>
+        <div class="contact-phone"
+             ng-if="contactInfo.phone">
+            <a href="tel:{{contactInfo.phone}}"><span class="glyphicons glyphicons-iphone"></span>{{contactInfo.phone}}</a>
+        </div>
+        <div class="contact-url"
+             ng-if="contactInfo.url">
+            <a href="{{contactInfo.url}}"><span class="glyphicons glyphicons-link"></span>{{contactInfo.url}}</a>
+        </div>
+        <div class="contact-linkedin-url"
+             ng-if="contactInfo.linkedInURL">
+            <a href="{{contactInfo.linkedInURL}}"><span class="social social-linked-in"></span>{{contactInfo.linkedInURL}}</a>
+        </div>
+    </div>
+    <div class="contact-footer"
+         ng-if="contactInfo.footerHTML"
+         ng-bind-html="contactInfo.footerHTML | makeSafeHTML"></div>
+</section>

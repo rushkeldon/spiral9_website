@@ -1,11 +1,12 @@
 .about-panel {
     .MixPanel();
-    background: @bgColor2;
-    color: @white;
+    background: @clrBG0;
+    color: @clrTxt0;
     text-align : left;
     .title-area {
         .MixPanelTitle();
         h2 {
+            color : @clrFG0;
         }
         p {
         }
@@ -18,7 +19,6 @@
             width: 60%;
             float: left;
             padding: 0px 0px 0px 20px;
-            color : @fgColor2;
             @media @smallQuery , @mediumQuery {
                 display: block;
                 float: none;
@@ -37,23 +37,20 @@
                 padding : 0px 0px 10px 3px;
                 a{
                     .MixLink();
+                    color : @orange;//@clrFG0;
+                    font-weight : 600;
                 }
             }
             .more-info-toggle{
                 padding-left : 3px;
                 font-size : 16px;
                 line-height : 150%;
-                font-weight : 400;
+                font-weight : 600;
                 a{
+                    .MixLink();
+                    color : @orange;//@clrFG0;
                     font-size : 16px;
                     line-height : 150%;
-                    color: #474D5D;
-                    text-decoration: none;
-                    outline: none;
-                    &.active, &:hover, &:focus {
-                        text-decoration: underline;
-                        outline: none;
-                    }
                     i{
                         padding-right : 10px;
                         &.active, &:hover, &:focus {
@@ -68,17 +65,18 @@
                 height : 0px;
             }
             button {
+                transition: 0.3s;
                 font-size: 16px;
                 font-family: 'Open Sans', sans-serif;
                 font-weight: 700;
-                background-color: #474D5D;
+                background-color: @clrBGbtn0;
+                color : @offWhite;
                 padding: 16px 22px;
                 display: inline-block;
                 outline: none;
-                margin : 15px;
+                margin : 15px 0px;
                 &.active, &:hover, &:focus {
-                    background: #373D4C;
-                    color: #CCCCCC;
+                    background: @clrBGbtn0hover;
                     text-decoration: none;
                     outline: none;
                 }
@@ -101,6 +99,7 @@
             }
             .img-circle {
                 border-radius: 50%;
+                border: @imageStroke;
             }
         }
     }

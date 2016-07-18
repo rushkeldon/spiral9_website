@@ -18,6 +18,7 @@ angular.module( 'spiral9', [
     'ngTouch',
     'spiral9.directives.aboutPanel',
     'spiral9.directives.arcIndicator',
+    'spiral9.directives.contactPanel',
     'spiral9.directives.navBar',
     'spiral9.directives.portfolioPanel',
     'spiral9.directives.skillsPanel',

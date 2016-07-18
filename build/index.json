@@ -59,15 +59,15 @@
         "subTitle" : "a brief introduction",
         "myName" : "Keldon Rush",
         "myRole" : "Experience Engineer / Front End Web Developer",
-        "myImgURL" : "img/keldon_bw.jpg",
+        "myImgURL" : "img/keldon_bw_1.png",
         "htmlBlurbs" : [
             "I started out in the software industry at Microsoft as a Technical Media Designer.  My interest in the technical aspects grew as I became the manager of the Technical Media Designers.",
             "I transitioned to the role of Program Manager at Microsoft but continued to contribute more and more <u>code</u> to the projects I was managing.",
             "I spent the next four years as a technical Program Manager at two startups and my contributions as a web developer increased.",
-            "Next at Smashing Ideas I was a core developer on the team (among some other duties).  Our customers included MTV, Disney, at&amp;t, T-Mobile, Verizon, Nokia, Adobe, and Microsoft.",
-            "In 2008 I started Spiral9 Inc which was at one point a 14 person company focused on providing ideation, design, and development services.  Our main customers were Adobe, TiVo, Cisco, Facebook, and Disney.",
+            "Next at Smashing Ideas I was a core developer on the team among some other important duties.  Our customers included MTV, Disney, at&amp;t, T-Mobile, Verizon, Nokia, Adobe, and Microsoft.",
+            "In 2008 I started Spiral9 Inc which was at one point a 14 person company focused on providing ideation, design, and development services.  Our main customers were Adobe, TiVo, Cisco, Facebook, and Disney.  We were riding a particular bubble in the Connected TV space.",
             "Since 2011 I have scaled back Spiral9 to just me and have been focused almost exclusively on providing front end web development services.",
-            "I developed this responsive angular app that you are using right now.  This site is <a href=\"https://github.com/rushkeldon/spiral9_website\">openly available on github</a> and configurable using one JSON file."
+            "I developed this responsive angular app that you are using right now.  This site is <a href=\"https://github.com/rushkeldon/spiral9_website\">available on github</a> and configurable using <a href=\"index.json\">one JSON file.</a>"
         ],
         "moreInfo" : {
             "labelSeeMore" : "see more about this app",
@@ -81,7 +81,7 @@
             ]
         },
         "btnLabel" : "Download My Resume",
-        "btnURL" : "http://spiral9.com/keldon/keldon_rush_resume.pdf"
+        "btnURL" : "http://spiral9.com/doc/resume_keldon_rush_dev.pdf"
     },
     "skillsInfo" : {
         "title" : "TECHNICAL SKILLS",
@@ -89,23 +89,23 @@
         "skills" : [
             {
                 "label" : "javascript",
-                "blurb" : "Straight up code!<br/>I am interested in ES6 and Babel...",
+                "blurb" : "Straight up code!<br/>I am interested in ES6, Babel, and TypeScript...",
                 "percent" : 93
             },
             {
                 "label" : "angular",
-                "blurb" : "I have come to really appreciate Angular - I'm quite interested in 2.0...",
+                "blurb" : "I have come to really appreciate Angular - I'm very interested in 2.0 and React...",
                 "percent" : 88
             },
             {
                 "label" : "LESS",
-                "blurb" : "SOooo cool!  I love LESS a lot MORE than I would have expected!",
+                "blurb" : "SOooo cool!  I love LESS a lot more than I would have expected!",
                 "percent" : 93
             },
             {
                 "label" : "CSS3",
                 "blurb" : "Solid, but [always] still learning",
-                "percent" : 84
+                "percent" : 92
             },
             {
                 "label" : "responsive",
@@ -114,7 +114,7 @@
             },
             {
                 "label" : "gulp",
-                "blurb" : "Streaming goodness with globs and pipes",
+                "blurb" : "Parallel streaming goodness with tasks that pipe globs",
                 "percent" : 85
             },
             {
@@ -124,12 +124,12 @@
             },
             {
                 "label" : "jenkins",
-                "blurb" : "Jenkins is super cool - I am planning on getting to know him better",
+                "blurb" : "Jenkins is super cool - I am planning on getting to know him better - CI forever!",
                 "percent" : 72
             },
             {
                 "label" : "photoshop",
-                "blurb" : "I'm not a designer - still I pixel poke better than most devs...",
+                "blurb" : "I pixel poke better than most devs, and I appreciate white space...",
                 "percent" : 78
             }
         ]
@@ -142,7 +142,8 @@
                 "badgeClass" : "primary",
                 "iconName" : "boat",
                 "title" : "Holland America Group",
-                "when" : "12/2014 - 9/2015",
+                "role" : "Senior Front End Developer",
+                "when" : "Dec 2014  -  Sep 2015",
                 "headerHTML" : "",
                 "linkInfos" : [
                     {
@@ -164,9 +165,12 @@
                     "git",
                     "gulp",
                     "html5",
+                    "jasmine",
                     "jenkins",
                     "jquery",
-                    "jasmine",
+                    "js",
+                    "less",
+                    "photoshop",
                     "responsive",
                     "rest",
                     "scrum"
@@ -182,9 +186,10 @@
             },
             {
                 "badgeClass" : "danger",
-                "iconName" : "show-big-thumbnails",
+                "iconName" : "bring-forward",
                 "title" : "Ratio Interactive",
-                "when" : "4/2014 - 11/2014",
+                "role" : "Lead Software Engineer",
+                "when" : "April 2014  -  Sep 2015",
                 "headerHTML" : "",
                 "linkInfos" : [
                     {
@@ -198,17 +203,22 @@
                     "angular",
                     "aws",
                     "css3",
+                    "d3",
                     "git",
                     "gulp",
                     "html5",
+                    "jasmine",
                     "jenkins",
                     "jquery",
-                    "jasmine",
+                    "js",
+                    "less",
+                    "photoshop",
                     "php",
                     "rest",
                     "scrum",
+                    "windows",
                     "winjs",
-                    "windows"
+                    "wordpress"
                 ],
                 "footerHTML" : "",
                 "details" : [
@@ -226,7 +236,8 @@
                 "badgeClass" : "success",
                 "iconName" : "golf-course",
                 "title" : "Active Mind Technology",
-                "when" : "5/2013 - 11/2013",
+                "role" : "Lead Front End Developer",
+                "when" : "May 2013 - Nov 2014",
                 "headerHTML" : "",
                 "linkInfos" : [
                     {
@@ -241,10 +252,11 @@
                     "as3",
                     "git",
                     "jenkins",
+                    "mac",
+                    "photoshop",
                     "rest",
                     "scrum",
                     "windows",
-                    "mac",
                     "wix"
                 ],
                 "footerHTML" : "",
@@ -263,19 +275,243 @@
                 "badgeClass" : "warning",
                 "iconName" : "star-half",
                 "title" : "Exponential Entertainment",
-                "when" : "just a moment ago",
+                "role" : "Lead Software Architect",
+                "when" : "Dec 2011 - Feb 2013",
                 "headerHTML" : "",
+                "linkInfos" : [
+                    {
+                        "label" : "exponentialent.com",
+                        "url" : "https://exponentialent.com/",
+                        "target" : "_blank"
+                    }
+                ],
                 "bodyHTML" : "",
-                "footerHTML" : ""
+                "badgeKeys" : [
+                    "air",
+                    "as3",
+                    "aws",
+                    "css3",
+                    "facebook",
+                    "git",
+                    "html5",
+                    "jquery",
+                    "js",
+                    "less",
+                    "photoshop",
+                    "rest",
+                    "scrum"
+                ],
+                "footerHTML" : "",
+                "details" : [
+                    "Architected and led the implementation of a social gaming environment (Hollywood Player) for Facebook, Google+, iOS, and Android",
+                    "Designed and implemented a virtual goods system with 5 currencies",
+                    "Integrated in-app purchase of virtual goods via social platform payment",
+                    "Acted as Lead Front End Developer on a number of games for both the gaming environment and stand alone iOS apps",
+                    "Created and documented a comprehensive SDK for web and mobile games to interoperate within the platform",
+                    "Hosted on AWS utilizing E3, S3, and SDB"
+                ]
             },
             {
                 "badgeClass" : "whimsy",
                 "iconName" : "tv",
                 "title" : "Spiral9",
-                "when" : "11/2007 - now",
+                "role" : "Senior Experience Engineer",
+                "when" : "Sep 2004 - now",
                 "headerHTML" : "",
+                "linkInfos" : [
+                    {
+                        "label" : "spiral9.com",
+                        "url" : "http://spiral9.com/",
+                        "target" : "_blank"
+                    }
+                ],
                 "bodyHTML" : "",
-                "footerHTML" : ""
+                "badgeKeys" : [
+                    "air",
+                    "angular",
+                    "as3",
+                    "aws",
+                    "bootstrap",
+                    "css3",
+                    "d3",
+                    "facebook",
+                    "git",
+                    "gulp",
+                    "html5",
+                    "jasmine",
+                    "jenkins",
+                    "jquery",
+                    "js",
+                    "less",
+                    "linux",
+                    "mac",
+                    "photoshop",
+                    "responsive",
+                    "rest",
+                    "scrum",
+                    "windows",
+                    "winjs",
+                    "wix"
+                ],
+                "footerHTML" : "",
+                "details" : [
+                    "Software design, development, and deployment for all types of devices and platforms",
+                    "Customers include : Adobe, Cisco, Intel, TiVo, Disney, Ratio Interactive, Holland America, Active Mind Technology"
+                ]
+            },
+            {
+                "badgeClass" : "darkorange",
+                "iconName" : "iphone",
+                "title" : "Smashing Ideas",
+                "role" : "Director, Platforms & Technologies Division  |  Sr Developer",
+                "when" : "Feb 2005  -  Aug 2008",
+                "headerHTML" : "",
+                "linkInfos" : [
+                    {
+                        "label" : "smashingideas.com",
+                        "url" : "http://smashingideas.com/",
+                        "target" : "_blank"
+                    }
+                ],
+                "bodyHTML" : "",
+                "badgeKeys" : [
+                    "air",
+                    "as3",
+                    "css3",
+                    "git",
+                    "html5",
+                    "javascript",
+                    "jquery",
+                    "js",
+                    "linux",
+                    "mac",
+                    "photoshop",
+                    "responsive",
+                    "rest",
+                    "scrum",
+                    "symbian",
+                    "windows"
+                ],
+                "footerHTML" : "",
+                "details" : [
+                    "Created, hired, and managed the company's mobile division",
+                    "The division specialized in mobile applications, mobile UX design, and games",
+                    "Was Lead Developer on many projects",
+                    "Helped with Business Development and Sales",
+                    "Customers included Disney, MTV, Adobe, AT&T, NASDAQ, Nokia, T-Mobile, Verizon, and Nickelodeon"
+                ]
+            },
+            {
+                "badgeClass" : "snapin",
+                "iconName" : "iphone",
+                "title" : "SNAPin Software",
+                "role" : "Director of Program Management  |  Lead Web Developer",
+                "when" : "Jul 2003  –  Feb 2005",
+                "headerHTML" : "",
+                "linkInfos" : [
+                    {
+                        "label" : "SNAPin acquired by Nuance",
+                        "url" : "http://www.xconomy.com/seattle/2008/08/22/in-nuances-snapping-up-of-snapin-software-investors-get-a-better-deal-some-further-analysis/",
+                        "target" : "_blank"
+                    }
+                ],
+                "bodyHTML" : "",
+                "badgeKeys" : [
+                    "as3",
+                    "css",
+                    "git",
+                    "html",
+                    "js",
+                    "photoshop",
+                    "rest",
+                    "scrum",
+                    "symbian",
+                    "windows"
+                ],
+                "footerHTML" : "",
+                "details" : [
+                    "Wrote all functional specifications",
+                    "Created all UX prototypes",
+                    "Developed all apps that ran on our proprietary engine JavaScript, XHTML, and CSS",
+                    "Managed the overall development process of a proprietary engine that ran on Symbian OS and Windows Mobile",
+                    "The company was acquired by Nuance Communications"
+                ]
+            },
+            {
+                "badgeClass" : "snapin",
+                "iconName" : "play-button",
+                "title" : "Action Engine",
+                "role" : "Group Program Manager  |  Lead Web Developer",
+                "when" : "Mar 2000  -  May 2002",
+                "headerHTML" : "",
+                "linkInfos" : [
+                    {
+                        "label" : "Action Engine gets $20M in funding",
+                        "url" : "http://www.seattlepi.com/business/article/Action-Engine-of-Redmond-gets-20-million-in-1245060.php",
+                        "target" : "_blank"
+                    }
+                ],
+                "bodyHTML" : "",
+                "badgeKeys" : [
+                    "as3",
+                    "css",
+                    "git",
+                    "html",
+                    "js",
+                    "photoshop",
+                    "symbian",
+                    "windows"
+                ],
+                "footerHTML" : "",
+                "details" : [
+                    "Wrote all functional specifications",
+                    "Created all UX prototypes",
+                    "Led the product planning, design, and schedule of a cross-device mobile application platform : Palm OS, Symbian OS, Windows Mobile, and Web",
+                    "Developed all XML, JavaScript, and CSS that ran the client application",
+                    "Represented the company twice in Cannes, France at 3GSM Mobile World Congress"
+                ]
+            },
+            {
+                "badgeClass" : "ms",
+                "iconName" : "show-big-thumbnails",
+                "title" : "Microsoft",
+                "role" : "Technical Media Designer  |  Program Manager",
+                "when" : "Mar 1996  -  Mar 2000",
+                "headerHTML" : "This is the header HTML",
+                "linkInfos" : [
+                    {
+                        "label" : "microsoft.com",
+                        "url" : "http://microsoft.com/",
+                        "target" : "_blank"
+                    }
+                ],
+                "bodyHTML" : "This is the body HTML",
+                "badgeKeys" : [
+                    "air",
+                    "as3",
+                    "css3",
+                    "git",
+                    "html5",
+                    "javascript",
+                    "jquery",
+                    "js",
+                    "linux",
+                    "mac",
+                    "photoshop",
+                    "responsive",
+                    "rest",
+                    "scrum",
+                    "symbian",
+                    "windows"
+                ],
+                "footerHTML" : "",
+                "details" : [
+                    "Created, hired, and managed the company's mobile division",
+                    "The division specialized in mobile applications, mobile UX design, and games",
+                    "Was Lead Developer on many projects",
+                    "Helped with Business Development and Sales",
+                    "Customers included Disney, MTV, Adobe, AT&T, NASDAQ, Nokia, T-Mobile, Verizon, and Nickelodeon"
+                ]
             }
         ]
     },
@@ -321,8 +557,99 @@
                 "link" : "http://hollandamerica.com",
                 "imageInfos" : [
                     {
-                        "url" : "http://spiral9.com/img/apple_wave.jpg",
-                        "captionHTML" : "the very nice wave image from Apple"
+                        "src" : "",
+                        "title" : "Homepage Hero : Desktop",
+                        "blurbHTML" : "The 'hero' on the homepage of Holland America Line (and Seabourn Cruise Line) is the most prominent and important element on the page. It needs to be rock solid on desktop as well as all other devices.  A complete rewrite enabled the Hero to be responsive and flexible in both its model and its view."
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_hero_large_0.png",
+                        "captionHTML" : "The 'hero' on the homepage of Holland America Line (and Seabourn Cruise Line) is the most prominent and important element on the page. It needed (and needs) to be rock solid on desktop as well as mobile.  A complete rewrite enabled the Hero to be responsive and flexible in both its model and its view."
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_hero_large_1.png",
+                        "captionHTML" : "The homepage hero - desktop breakpoint."
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_hero_large_2.png",
+                        "captionHTML" : "The homepage hero - desktop breakpoint."
+                    },
+                    {
+                        "src" : "",
+                        "title" : "Homepage Hero : Tablet",
+                        "blurbHTML" : "In the tablet breakpoint layout there are different bread crumbs, background images (potentially) and the background image is treated differently."
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_hero_medium_0.png",
+                        "captionHTML" : "The homepage hero - tablet breakpoint."
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_hero_medium_1.png",
+                        "captionHTML" : "The homepage hero - tablet breakpoint."
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_hero_medium_2.png",
+                        "captionHTML" : "The homepage hero - tablet breakpoint."
+                    },
+                    {
+                        "src" : "",
+                        "title" : "Homepage Hero : Phone",
+                        "blurbHTML" : "Here are a few shots of the Hero in it's phone breakpoint rendition.  There are no bread crumbs, smaller images (potentially) and the auto-advance feature is not on."
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_hero_small_0.png",
+                        "captionHTML" : "The homepage hero - phone breakpoint.  It is really interesting here to notice that a run on sentence just causes the caption box to grow taller and taller and taller - isn't that amazing!!"
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_hero_small_1.png",
+                        "captionHTML" : "The homepage hero - phone breakpoint."
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_hero_small_2.png",
+                        "captionHTML" : "The homepage hero - phone breakpoint."
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_sec_flow_cart_0.png",
+                        "captionHTML" : ""
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_sec_flow_cc_confirm.png",
+                        "captionHTML" : ""
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_sec_flow_cc_processing.png",
+                        "captionHTML" : ""
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_sec_flow_confirmation.png",
+                        "captionHTML" : ""
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_sec_flow_cpp_0.png",
+                        "captionHTML" : ""
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_sec_flow_cpp_add.png",
+                        "captionHTML" : ""
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_sec_flow_shorex_0.png",
+                        "captionHTML" : ""
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_sec_flow_shorex_1.png",
+                        "captionHTML" : ""
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_sec_flow_shorex_2.png",
+                        "captionHTML" : ""
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_sec_flow_shorex_wait.png",
+                        "captionHTML" : ""
+                    },
+                    {
+                        "url" : "img/portfolio/hal/hal_sec_flow_travel_plan_post.png",
+                        "captionHTML" : ""
                     }
                 ]
             },
@@ -338,8 +665,8 @@
                 "link" : "http://weareratio.com",
                 "imageInfos" : [
                     {
-                        "url" : "http://spiral9.com/img/apple_wave.jpg",
-                        "captionHTML" : "the very nice wave image from Apple"
+                        "url" : "img/portfolio/ratio/high_avail_word_press.svg",
+                        "captionHTML" : "This diagram shows the configuration of each availabilty zone at a high level for an AWS WordPress deployment."
                     }
                 ]
             },
@@ -347,7 +674,7 @@
                 "label" : "Active Mind Technology",
                 "tags" : [
                     "all",
-                    "phone"
+                    "desktop"
                 ],
                 "thumb" : "img/logo_game_golf.png",
                 "link" : "http://gamegolf.com",
@@ -378,11 +705,25 @@
                 "label" : "TiVo",
                 "tags" : [
                     "all",
-                    "tablet",
-                    "phone"
+                    "tv"
                 ],
                 "thumb" : "img/logo_tivo.png",
                 "link" : "http://tivo.com",
+                "imageInfos" : [
+                    {
+                        "url" : "http://spiral9.com/img/apple_wave.jpg",
+                        "captionHTML" : "the very nice wave image from Apple"
+                    }
+                ]
+            },
+            {
+                "label" : "spiral9",
+                "tags" : [
+                    "all",
+                    "desktop"
+                ],
+                "thumb" : "img/logo_spiral9.png",
+                "link" : "http://spiral9.com",
                 "imageInfos" : [
                     {
                         "url" : "http://spiral9.com/img/apple_wave.jpg",
@@ -454,15 +795,14 @@
         ]
     },
     "contactInfo" : {
-        "title" : "GET IN TOUCH",
-        "subTitle" : "I'd love to hear about your projects & opportunities",
-        "contactDetails" : {
-            "label" : "CONTACT DETAILS",
-            "address" : "",
-            "phone" : " +1 (206) 349-8690",
-            "email" : "keldon@spiral9.com",
-            "url" : "http://spiral9.com"
-        },
-        "contactForm" : null
+        "title" : "CONTACT KELDON",
+        "subTitle" : "I'd love to hear from you",
+        "name" : "Keldon Rush",
+        "address" : "Seattle, WA",
+        "phone" : " +1 (206) 349-8690",
+        "email" : "keldon@spiral9.com",
+        "url" : "http://spiral9.com",
+        "linkedInURL" : "https://www.linkedin.com/in/keldonrush",
+        "footerHTML" : "<a href=\"https://github.com/rushkeldon/spiral9_website\"><span class=\"glyphicons glyphicons-link\"></span>download this site on github</a>"
     }
 }

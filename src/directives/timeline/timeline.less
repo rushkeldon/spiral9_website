@@ -117,6 +117,12 @@
             .glyphicons, .halflings {
                 line-height: 46px;
             }
+            &.ms{
+                background-color: @msWinBlue;
+            }
+            &.darkorange {
+                background-color: #D45421;
+            }
             &.primary {
                 background-color: @colorPrimary;
             }
@@ -134,6 +140,9 @@
             }
             &.whimsy {
                 background-color: #50BB40;
+            }
+            &.snapin {
+                background-color: #004FC5;
             }
             &.hidden {
                 display: block !important;
@@ -214,6 +223,7 @@
                 }
                 h4 {
                     float : left;
+                    padding-left : 5px;
                     &:after {
                         visibility: hidden;
                         display: block;
@@ -251,7 +261,12 @@
                     clear: both;
                     color: inherit;
                     font-weight : 400;
-                    padding : 4px 5px;
+                    padding : 6px 5px;
+                    h5{
+                        font-size : 14px;
+                        padding : 2px 0px;
+                        white-space: pre;
+                    }
                     a{
                         .MixLink();
                         display : block;

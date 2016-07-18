@@ -1,12 +1,13 @@
 .portfolio-panel {
     .MixPanel();
-    background: @bgColor2;
-    color: @white;
+    background: @clrBG3;
+    color: @clrFG3_1;
     text-align: left;
-    min-height : 800px;
+    .MixPanelLast();
     .title-area {
         .MixPanelTitle();
         h2 {
+            color: @clrFG3;
         }
         p {
         }
@@ -22,8 +23,8 @@
                 .MixDisableSelection();
                 .MixAnim3();
                 cursor: pointer;
-                border: solid 2px #95D9EE;
-                color: #FFFFFF;
+                border: solid 2px rgba(255,255,255,0.4);
+                color: @white;
                 display: inline-block;
                 font-size: 16px;
                 font-weight: 400;
@@ -48,16 +49,19 @@
                 }
                 &.current {
                     cursor: unset;
-                    background-color: #15596E;
-                    border: solid 2px #15596E;
+                    background-color: rgba( 0, 0, 0, 0.3 );
+                    border: solid 2px rgba( 0, 0, 0, 0 );//#15596E;
                     font-weight: 400;
                     color: #FFFFFF;
+                    pointer-events : none;
+                    /*
                     &:hover {
-                        background-color: #15596E;
-                        border: solid 2px #15596E;
+                        background-color: rgba( 0, 0, 0, 0.3 );//#15596E;
+                        border: solid 2px rgba( 0, 0, 0, 0.3 );//#15596E;
                         font-weight: 400;
                         color: #FFFFFF;
                     }
+                    */
                 }
             }
         }
@@ -172,7 +176,7 @@
             width: 60%;
             float: left;
             padding: 0px 0px 0px 20px;
-            color: @fgColor2;
+            color: @clrFG0;
             @media @smallQuery , @mediumQuery {
                 display: block;
                 float: none;

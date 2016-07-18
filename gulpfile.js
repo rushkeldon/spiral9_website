@@ -38,14 +38,19 @@ var filePatterns = {
     fontFiles : [
         'vendor/font-awesome/fonts/*',
         'vendor/glyphicons/basic_bootstrap/fonts/*',
-        'vendor/glyphicons/halfling/fonts/*'
+        'vendor/glyphicons/halfling/fonts/*',
+        'vendor/glyphicons/social/fonts/*'
     ],
     vendorCSSfiles : [
         'vendor/bootstrap/dist/css/bootstrap.min.css',
         'vendor/glyphicons/basic_bootstrap/css/*',
-        'vendor/glyphicons/halfling/css/glyphicons-halflings.css'
+        'vendor/glyphicons/halfling/css/glyphicons-halflings.css',
+        'vendor/glyphicons/social/css/glyphicons-social.css'
     ],
-    vendorJSfiles : 'vendor/angular-scroll-animate/dist/*.js'
+    vendorJSfiles : [
+        'vendor/angular-scroll-animate/dist/*.js',
+        'vendor/dom-to-image/dist/*.js'
+    ]
 };
 
 
@@ -148,7 +153,8 @@ gulp.task( 'copyVendorCSS', [], function copyVendorCSS() {
 
 // copy vendor js files
 gulp.task( 'copyVendorJS', [], function copyVendorJS() {
-    return gulp.src( filePatterns.vendorJSfiles )
+    return gulp.src( filePatterns.vendorJSfiles, { "base" : "." } )
+        .pipe( flatten() )
         .pipe( gulp.dest( './build/js' ) );
 } );
 

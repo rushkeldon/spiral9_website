@@ -13,8 +13,9 @@
                 <p class="timeline-when" ng-if="event.when">
                     <i class="halflings halflings-time"></i>{{event.when}}
                 </p>
-                <!-- <div class="heading-inner" ng-if="event.headerHTML" ng-bind-html="event.headerHTML | makeSafeHTML"></div> -->
+
                 <div class="heading-inner">
+                    <h5 ng-if="event.role" ng-bind="event.role"></h5>
                     <a ng-repeat="linkInfo in event.linkInfos"
                        ng-href="{{linkInfo.url}}"
                        target="{{linkInfo.target ? linkInfo.target : '_self'}}">

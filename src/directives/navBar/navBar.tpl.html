@@ -1,12 +1,11 @@
 <nav class="nav-bar" ng-show="navInfo">
     <!-- <span ng-bind="echo"></span> -->
-    <button ng-click="toggleNavMenu( $event )" stop-events="touchstart touchend">
+    <button ng-click="toggleNavMenu( $event )">
         <label ng-bind="navInfo.label"></label>
         <i class="fa fa-bars"></i>
     </button>
     <ul class="nav-menu">
         <li class="nav-item"
-            stop-events="touchstart touchend"
             ng-show="shouldMenuDisplay"
             ng-repeat="navItem in navInfo.navItems"
             ng-class="{ 'active' : currentSelector === navItem.selector }"
