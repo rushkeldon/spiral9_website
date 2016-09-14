@@ -81,7 +81,7 @@
             ]
         },
         "btnLabel" : "Download My Resume",
-        "btnURL" : "http://spiral9.com/doc/resume_keldon_rush_dev.pdf"
+        "btnURL" : "http://spiral9.com/doc/keldon_rush_resume.pdf"
     },
     "skillsInfo" : {
         "title" : "TECHNICAL SKILLS",
@@ -546,6 +546,43 @@
         ],
         "projects" : [
             {
+                "label" : "LiveArea",
+                "tags" : [
+                    "all",
+                    "web",
+                    "tablet",
+                    "phone"
+                ],
+                "thumb" : "img/logo_livearea.png",
+                "link" : "http://livearealabs.com/",
+                "imageInfos" : [
+                    {
+                        "url" : "img/portfolio/lal/lal_project_estimator.png",
+                        "captionHTML" : "Modelled, designed, and implemented an online estimation tool for Demandware projects.  This included every UX component from the 221 page Demandware SiteGenesis wireframe document and included links to the live documentation."
+                    },
+                    {
+                        "url" : "img/portfolio/lal/london_drugs.png",
+                        "captionHTML" : "Helped implement a full set of UX modules and templates for the web development team at London Drugs to use in building a new site from the ground up and based on LiveArea's complete UX and visual redesign."
+                    },
+                    {
+                        "url" : "img/portfolio/lal/sally_beauty.png",
+                        "captionHTML" : "Worked as an 'embedded asset' in the Sally Beauty team.  Designed and implemented a new video player for the site.  Performed image production in Photoshop and video transcoding.  HTML, CSS, and JS implementation.  Merchandising via the Business Manager interface of Demandware."
+                    },
+                    {
+                        "url" : "img/portfolio/lal/sees_big.png",
+                        "captionHTML" : "Finished implementing responsive design for the See's Candies e-commerce site.  Fixed many bugs.  Refactored all number input fields to be truly responsive.  Refactored the front end and back end implementation of addresses."
+                    },
+                    {
+                        "url" : "img/portfolio/lal/sees_med.png",
+                        "captionHTML" : "See's Candies in a medium / tablet breakpoint."
+                    },
+                    {
+                        "url" : "img/portfolio/lal/sees_small.png",
+                        "captionHTML" : "See's Candies in a small / phone breakpoint."
+                    }
+                ]
+            },
+            {
                 "label" : "Holland America Group",
                 "tags" : [
                     "all",
@@ -667,6 +704,46 @@
                     {
                         "url" : "img/portfolio/ratio/high_avail_word_press.svg",
                         "captionHTML" : "This diagram shows the configuration of each availabilty zone at a high level for an AWS WordPress deployment."
+                    },
+                    {
+                        "url" : "img/portfolio/ratio/boardpad_001.jpg",
+                        "captionHTML" : "BoardPad is a Windows Store application that enables a company's Board of Directors to conduct all of it's functions using a Windows tablet.  This is the secure login screen."
+                    },
+                    {
+                        "url" : "img/portfolio/ratio/boardpad_002.jpg",
+                        "captionHTML" : "<strong>The Dashboard Screen</strong> shows an at-a-glance view of Meetings, News, Actions, and People.  Touching and swiping the user can navigate the entire application."
+                    },
+                    {
+                        "url" : "img/portfolio/ratio/boardpad_003.jpg",
+                        "captionHTML" : ""
+                    },
+                    {
+                        "url" : "img/portfolio/ratio/boardpad_004.jpg",
+                        "captionHTML" : "<strong>The Meeting Screen</strong> Attached documents, high level information, and the ability to vote on proposals and resolutions."
+                    },
+                    {
+                        "url" : "img/portfolio/ratio/boardpad_005.jpg",
+                        "captionHTML" : "<strong>The Voting Panel</strong>"
+                    },
+                    {
+                        "url" : "img/portfolio/ratio/boardpad_006.jpg",
+                        "captionHTML" : ""
+                    },
+                    {
+                        "url" : "img/portfolio/ratio/boardpad_007.jpg",
+                        "captionHTML" : ""
+                    },
+                    {
+                        "url" : "img/portfolio/ratio/boardpad_008.jpg",
+                        "captionHTML" : ""
+                    },
+                    {
+                        "url" : "img/portfolio/ratio/boardpad_009.jpg",
+                        "captionHTML" : ""
+                    },
+                    {
+                        "url" : "img/portfolio/ratio/boardpad_010.jpg",
+                        "captionHTML" : ""
                     }
                 ]
             },

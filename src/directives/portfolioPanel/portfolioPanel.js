@@ -115,6 +115,7 @@ angular.module( 'spiral9.directives.portfolioPanel', [
                 };
 
                 scope.viewProjectImages = function viewProjectImages( project ) {
+                    console.log( CN + ".viewProjectImages" );
                     SignalTowerService.dispatchSignal( 'signalLightboxImages', project.imageInfos );
                 };
 

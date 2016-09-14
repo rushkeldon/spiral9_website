@@ -11,6 +11,7 @@ var gulp = require( 'gulp' ),
     jshint = require( 'gulp-jshint' ),
     karma = require( 'gulp-karma' ),
     less = require( 'gulp-less' ),
+    newer = require('gulp-newer'),
     ngAnnotate = require( 'browserify-ngannotate' ),
     rename = require( 'gulp-rename' ),
     source = require( 'vinyl-source-stream' ),
@@ -27,8 +28,7 @@ var paths = {
 };
 
 var fileNames = {
-    cssFile : 'spiral9.css',
-
+    cssFile : 'spiral9.css'
 };
 
 var filePatterns = {
@@ -103,7 +103,6 @@ gulp.task( 'jsHint', [], function jsHint() {
         .pipe( jshint.reporter( 'fail' ) );
 } );
 
-
 // compiles JS
 gulp.task( 'compileJS', [], function compileJS() {
     // gulp expects tasks to return a stream, so we create one here.
@@ -140,7 +139,10 @@ gulp.task( 'compileJS', [], function compileJS() {
 
 // copy images
 gulp.task( 'copyImages', [], function copyImages() {
-    return gulp.src( 'img/**/*', { 'base' : '.' } )
+    var imgSrc = 'img/**/*';
+    var imgDest = './build';
+    return gulp.src( imgSrc, { 'base' : '.' } )
+        .pipe( newer( imgDest ) )
         .pipe( gulp.dest( './build' ) );
 } );
 

@@ -40,8 +40,8 @@ angular.module( 'spiral9.directives.lightbox', [
                     "captionHTML" : ""
                 };
 
-                scope.reset = function reset() {
-                    // console.log( CN + ".reset" );
+                scope.reset = function reset( isInit ) {
+                    console.log( CN + ".reset" );
 
                     scope.imageIndex = -1;
                     scope.isInTransition = false;
@@ -51,9 +51,8 @@ angular.module( 'spiral9.directives.lightbox', [
                     scope.mouseDirection = 'next';
                 };
 
-                scope.reset();
-
-                function getImageIndex( refIndex, direction ) {
+                scope.getImageIndex = function getImageIndex( refIndex, direction ) {
+                    console.log( CN + ".getImageIndex" );
                     var index = 0;
                     switch( direction ) {
                         case 'right':
@@ -64,16 +63,16 @@ angular.module( 'spiral9.directives.lightbox', [
                             break;
                     }
                     return index;
-                }
+                };
 
-                function setImageInfo( direction, shouldDisplay ) {
-                    // console.log( CN + ".setImageInfo" );
-                    // console.log( "\tdirection :", direction );
-                    // console.log( "\tshouldDisplay :", shouldDisplay );
+                scope.setImageInfo = function setImageInfo( direction, shouldDisplay ) {
+                    console.log( CN + ".setImageInfo" );
+
+                    var scope = scope ? scope : this;
 
                     scope.transitionFrom = direction;
                     var originalImageIndex = scope.imageIndex;
-                    scope.imageIndex = getImageIndex( scope.imageIndex, direction );
+                    scope.imageIndex = scope.getImageIndex( scope.imageIndex, direction );
 
                     var darkRoom = scope.darkRooms[ 1 ];
                     var imageInfo = scope.imageInfos[ scope.imageIndex ];
@@ -104,28 +103,50 @@ angular.module( 'spiral9.directives.lightbox', [
                         }
 
                     }
-                }
+                };
 
                 scope.nextImage = function nextImage() {
-                    // console.log( CN + ".nextImage" );
+                    console.log( CN + ".nextImage BUBBA" );
 
-                    if( scope.isInTransition ) { return; }
+                    var scope = scope ? scope : this;
+
+                    switch( true ){
+                        case !!scope.isInTransition :
+                            return;
+                            //break;
+                        // skip HTML type slides for now
+                        case !!scope.imageInfos[ scope.getImageIndex( scope.imageIndex, 'right' ) ].title :
+                            scope.imageIndex++;
+                            break;
+                    }
+
                     scope.isInTransition = true;
                     scope.dismissCaptionPane( true );
-                    setImageInfo( 'right', true );
+                    scope.setImageInfo( 'right', true );
                 };
 
                 scope.prevImage = function prevImage() {
-                    // console.log( CN + ".prevImage" );
+                    console.log( CN + ".prevImage" );
 
-                    if( scope.isInTransition ) { return; }
+                    var scope = scope ? scope : this;
+
+                    switch( true ){
+                        case !!scope.isInTransition :
+                            return;
+                        //break;
+                        // skip HTML type slides for now
+                        case !!scope.imageInfos[ scope.getImageIndex( scope.imageIndex, 'left' ) ].title :
+                            scope.imageIndex--;
+                            break;
+                    }
+
                     scope.isInTransition = true;
                     scope.dismissCaptionPane( true );
-                    setImageInfo( 'left', true );
+                    scope.setImageInfo( 'left', true );
                 };
 
                 scope.layoutThenIntro = function layoutThenIntro( image ) {
-                    // console.log( CN + ".layoutThenIntro" );
+                    console.log( CN + ".layoutThenIntro" );
 
                     var naturalWidth = image.naturalWidth;
                     var naturalHeight = image.naturalHeight;
@@ -139,26 +160,20 @@ angular.module( 'spiral9.directives.lightbox', [
                     darkRoom.lightFrame.style.width = width + "px";
                     darkRoom.lightBox.style.paddingBottom = paddingBottom;
 
-                    /*
-                    if( !scope.readyToDisplay ) {
-                        scope.readyToDisplay = true;
-                    }
-                    */
-
                     element[ 0 ].appendChild( darkRoom.lightFrame );
 
                     scope.$evalAsync( scope.intro );
                 };
 
                 scope.imageLoaded = function imageLoaded( e ) {
-                    // console.log( CN + ".imageLoaded" );
+                    console.log( CN + ".imageLoaded" );
 
                     e.target.removeEventListener( 'load', imageLoaded );
                     scope.layoutThenIntro( e.target );
                 };
 
                 scope.transitionCompleted = function transitionCompleted( darkRoomToOutro ) {
-                    // console.log( CN + ".transitionCompleted" );
+                    console.log( CN + ".transitionCompleted" );
 
                     scope.tweenCount--;
 
@@ -178,7 +193,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.resetDarkRoom = function resetLightBox( darkRoom ) {
-                    // console.log( CN + ".resetDarkRoom" );
+                    console.log( CN + ".resetDarkRoom" );
 
                     darkRoom.imageInfo = scope.defaultImageInfo;
 
@@ -198,11 +213,10 @@ angular.module( 'spiral9.directives.lightbox', [
                     TweenMax.set( darkRoom.captionPane, {
                         autoAlpha : 0
                     } );
-                    /**/
                 };
 
                 scope.intro = function intro() {
-                    // console.log( CN + ".intro" );
+                    console.log( CN + ".intro" );
 
                     var duration = 0.7;
                     var darkRoomToIntro = scope.darkRooms[ 1 ];
@@ -251,6 +265,8 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.displayCaptionPane = function displayCaptionPane() {
+                    console.log( CN + ".displayCaptionPane" );
+
                     if( scope.darkRooms[ 0 ].imageInfo.captionHTML ) {
                         TweenMax.to( scope.darkRooms[ 0 ].captionPane, 0.5, {
                             autoAlpha : 1
@@ -263,6 +279,8 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.dismissCaptionPane = function dismissCaptionPane( isImmediate ) {
+                    console.log( CN + ".dismissCaptionPane" );
+
                     if( isImmediate ) {
                         TweenMax.set( scope.darkRooms[ 0 ].captionPane, {
                             autoAlpha : 0
@@ -302,6 +320,8 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.mouseLeft = function mouseLeft( e ) {
+                    console.log( CN + ".mouseLeft" );
+
                     if( scope.isInTransition ) { return; }
 
                     var darkRoom = scope.darkRooms[ 0 ];
@@ -311,6 +331,8 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.touchPaneClicked = function touchPaneClicked( e ) {
+                    console.log( CN + ".touchPaneClicked" );
+
                     if( scope.isInTransition ) { return; }
 
                     var darkRoom = scope.darkRooms[ 0 ];
@@ -330,6 +352,8 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.pageClicked = function pageClicked( e ) {
+                    console.log( CN + ".pageClicked" );
+
                     if( scope.isInTransition ) { return; }
 
                     var darkRoom = scope.darkRooms[ 0 ];
@@ -347,33 +371,18 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.removeDarkRoomByIndex = function removeDarkRoomByIndex( index ) {
-                    // console.log( CN + ".removeDarkRoomByIndex" );
+                    console.log( CN + ".removeDarkRoomByIndex" );
+
 
                     if( scope.darkRooms[ index ].lightFrame.parentNode ) {
                         scope.darkRooms[ index ].lightFrame.parentNode.removeChild( scope.darkRooms[ index ].lightFrame );
                     }
                 };
 
-                scope.addPNGsrcFromNode = function addPNGsrcFromNode( nodeToRasterize, srcRecipient ) {
-                    // requires https://github.com/tsayen/dom-to-image
-
-                    // TODO : try catch?  detect Safari's dumb ass??
-                    if( nodeToRasterize && srcRecipient ) {
-                        domtoimage.toPng( nodeToRasterize )
-                            .then(
-                                function pngReceived( dataUrl ) {
-                                    srcRecipient.src = dataUrl;
-                                } )
-                            .catch(
-                                function pngFailed( error ) {
-                                    console.error( 'oops, something went wrong!', error );
-                                } );
-                    } else {
-                        console.error( CN + ".getPNGsrcFromSelector has a missing param..." );
-                    }
-                };
-
                 scope.newImageInfosReceived = function newImageInfosReceived( newImageInfos ) {
+                    console.log( CN + ".newImageInfosReceived" );
+                    console.log( '\tnewImageInfos : ', newImageInfos );
+
                     if( !newImageInfos || !newImageInfos.length ) {
                         console.error( CN + " newImageInfos missing." );
                         return;
@@ -382,7 +391,7 @@ angular.module( 'spiral9.directives.lightbox', [
 
                     scope.reset();
                     scope.imageInfos = newImageInfos;
-                    scope.rasterizeSignposts();
+                    // scope.rasterizeSignposts();
                     scope.readyToDisplay = true;
 
                     TweenMax.set( element[ 0 ], {
@@ -391,46 +400,17 @@ angular.module( 'spiral9.directives.lightbox', [
 
                     TweenMax.to( element[ 0 ], 0.5, {
                         autoAlpha : 1,
+                        onCompleteScope : scope,
                         onComplete : function displayed(){
-                            // console.log( CN + ".displayed" );
-                            scope.nextImage();
-                            scope.addEventListeners();
+                            console.log( CN + "TweenMax.onComplete.displayed" );
+                            this.nextImage();
+                            this.addEventListeners();
                         }
                     } );
-                };
-
-                scope.addImageData = function addImageData( imageInfo ){
-                    // clean out signpostElement
-                    scope.signpostElement.innerHTML = "";
-
-                    // populate signpostElement
-                    var titleElement = window.document.createElement( 'h1' );
-                    titleElement.innerHTML = imageInfo.title;
-                    scope.signpostElement.appendChild( titleElement );
-
-                    var blurbElement = window.document.createElement( 'p' );
-                    blurbElement.innerHTML = imageInfo.blurbHTML;
-                    scope.signpostElement.appendChild( blurbElement );
-
-                    // assign imgSrc for signpost
-                    // TODO : ? add in a wait here?
-                    scope.addPNGsrcFromNode( scope.signpostElement, imageInfo );
-                };
-
-                scope.rasterizeSignposts = function rasterizeSignposts(){
-                    // console.log( CN + ".rasterizeSignposts" );
-
-                    angular.forEach( scope.imageInfos, function createSignpost( imageInfo, index ){
-                        if( imageInfo.hasOwnProperty( "title" ) ){
-                            window.setTimeout( function callAddImageData(){ scope.addImageData( imageInfo ); }, 1000 * index );
-                        }
-                    } );
-
-
                 };
 
                 scope.dismiss = function dismiss() {
-                    // console.log( CN + ".dismiss" );
+                    console.log( CN + ".dismiss" );
 
                     TweenMax.to( element[ 0 ], 0.5, {
                         autoAlpha : 0,
@@ -447,7 +427,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.addEventListeners = function addEventListeners() {
-                    // console.log( CN + ".addEventListeners" );
+                    console.log( CN + ".addEventListeners" );
 
                     angular.forEach( scope.darkRooms, function addListeners( darkRoom ) {
                         darkRoom.touchPane.addEventListener( 'mousemove', scope.mouseMoved, false );
@@ -459,7 +439,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.removeEventListeners = function removeEventListeners( isUponDestruction ) {
-                    // console.log( CN + ".removeEventListeners" );
+                    console.log( CN + ".removeEventListeners" );
 
                     // remove event listeners
                     angular.forEach( scope.darkRooms, function addListeners( darkRoom ) {
@@ -472,7 +452,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.cleanup = function cleanup() {
-                    // console.log( CN + ".cleanup" );
+                    console.log( CN + ".cleanup" );
 
                     scope.removeEventListeners( true );
 
@@ -481,11 +461,11 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.getReferences = function getReferences() {
-                    // console.log( CN + ".getReferences" );
+                    console.log( CN + ".getReferences" );
 
                     var lightFrames = element[ 0 ].querySelectorAll( '.light-frame' );
-                    scope.offstage = element[ 0 ].querySelector( '.offstage' );
-                    scope.signpostElement = element[ 0 ].querySelector( '.signpost' );
+                    // scope.offstage = element[ 0 ].querySelector( '.offstage' );
+                    // scope.signpostElement = element[ 0 ].querySelector( '.signpost' );
                     scope.darkRooms = [];
                     angular.forEach( lightFrames, function getReferences( lightFrame ) {
                         scope.darkRooms.push( {
@@ -503,6 +483,8 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.init = function init() {
+                    console.log( CN + ".init" );
+                    scope.reset( true );
                     var errorMsg = CN + " encountered an error while initializing.";
                     var bodyNode;
 
@@ -522,11 +504,6 @@ angular.module( 'spiral9.directives.lightbox', [
                     }
 
                     scope.getReferences();
-
-                    if( scope.offstage && scope.offstage.parentNode ){
-                        scope.offstage.parentNode.removeChild( scope.offstage );
-                        bodyNode.appendChild( scope.offstage );
-                    }
 
                     // add one-time listeners
                     scope.signalLightboxImages = SignalTowerService.subscribeToSignal( 'signalLightboxImages', scope.newImageInfosReceived, scope );

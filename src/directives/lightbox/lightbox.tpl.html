@@ -1,14 +1,9 @@
 <div class="dark-room" ng-show="readyToDisplay">
-    <!-- <lightbox image-infos="imageInfosArray"></lightbox> -->
-    <div class="offstage">
-        <div class="signpost">
-
-        </div>
-    </div>
     <div class="light-frame">
         <div class="touch-pane" ng-swipe-left="nextImage()" ng-swipe-right="prevImage()"></div>
         <div class="light-box">
             <img/>
+            <div class="signpost"></div>
             <div class="image-border"></div>
             <button class="btn-prev fa fa-chevron-left"></button>
             <button class="btn-next fa fa-chevron-right"></button>
@@ -19,6 +14,7 @@
         <div class="touch-pane" ng-swipe-left="nextImage()" ng-swipe-right="prevImage()"></div>
         <div class="light-box">
             <img/>
+            <div class="signpost"></div>
             <div class="image-border"></div>
             <button class="btn-prev fa fa-chevron-left"></button>
             <button class="btn-next fa fa-chevron-right"></button>
