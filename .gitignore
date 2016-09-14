@@ -1,4 +1,8 @@
 *~
 .idea
 vendor
+.bower
+build
+img_src
+node_modules
 
