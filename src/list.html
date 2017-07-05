@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <!--
+            Put this page in any directory on an apache web server that is set to list directories.
+            Files will be displayed by file name with a download 'icon' preceding.
+            Subdirectories will be displayed as links.
+         -->
+        <meta content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=yes" name="viewport">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
+        <style>
+            html {
+                box-sizing: border-box;
+            }
+
+            *, *:before, *:after {
+                box-sizing: inherit;
+            }
+
+            body {
+                margin: 0px;
+                padding: 0px;
+            }
+
+            .prestage {
+                display: none;
+            }
+
+            .stage {
+                padding: 0px;
+                margin: 0px;
+                width: 100vw;
+                height: 100vh;
+                -webkit-overflow-scrolling: touch;
+                overflow-scrolling: touch;
+                overflow-y: scroll;
+                overflow-x: hidden;
+            }
+
+            a {
+                display: block;
+                font-size: 20px;
+                line-height: 40px;
+                text-decoration: none;
+                padding: 0px 10px;
+            }
+
+            @media screen and (min-width: 1100px) {
+                a {
+                    font-size: 16px;
+                    line-height: 32px;
+                }
+            }
+
+            a:hover {
+                color: #268B1A;
+                background-color: #F6F6F6;
+            }
+
+        </style>
+        <script>
+            "use strict";
+            var fileList = [];
+            var fileListDiv;
+            function getDirList() {
+                var prestage = window.document.querySelector( '.prestage' );
+                var stage = window.document.querySelector( '.stage' );
+                var dir = window.document.URL.substr( 0, document.URL.lastIndexOf( '/' ) + 1 );
+
+                function populatePlaceholder( msg ) {
+                    if( msg ) console.warn( msg );
+                    var placeholderHTML = "<a href=\"dune_battle_of_corrin.zip\">\u21E9&nbsp;&nbsp;dune_battle_of_corrin.zip</a>\n<a href=\"dune_house_corrino.zip\">\u21E9&nbsp;&nbsp;dune_house_corrino.zip</a>\n<a href=\"dune_house_harkonnen.zip\">\u21E9&nbsp;&nbsp;dune_house_harkonnen.zip</a>\n<a href=\"dune_hunters_of_dune.zip\">\u21E9&nbsp;&nbsp;dune_hunters_of_dune.zip</a>\n<a href=\"dune_mentats_of_dune.zip\">\u21E9&nbsp;&nbsp;dune_mentats_of_dune.zip</a>\n<a href=\"dune_navigators_of_dune.zip\">\u21E9&nbsp;&nbsp;dune_navigators_of_dune.zip</a>\n<a href=\"dune_the_butlerian_jihad.zip\">\u21E9&nbsp;&nbsp;dune_the_butlerian_jihad.zip</a>\n<a href=\"dune_the_machine_crusade.zip\">\u21E9&nbsp;&nbsp;dune_the_machine_crusade.zip</a>\n<a href=\"jack_reacher_61_hours.zip\">\u21E9&nbsp;&nbsp;jack_reacher_61_hours.zip</a>\n<a href=\"jack_reacher_a_wanted_man.zip\">\u21E9&nbsp;&nbsp;jack_reacher_a_wanted_man.zip</a>\n<a href=\"jack_reacher_bad_luck_and_trouble.zip\">\u21E9&nbsp;&nbsp;jack_reacher_bad_luck_and_trouble.zip</a>\n<a href=\"jack_reacher_die_trying.zip\">\u21E9&nbsp;&nbsp;jack_reacher_die_trying.zip</a>\n<a href=\"jack_reacher_echo_burning.zip\">\u21E9&nbsp;&nbsp;jack_reacher_echo_burning.zip</a>\n<a href=\"jack_reacher_gone_tomorrow.zip\">\u21E9&nbsp;&nbsp;jack_reacher_gone_tomorrow.zip</a>\n<a href=\"jack_reacher_killing_floor.zip\">\u21E9&nbsp;&nbsp;jack_reacher_killing_floor.zip</a>\n<a href=\"jack_reacher_make_me.zip\">\u21E9&nbsp;&nbsp;jack_reacher_make_me.zip</a>\n<a href=\"jack_reacher_never_go_back.zip\">\u21E9&nbsp;&nbsp;jack_reacher_never_go_back.zip</a>\n<a href=\"jack_reacher_not_a_drill.zip\">\u21E9&nbsp;&nbsp;jack_reacher_not_a_drill.zip</a>\n<a href=\"jack_reacher_persuader.zip\">\u21E9&nbsp;&nbsp;jack_reacher_persuader.zip</a>\n<a href=\"jack_reacher_small_wars.zip\">\u21E9&nbsp;&nbsp;jack_reacher_small_wars.zip</a>\n<a href=\"jack_reacher_the_affair.zip\">\u21E9&nbsp;&nbsp;jack_reacher_the_affair.zip</a>\n<a href=\"jack_reacher_the_enemy.zip\">\u21E9&nbsp;&nbsp;jack_reacher_the_enemy.zip</a>\n<a href=\"jack_reacher_the_hard_way.zip\">\u21E9&nbsp;&nbsp;jack_reacher_the_hard_way.zip</a>\n<a href=\"jack_reacher_three_novellas.zip\">\u21E9&nbsp;&nbsp;jack_reacher_three_novellas.zip</a>\n<a href=\"jack_reacher_without_fail.zip\">\u21E9&nbsp;&nbsp;jack_reacher_without_fail.zip</a>\n<a href=\"jack_ryan_command_authority.zip\">\u21E9&nbsp;&nbsp;jack_ryan_command_authority.zip</a>\n<a href=\"jack_ryan_debt_of_honor.zip\">\u21E9&nbsp;&nbsp;jack_ryan_debt_of_honor.zip</a>\n<a href=\"miracle_life_of_edgar_mint.zip\">\u21E9&nbsp;&nbsp;miracle_life_of_edgar_mint.zip</a>\n<a href=\"star_wars_darth_plagueis.zip\">\u21E9&nbsp;&nbsp;star_wars_darth_plagueis.zip</a>\n<a href=\"william_gibson_count_zero.zip\">\u21E9&nbsp;&nbsp;william_gibson_count_zero.zip</a>\n<a href=\"william_gibson_mona_lisa_overdrive.zip\">\u21E9&nbsp;&nbsp;william_gibson_mona_lisa_overdrive.zip</a>\n<a href=\"william_gibson_neuromancer.zip\">\u21E9&nbsp;&nbsp;william_gibson_neuromancer.zip</a>\n<a href=\"william_gibson_pattern_recognition.zip\">\u21E9&nbsp;&nbsp;william_gibson_pattern_recognition.zip</a>\n<a href=\"william_gibson_zero_history.zip\">\u21E9&nbsp;&nbsp;william_gibson_zero_history.zip</a>";
+                    console.log( 'Displaying placeholder content.' );
+                    stage.innerHTML = placeholderHTML;
+                }
+
+                try {
+                    var xmlHTTP = new XMLHttpRequest();
+                    xmlHTTP.onreadystatechange = responseReceived;
+                    xmlHTTP.open( "GET", dir, true );
+                    xmlHTTP.send();
+                }
+                catch( err ) {
+                    console.error( err );
+                    populatePlaceholder( 'There appears to be an error - maybe something to do with cross-protocol authentication?' );
+                }
+
+                function responseReceived() {
+                    if( xmlHTTP.readyState === 4 && xmlHTTP.status === 200 ) {
+                        if( xmlHTTP.responseText && xmlHTTP.responseText.indexOf( '<hr>' ) !== -1 ) {
+                            var links = xmlHTTP.responseText.split( "<hr>" )[ 1 ];
+                            var downloadGlyph_1 = '\u21E9\u00A0\u00A0';
+                            prestage.innerHTML = links;
+                            links = prestage.querySelectorAll( 'a' );
+                            var newInnerText;
+                            [].forEach.call( links, function processLink( link ) {
+                                if( link.href.indexOf( dir ) !== -1 && link.href !== dir + 'list.html' ) {
+                                    newInnerText = link.href.split( dir )[ 1 ];
+                                    if( newInnerText.indexOf( '/' ) === -1 ){
+                                        newInnerText = downloadGlyph_1 + newInnerText;
+                                        link.setAttribute( 'download', link.href.substr( link.href.lastIndexOf( '/' ) + 1 ) );
+                                    }
+
+                                    link.innerText = newInnerText;
+                                    stage.innerHTML += link.outerHTML;
+                                }
+                            } );
+                            if( stage.innerHTML === '' ){
+                                stage.innerHTML = '<a href="' + dir + '">no files - return to parent directory</a>';
+                            }
+                        }
+                        else {
+                            populatePlaceholder( 'You don\'t seem to be in an apache server directory without an index.html file.' );
+                        }
+                    }
+                }
+            }
+            document.addEventListener( 'DOMContentLoaded', getDirList, false );
+        </script>
+    </head>
+    <body>
+        <div class="prestage"></div>
+        <div class="stage"></div>
+    </body>
+</html>

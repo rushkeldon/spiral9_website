@@ -1,16 +1,16 @@
 {
-    "name" : "spiral9_website",
-    "version" : "0.0.0",
-    "homepage" : "https://github.com/rushkeldon/spiral9_website",
-    "contributors" : [
+    "name": "spiral9_website",
+    "version": "0.0.0",
+    "homepage": "https://github.com/rushkeldon/spiral9_website",
+    "contributors": [
         {
-            "name" : "Keldon Rush",
-            "email" : "keldon@spiral9.com"
+            "name": "Keldon Rush",
+            "email": "keldon@spiral9.com"
         }
     ],
-    "description" : "An angular responsive portfolio",
-    "main" : "build",
-    "keywords" : [
+    "description": "An angular responsive portfolio",
+    "main": "build",
+    "keywords": [
         "HTML5",
         "CSS3",
         "Angular",
@@ -20,7 +20,7 @@
     ],
     "private": true,
     "dependencies": {
-        "angular" : "1.4.x",
+        "angular": "1.4.x",
         "todomvc-app-css": "2.0.x",
         "todomvc-common": "1.0.x"
     },
@@ -30,13 +30,13 @@
         "browserify": "12.0.X",
         "browserify-ngannotate": "1.0.x",
         "del": "2.0.x",
-        "globby" : "3.0.x",
+        "globby": "3.0.x",
         "gulp": "3.9.x",
         "gulp-cachebust": "0.0.x",
         "gulp-concat": "2.6.x",
         "gulp-copy": "x.x.x",
         "gulp-flatten": "0.2.x",
-        "gulp-html2js" : "0.2.x",
+        "gulp-html2js": "0.2.x",
         "gulp-install": "0.6.x",
         "gulp-jshint": "1.12.x",
         "gulp-karma": "0.0.x",
@@ -55,8 +55,8 @@
         "karma-firefox-launcher": "0.1.x",
         "karma-jasmine": "0.3.x",
         "karma-phantomjs-launcher": "0.2.x",
-        "less-plugin-glob" : "1.x.x",
-        "through2" : "2.0.x",
+        "less-plugin-glob": "1.x.x",
+        "through2": "2.0.x",
         "vinyl-buffer": "1.0.x",
         "vinyl-source-stream": "1.1.x"
     }
