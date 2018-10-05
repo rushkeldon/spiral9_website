@@ -10,6 +10,6 @@
             ng-repeat="navItem in navInfo.navItems"
             ng-class="{ 'active' : currentSelector === navItem.selector }"
             ng-bind="navItem.label"
-            ng-click="navItemClicked( $event, navItem.selector )"></li>
+            ng-click="navItemClicked( $event, navItem.selector, navItem.bookmark )"></li>
     </ul>
 </nav>

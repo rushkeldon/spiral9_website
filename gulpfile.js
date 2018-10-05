@@ -169,14 +169,14 @@ gulp.task( 'copyFonts', [], function copyFonts() {
 
 // copy main files
 gulp.task( 'copyMainFiles', [], function copyMainFiles() {
-    return gulp.src( [ 'src/index.html', 'src/index.json' ] )
+    return gulp.src( [ 'src/index.html', 'src/index.json', 'src/zenscroll.js' ] )
         .pipe( gulp.dest( './build' ) );
 } );
 
 // full build
 gulp.task( 'default', [
     'compileLESS',
-    'jsHint',
+    // 'jsHint',
     'compileHTMLtemplates',
     'compileJS',
     'copyImages',

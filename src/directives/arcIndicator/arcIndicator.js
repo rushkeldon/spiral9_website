@@ -93,8 +93,6 @@ angular.module( 'spiral9.directives.arcIndicator', [
                 $scope.getArcInfo = function( index, value, radius, spacing ) {
                     var end = findDegress( value ),
                         arcValues = getArcValues( index, radius, spacing );
-
-
                     return {
                         innerRadius : arcValues.innerRadius,
                         outerRadius : arcValues.outerRadius,
@@ -104,10 +102,13 @@ angular.module( 'spiral9.directives.arcIndicator', [
                 };
 
                 $scope.tweenArc = function tweenArc( b, arc ) {
+                    // console.log( CN + '.tweenArc' );
                     return function( a ) {
                         var i = d3.interpolate( a, b );
                         for( var key in b ) {
-                            a[ key ] = b[ key ];
+                            if( b[ key ] ){
+                                a[ key ] = b[ key ];
+                            }
                         }
                         return function( t ) {
                             return arc( i( t ) );
@@ -162,7 +163,8 @@ angular.module( 'spiral9.directives.arcIndicator', [
                 arc.endAngle = 0;
 
                 scope.tweenInnerArc = function tweenInnerArc(){
-                    if( !scope.innerArc ){ return; }
+                    // console.log( CN + '.tweenInnerArc' );
+                    if( !scope.innerArc ){ console.log( 'no innerArc' ); return; }
                     scope.innerArc
                         .datum( arc )
                         .attr( 'd', arcObject )
@@ -193,7 +195,9 @@ angular.module( 'spiral9.directives.arcIndicator', [
                 element.addClass( scope.findPathColor() );
 
                 scope.tweenOuterArc = function tweenOuterArc() {
-                    if( !scope.outerArc ){ return; }
+                    // console.log( CN + '.tweenOuterArc - noop' );
+                    if( !scope.outerArc ){ console.log( 'no outerArc' ); return; }
+
                     scope.outerArc
                         .datum( arc )
                         .attr( 'd', arcObject )
@@ -202,6 +206,7 @@ angular.module( 'spiral9.directives.arcIndicator', [
                         .duration( 1500 )
                         .ease( 'bounce' )
                         .attrTween( 'd', scope.tweenArc( { endAngle : end }, arcObject ) );
+                    /**/
                 };
 
                 if( !scope.paused ){

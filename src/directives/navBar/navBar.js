@@ -44,18 +44,23 @@ angular.module( 'spiral9.directives.navBar', [
                     scope.$evalAsync();
                 };
 
-                scope.navItemClicked = function navItemClicked( e, selector ){
+                scope.navItemClicked = function navItemClicked( e, selector, bookmark ){
+                    // console.log( CN + '.navItemClicked' );
+                    e.preventDefault();
                     if( ResponsiveService.tag() !== 'large' ){
                         scope.shouldMenuDisplay = false;
                         scope.$evalAsync();
                     }
                     scope.currentSelector = selector;
-                    scope.scrollToCurrentSelector();
+                    scope.scrollToCurrentSelector( bookmark );
                 };
 
-                scope.scrollToCurrentSelector = function scrollToCurrentSelector(){
+                scope.scrollToCurrentSelector = function scrollToCurrentSelector( bookmark ){
+                    // console.log( CN + '.scrollToCurrentSelector' );
+
                     var targetElement = $document[ 0 ].querySelector( scope.currentSelector );
                     if( targetElement ){
+
                         //var currentVerticalScroll = window.pageYOffset;
                         var currentVerticalScroll = ( window.pageYOffset !== null ) ? window.pageYOffset : ( document.documentElement.scrollTop !== null ) ? document.documentElement.scrollTop : document.body.scrollTop;
 
@@ -74,6 +79,7 @@ angular.module( 'spiral9.directives.navBar', [
                                 scope.tween = null;
                             }
                         } );
+
                     }
                 };
 

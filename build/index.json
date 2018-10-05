@@ -30,27 +30,33 @@
         "navItems" : [
             {
                 "label" : "KELDON",
-                "selector" : ".slide-panel"
+                "selector" : ".slide-panel",
+                "bookmark" : "#slide"
             },
             {
                 "label" : "ABOUT",
-                "selector" : ".about-panel"
+                "selector" : ".about-panel",
+                "bookmark" : "#about"
             },
             {
                 "label" : "SKILLS",
-                "selector" : ".skills-panel"
+                "selector" : ".skills-panel",
+                "bookmark" : "#skills"
             },
             {
                 "label" : "EXPERIENCE",
-                "selector" : ".work-panel"
+                "selector" : ".work-panel",
+                "bookmark" : "#work"
             },
             {
                 "label" : "PORTFOLIO",
-                "selector" : ".portfolio-panel"
+                "selector" : ".portfolio-panel",
+                "bookmark" : "#portfolio"
             },
             {
                 "label" : "CONTACT",
-                "selector" : ".contact-panel"
+                "selector" : ".contact-panel",
+                "bookmark" : "#contact"
             }
         ]
     },
@@ -88,9 +94,24 @@
         "subTitle" : "some of my chops",
         "skills" : [
             {
+                "label" : "typescript",
+                "blurb" : "Been loving typescript<br/>I am interested in Babel and webpack...",
+                "percent" : 95
+            },
+            {
                 "label" : "javascript",
-                "blurb" : "Straight up code!<br/>I am interested in ES6, Babel, and TypeScript...",
-                "percent" : 93
+                "blurb" : "old skool, ES5, ES6<br/>to Infinity and beyond...",
+                "percent" : 95
+            },
+            {
+                "label" : "node",
+                "blurb" : "there is always more to node",
+                "percent" : 80
+            },
+            {
+                "label" : "demandware",
+                "blurb" : "the front end part...",
+                "percent" : 89
             },
             {
                 "label" : "angular",
@@ -139,6 +160,97 @@
         "subTitle" : "Some of my experiences creating experiences",
         "events" : [
             {
+                "badgeClass" : "ms",
+                "iconName" : "signal",
+                "title" : "autoGraph",
+                "role" : "Product Experience Director",
+                "when" : "Oct 2016  -  Present",
+                "headerHTML" : "",
+                "linkInfos" : [
+                    {
+                        "label" : "autograph.me",
+                        "url" : "http://www.autograph.me/",
+                        "target" : "_self"
+                    },
+                    {
+                        "label" : "T-Mobile Mobile Life",
+                        "url" : "https://ml.t-mobile.com",
+                        "target" : "_self"
+                    }
+                ],
+                "bodyHTML" : "",
+                "badgeKeys" : [
+                    "aws",
+                    "css3",
+                    "git",
+                    "html5",
+                    "javascript",
+                    "jenkins",
+                    "js",
+                    "less",
+                    "node",
+                    "photoshop",
+                    "responsive",
+                    "rest",
+                    "scrum",
+                    "typescript"
+                ],
+                "footerHTML" : "",
+                "details" : [
+                    "Part UX Designer, Project Manager, Technical Sales, Ad Ops, and Front End Developer",
+                    "Wireless carriers are our main customers",
+                    "'Mobile first' and 'progressive enhancement' site design and implementation",
+                    "Helped establish and maintain each project's 'performance budget'",
+                    "Managed projects across five wireless carriers, four continents, and two languages"
+                ]
+            },
+            {
+                "badgeClass" : "primary",
+                "iconName" : "shopping-cart",
+                "title" : "Live Area",
+                "role" : "Senior Front End Developer",
+                "when" : "Jan 2016  -  Sep 2016",
+                "headerHTML" : "",
+                "linkInfos" : [
+                    {
+                        "label" : "liveareacx.com",
+                        "url" : "http://www.liveareacx.com/",
+                        "target" : "_self"
+                    },
+                    {
+                        "label" : "See's Candies - sees.com",
+                        "url" : "http://sees.com",
+                        "target" : "_self"
+                    }
+                ],
+                "bodyHTML" : "",
+                "badgeKeys" : [
+                    "bootstrap",
+                    "css3",
+                    "demandware",
+                    "git",
+                    "gulp",
+                    "html5",
+                    "jasmine",
+                    "jenkins",
+                    "jquery",
+                    "js",
+                    "less",
+                    "photoshop",
+                    "responsive",
+                    "rest",
+                    "scrum"
+                ],
+                "footerHTML" : "",
+                "details" : [
+                    "Created tools for the team including <a href=\"https://www.npmjs.com/package/davup\">davup</a> and <a href=\"http://appcloud9.com/dfs/\">'Delta Foresight'</a>",
+                    "Emphasis on SEO optimal development",
+                    "'Mobile first' and 'progressive enhancement' site design and implementation",
+                    "Helped establish and maintain each project's 'performance budget'",
+                    "Worked on many sites including See's Candy, Sally Beauty, and London Drugs"
+                ]
+            },
+            {
                 "badgeClass" : "primary",
                 "iconName" : "boat",
                 "title" : "Holland America Group",
@@ -166,8 +278,6 @@
                     "gulp",
                     "html5",
                     "jasmine",
-                    "jenkins",
-                    "jquery",
                     "js",
                     "less",
                     "photoshop",

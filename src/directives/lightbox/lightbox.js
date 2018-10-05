@@ -41,7 +41,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.reset = function reset( isInit ) {
-                    console.log( CN + ".reset" );
+                    // console.log( CN + ".reset" );
 
                     scope.imageIndex = -1;
                     scope.isInTransition = false;
@@ -52,7 +52,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.getImageIndex = function getImageIndex( refIndex, direction ) {
-                    console.log( CN + ".getImageIndex" );
+                    // console.log( CN + ".getImageIndex" );
                     var index = 0;
                     switch( direction ) {
                         case 'right':
@@ -66,7 +66,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.setImageInfo = function setImageInfo( direction, shouldDisplay ) {
-                    console.log( CN + ".setImageInfo" );
+                    // console.log( CN + ".setImageInfo" );
 
                     var scope = scope ? scope : this;
 
@@ -106,7 +106,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.nextImage = function nextImage() {
-                    console.log( CN + ".nextImage BUBBA" );
+                    // console.log( CN + ".nextImage BUBBA" );
 
                     var scope = scope ? scope : this;
 
@@ -126,7 +126,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.prevImage = function prevImage() {
-                    console.log( CN + ".prevImage" );
+                    // console.log( CN + ".prevImage" );
 
                     var scope = scope ? scope : this;
 
@@ -146,7 +146,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.layoutThenIntro = function layoutThenIntro( image ) {
-                    console.log( CN + ".layoutThenIntro" );
+                    // console.log( CN + ".layoutThenIntro" );
 
                     var naturalWidth = image.naturalWidth;
                     var naturalHeight = image.naturalHeight;
@@ -166,14 +166,14 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.imageLoaded = function imageLoaded( e ) {
-                    console.log( CN + ".imageLoaded" );
+                    // console.log( CN + ".imageLoaded" );
 
                     e.target.removeEventListener( 'load', imageLoaded );
                     scope.layoutThenIntro( e.target );
                 };
 
                 scope.transitionCompleted = function transitionCompleted( darkRoomToOutro ) {
-                    console.log( CN + ".transitionCompleted" );
+                    // console.log( CN + ".transitionCompleted" );
 
                     scope.tweenCount--;
 
@@ -193,7 +193,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.resetDarkRoom = function resetLightBox( darkRoom ) {
-                    console.log( CN + ".resetDarkRoom" );
+                    // console.log( CN + ".resetDarkRoom" );
 
                     darkRoom.imageInfo = scope.defaultImageInfo;
 
@@ -216,7 +216,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.intro = function intro() {
-                    console.log( CN + ".intro" );
+                    // console.log( CN + ".intro" );
 
                     var duration = 0.7;
                     var darkRoomToIntro = scope.darkRooms[ 1 ];
@@ -265,7 +265,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.displayCaptionPane = function displayCaptionPane() {
-                    console.log( CN + ".displayCaptionPane" );
+                    // console.log( CN + ".displayCaptionPane" );
 
                     if( scope.darkRooms[ 0 ].imageInfo.captionHTML ) {
                         TweenMax.to( scope.darkRooms[ 0 ].captionPane, 0.5, {
@@ -279,7 +279,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.dismissCaptionPane = function dismissCaptionPane( isImmediate ) {
-                    console.log( CN + ".dismissCaptionPane" );
+                    // console.log( CN + ".dismissCaptionPane" );
 
                     if( isImmediate ) {
                         TweenMax.set( scope.darkRooms[ 0 ].captionPane, {
@@ -320,7 +320,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.mouseLeft = function mouseLeft( e ) {
-                    console.log( CN + ".mouseLeft" );
+                    // console.log( CN + ".mouseLeft" );
 
                     if( scope.isInTransition ) { return; }
 
@@ -331,7 +331,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.touchPaneClicked = function touchPaneClicked( e ) {
-                    console.log( CN + ".touchPaneClicked" );
+                    // console.log( CN + ".touchPaneClicked" );
 
                     if( scope.isInTransition ) { return; }
 
@@ -352,7 +352,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.pageClicked = function pageClicked( e ) {
-                    console.log( CN + ".pageClicked" );
+                    // console.log( CN + ".pageClicked" );
 
                     if( scope.isInTransition ) { return; }
 
@@ -371,7 +371,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.removeDarkRoomByIndex = function removeDarkRoomByIndex( index ) {
-                    console.log( CN + ".removeDarkRoomByIndex" );
+                    // console.log( CN + ".removeDarkRoomByIndex" );
 
 
                     if( scope.darkRooms[ index ].lightFrame.parentNode ) {
@@ -380,11 +380,11 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.newImageInfosReceived = function newImageInfosReceived( newImageInfos ) {
-                    console.log( CN + ".newImageInfosReceived" );
-                    console.log( '\tnewImageInfos : ', newImageInfos );
+                    // console.log( CN + ".newImageInfosReceived" );
+                    // console.log( '\tnewImageInfos : ', newImageInfos );
 
                     if( !newImageInfos || !newImageInfos.length ) {
-                        console.error( CN + " newImageInfos missing." );
+                        // console.error( CN + " newImageInfos missing." );
                         return;
                     }
                     window.document.body.className += " non-scrollable";
@@ -402,7 +402,7 @@ angular.module( 'spiral9.directives.lightbox', [
                         autoAlpha : 1,
                         onCompleteScope : scope,
                         onComplete : function displayed(){
-                            console.log( CN + "TweenMax.onComplete.displayed" );
+                            // console.log( CN + "TweenMax.onComplete.displayed" );
                             this.nextImage();
                             this.addEventListeners();
                         }
@@ -410,7 +410,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.dismiss = function dismiss() {
-                    console.log( CN + ".dismiss" );
+                    // console.log( CN + ".dismiss" );
 
                     TweenMax.to( element[ 0 ], 0.5, {
                         autoAlpha : 0,
@@ -427,7 +427,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.addEventListeners = function addEventListeners() {
-                    console.log( CN + ".addEventListeners" );
+                    // console.log( CN + ".addEventListeners" );
 
                     angular.forEach( scope.darkRooms, function addListeners( darkRoom ) {
                         darkRoom.touchPane.addEventListener( 'mousemove', scope.mouseMoved, false );
@@ -439,7 +439,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.removeEventListeners = function removeEventListeners( isUponDestruction ) {
-                    console.log( CN + ".removeEventListeners" );
+                    // console.log( CN + ".removeEventListeners" );
 
                     // remove event listeners
                     angular.forEach( scope.darkRooms, function addListeners( darkRoom ) {
@@ -452,7 +452,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.cleanup = function cleanup() {
-                    console.log( CN + ".cleanup" );
+                    // console.log( CN + ".cleanup" );
 
                     scope.removeEventListeners( true );
 
@@ -461,7 +461,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.getReferences = function getReferences() {
-                    console.log( CN + ".getReferences" );
+                    // console.log( CN + ".getReferences" );
 
                     var lightFrames = element[ 0 ].querySelectorAll( '.light-frame' );
                     // scope.offstage = element[ 0 ].querySelector( '.offstage' );
@@ -483,7 +483,7 @@ angular.module( 'spiral9.directives.lightbox', [
                 };
 
                 scope.init = function init() {
-                    console.log( CN + ".init" );
+                    // console.log( CN + ".init" );
                     scope.reset( true );
                     var errorMsg = CN + " encountered an error while initializing.";
                     var bodyNode;
@@ -495,11 +495,11 @@ angular.module( 'spiral9.directives.lightbox', [
                         if( bodyNode ) {
                             bodyNode.appendChild( elementNode );
                         } else {
-                            console.error( errorMsg );
+                            // console.error( errorMsg );
                             return;
                         }
                     } else {
-                        console.error( errorMsg );
+                        // console.error( errorMsg );
                         return;
                     }
 

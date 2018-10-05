@@ -124,6 +124,13 @@ angular.module( 'spiral9.services.DataService', [] )
                     "blurb" : "Cascading Style Sheets - all the versions before CSS3.",
                     "clr" : "#2E6DA4"
                 },
+                "demandware" : {
+                    "name" : "demandware",
+                    "longName" : "salseforce commerce cloud",
+                    "url" : "https://www.demandware.com/",
+                    "blurb" : "A cloud-based e-commerce platform purchased by SalesForce - now 'salseforce commerce cloud'.",
+                    "clr" : "#1178B9"
+                },
                 "d3" : {
                     "name" : "d3",
                     "longName" : "D3.js",
@@ -215,6 +222,13 @@ angular.module( 'spiral9.services.DataService', [] )
                     "blurb" : "OS X is the operating system that makes it possible to do all the things you do on a Mac.",
                     "clr" : "#333333"
                 },
+                "node" : {
+                    "name" : "node",
+                    "longName" : "Node.js®",
+                    "url" : "https://nodejs.org/en/",
+                    "blurb" : "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+                    "clr" : "#0D6D0E"
+                },
                 "photoshop" : {
                     "name" : "photoshop",
                     "longName" : "Adobe Photoshop CC",
@@ -249,6 +263,13 @@ angular.module( 'spiral9.services.DataService', [] )
                     "url" : "https://en.wikipedia.org/wiki/Symbian",
                     "blurb" : "The Symbian OS is the operating system developed and sold by Symbian Ltd. The OS was primarily used by Nokia.",
                     "clr" : "#FDAC00"
+                },
+                "typescript" : {
+                    "name" : "typescript",
+                    "longName" : "TypeScript",
+                    "url" : "https://www.typescriptlang.org/",
+                    "blurb" : "JavaScript that scales. TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. Any browser. Any host. Any OS. Open source.",
+                    "clr" : "#2B4F7E"
                 },
                 "winjs" : {
                     "name" : "winjs",
