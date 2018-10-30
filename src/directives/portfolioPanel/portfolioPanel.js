@@ -43,6 +43,8 @@ angular.module( 'spiral9.directives.portfolioPanel', [
                 };
 
                 scope.outro = function outro() {
+                    console.log( CN + '.outro' );
+
                     if( scope.projectsToOutro.length ) {
                         angular.forEach( scope.projectsToOutro, function outroProject( projectObject, projectIndex ){
                             TweenMax.to( projectObject.element, 0.3, {
@@ -64,6 +66,8 @@ angular.module( 'spiral9.directives.portfolioPanel', [
                 };
 
                 scope.intro = function intro() {
+                    console.log( CN + '.intro' );
+
                     if( scope.projectsToIntro.length ) {
                         angular.forEach( scope.projectsToIntro, function introProject( projectObject, projectIndex ){
                             TweenMax.to( projectObject.element, 0.3, {
@@ -85,6 +89,8 @@ angular.module( 'spiral9.directives.portfolioPanel', [
                 };
 
                 scope.filterByTag = function filterByTag( e, filterTag ) {
+                    console.log( CN + '.filterByTag' );
+
                     scope.projectsToIntro = [];
                     scope.projectsToOutro = [];
                     scope.currentFilterTag = filterTag;
@@ -111,11 +117,14 @@ angular.module( 'spiral9.directives.portfolioPanel', [
                 };
 
                 scope.projectClicked = function projectClicked( project ) {
+                    console.log( CN + '.projectClicked' );
+
 
                 };
 
                 scope.viewProjectImages = function viewProjectImages( project ) {
                     console.log( CN + ".viewProjectImages" );
+
                     SignalTowerService.dispatchSignal( 'signalLightboxImages', project.imageInfos );
                 };
 
